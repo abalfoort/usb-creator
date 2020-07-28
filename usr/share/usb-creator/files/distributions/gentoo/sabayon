@@ -1,0 +1,8 @@
+menuentry '[MENUTITLE]' --class [CLASS] {
+    set iso_path='/[ISONAME]'
+    loopback loop $iso_path
+    search --set -f $iso_path
+    probe --set=rootuuid -u $root
+    linux (loop)[VMLINUZ] isoboot=$iso_path root=live:UUID=$rootuuid rd.vconsole.keymap=us vconsole.keymap=us locale=en_US [OPTIONS]
+    initrd (loop)[INITRD]
+} 

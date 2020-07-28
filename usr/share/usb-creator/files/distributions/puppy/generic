@@ -1,0 +1,5 @@
+menuentry '[MENUTITLE]' --class [CLASS] {
+    set iso_path='/[ISONAME]'
+    linux $iso_path/vmlinuz psubdir=$iso_path pfix=fsck
+    initrd $iso_path/initrd.gz
+}

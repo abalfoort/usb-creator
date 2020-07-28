@@ -1,0 +1,6 @@
+menuentry '[MENUTITLE]' --class [CLASS] {
+    set iso_path='/[ISONAME]'
+    loopback loop $iso_path
+    linux (loop)[VMLINUZ] fromiso=$iso_path [OPTIONS]
+    initrd (loop)[INITRD]
+}

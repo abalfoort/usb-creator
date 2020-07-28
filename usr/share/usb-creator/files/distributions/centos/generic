@@ -1,0 +1,7 @@
+menuentry '[MENUTITLE]' --class [CLASS] {
+    set iso_path='/[ISONAME]'
+    loopback loop $iso_path
+    probe --set=loopuuid -u (loop)
+    linux (loop)[VMLINUZ]  iso-scan/filename=$iso_path inst.stage2=hd:UUID=$loopuuid [OPTIONS]
+    initrd (loop)[INITRD]
+}

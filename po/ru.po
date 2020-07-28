@@ -1,0 +1,468 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Translators:
+# Arjen Balfoort <arjenbalfoort@solydxk.com>, 2018
+# Arjen Balfoort <arjenbalfoort@solydxk.com>, 2016
+# Михаил Ильинский (milinsky) <mail@milinsky.com>, 2015
+# Анатолий Валерианович <ffox909@mail.ru>, 2015
+# Михаил Ильинский (milinsky) <mail@milinsky.com>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: usb-creator\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-01-30 20:03+0100\n"
+"PO-Revision-Date: 2018-07-03 10:28+0000\n"
+"Last-Translator: Arjen Balfoort <arjenbalfoort@solydxk.com>\n"
+"Language-Team: Russian (http://www.transifex.com/solydxk/usb-creator/"
+"language/ru/)\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: usr/lib/usb-creator/usbcreator.py:76
+#: usr/share/applications/usb-creator.desktop.in.h:1
+msgid "USB Creator"
+msgstr "USB Creator - Создание загрузочной флешки."
+
+#: usr/lib/usb-creator/usbcreator.py:77
+msgid "Device"
+msgstr "Устройство"
+
+#: usr/lib/usb-creator/usbcreator.py:78
+#, fuzzy
+msgid "Partition device"
+msgstr "Восстановить устройство"
+
+#: usr/lib/usb-creator/usbcreator.py:79
+msgid "This will remove all data from the device."
+msgstr ""
+
+#: usr/lib/usb-creator/usbcreator.py:80
+msgid "USB"
+msgstr "USB"
+
+#: usr/lib/usb-creator/usbcreator.py:81
+msgid "Available"
+msgstr "Доступный"
+
+#: usr/lib/usb-creator/usbcreator.py:82
+msgid "Required"
+msgstr "Необходимый"
+
+#: usr/lib/usb-creator/usbcreator.py:83
+msgid "Execute"
+msgstr "Выполнить"
+
+#: usr/lib/usb-creator/usbcreator.py:84
+msgid "ISO"
+msgstr "ISO"
+
+#: usr/lib/usb-creator/usbcreator.py:85
+msgid "Write single ISO"
+msgstr ""
+
+#: usr/lib/usb-creator/usbcreator.py:86
+msgid "Write a single ISO to USB using dd"
+msgstr ""
+
+#: usr/lib/usb-creator/usbcreator.py:87
+msgid "Remove"
+msgstr ""
+
+#: usr/lib/usb-creator/usbcreator.py:88
+msgid "Refresh device list"
+msgstr "Обновить список устройств"
+
+#: usr/lib/usb-creator/usbcreator.py:89
+msgid "Unmount device"
+msgstr "Размонтировать устройство"
+
+#: usr/lib/usb-creator/usbcreator.py:90
+msgid "Browse for ISO file"
+msgstr "Найти ISO-файл"
+
+#: usr/lib/usb-creator/usbcreator.py:91
+msgid "Clear the ISO field"
+msgstr "Очистить ISO поле"
+
+#: usr/lib/usb-creator/usbcreator.py:92
+msgid "Manual"
+msgstr ""
+
+#: usr/lib/usb-creator/usbcreator.py:93
+msgid ""
+"Manually select the distribution name if USB Creator cannot\n"
+"determine the distribution name automatically."
+msgstr ""
+
+#: usr/lib/usb-creator/usbcreator.py:97
+msgid "Copy ISO to USB..."
+msgstr ""
+
+#: usr/lib/usb-creator/usbcreator.py:101
+#, fuzzy
+msgid "Prepare copy of ISO..."
+msgstr "Проверка hash суммы образа..."
+
+#: usr/lib/usb-creator/usbcreator.py:102
+#, fuzzy
+msgid "Verify hash of ISO..."
+msgstr "Проверка hash суммы образа..."
+
+#: usr/lib/usb-creator/usbcreator.py:103
+#, fuzzy
+msgid "Install Grub..."
+msgstr "Установка загрузчика Grub..."
+
+#: usr/lib/usb-creator/usbcreator.py:104
+#, fuzzy
+msgid "Unpacking ISO..."
+msgstr "Копирование образа..."
+
+#: usr/lib/usb-creator/usbcreator.py:105
+msgid "Gather ISO information..."
+msgstr ""
+
+#: usr/lib/usb-creator/usbcreator.py:149
+msgid "Version"
+msgstr "Версия"
+
+#: usr/lib/usb-creator/usbcreator.py:164
+msgid ""
+"Cannot add ISO from path: {}.\n"
+"Please, remove the ISO path or browse for an existing ISO."
+msgstr ""
+"Не удается добавить образ:{}.\n"
+"Пожалуйста проверьте путь или укажите другой образ."
+
+#: usr/lib/usb-creator/usbcreator.py:172
+msgid ""
+"There is not enough space available on the pen drive.\n"
+"Please, remove unneeded files before continuing."
+msgstr ""
+"Недостаточно места на флэш-накопителе.\n"
+"Освободите место на накопителе перед продолжением."
+
+#: usr/lib/usb-creator/usbcreator.py:201
+msgid "Are you sure you want to remove the selected ISO from the device?"
+msgstr "Вы уверены, что хотите удалить выбранный образ?"
+
+#: usr/lib/usb-creator/usbcreator.py:222
+msgid "Select ISO"
+msgstr "Выбрать ISO-образ"
+
+#: usr/lib/usb-creator/usbcreator.py:279
+msgid "Unmount"
+msgstr "Размонтировать"
+
+#: usr/lib/usb-creator/usbcreator.py:284
+msgid "You can now safely remove the device."
+msgstr "Теперь вы можете безопасно извлечь устройство."
+
+#: usr/lib/usb-creator/usbcreator.py:286
+msgid ""
+"Could not unmount the device.\n"
+"Please unmount the device manually."
+msgstr ""
+"Не удалось размонтировать устройство.\n"
+"Пожалуйста, отключите устройство вручную."
+
+#: usr/lib/usb-creator/usbcreator.py:324
+msgid ""
+"No partition found.\n"
+"Please format the USB before you continue."
+msgstr ""
+
+#: usr/lib/usb-creator/usbcreator.py:326
+msgid "No Partition"
+msgstr ""
+
+#: usr/lib/usb-creator/usbcreator.py:563
+msgid "Error"
+msgstr ""
+
+#: usr/lib/usb-creator/usbcreator.py:566
+#, fuzzy
+msgid "Wrong arguments were passed."
+msgstr "Неправильные аргументы были приняты к usb-creator."
+
+#: usr/lib/usb-creator/usbcreator.py:568
+#, fuzzy
+msgid "The device was not found."
+msgstr "Устройство не имеет разделов fat32."
+
+#: usr/lib/usb-creator/usbcreator.py:570
+#, fuzzy
+msgid "The device is not detachable."
+msgstr "На устройстве не установлен загрузчик."
+
+#: usr/lib/usb-creator/usbcreator.py:572
+#, fuzzy
+msgid "The device has no partition."
+msgstr "Устройство не имеет разделов fat32."
+
+#: usr/lib/usb-creator/usbcreator.py:574
+msgid "Unable to mount the device."
+msgstr "Не удается подключить устройство."
+
+#: usr/lib/usb-creator/usbcreator.py:576
+msgid "Given ISO path was not found."
+msgstr "Указанный путь не  был найден."
+
+#: usr/lib/usb-creator/usbcreator.py:578
+msgid ""
+"ISO too large for FAT formatted USB (max 4GB).\n"
+"Format the USB to exFAT, NTFS, ext4, etc."
+msgstr ""
+
+#: usr/lib/usb-creator/usbcreator.py:581
+msgid "There is not enough space available on the device."
+msgstr "Недостаточно места на устройстве."
+
+#: usr/lib/usb-creator/usbcreator.py:583
+#, fuzzy
+msgid ""
+"Unable to determine the distribution name.\n"
+"Select a distribution in the 'Manual' section."
+msgstr "Не удается подключить устройство."
+
+#: usr/lib/usb-creator/usbcreator.py:586
+msgid "Cannot find the target ISO file. Did you insert the USB?"
+msgstr ""
+
+#: usr/lib/usb-creator/usbcreator.py:588
+msgid "Hash mismatch."
+msgstr "Hash-сумма не совпадает."
+
+#: usr/lib/usb-creator/usbcreator.py:590
+#, fuzzy
+msgid "Copy of ISO failed."
+msgstr "Найти ISO-файл"
+
+#: usr/lib/usb-creator/usbcreator.py:592
+msgid "Device is in use by another application."
+msgstr "Устройство используется другим приложением."
+
+#: usr/lib/usb-creator/usbcreator.py:594
+msgid ""
+"An unknown error accured.\n"
+"Please, visit our forum for support: https://forums.solydxk.com"
+msgstr ""
+"Неизвестная ошибка.\n"
+"Пожалуйста, посетите наш форум https://forums.solydxk.com"
+
+#: usr/lib/usb-creator/usbcreator.py:598
+msgid "The USB was successfully written."
+msgstr "USB был успешно записан."
+
+#: usr/lib/usb-creator/usbcreator.py:599
+msgid "Finished"
+msgstr ""
+
+#: usr/lib/usb-creator/main.py:49
+msgid "Unexpected error"
+msgstr "Непредвиденная ошибка"
+
+#: usr/lib/usb-creator/main.py:50
+msgid ""
+"USB Creator has failed with the following unexpected error. Please submit a "
+"bug report!"
+msgstr ""
+"В приложении USB Creator произошла непредвиденная ошибка. Пожалуйста, "
+"отправьте отчет об ошибке!"
+
+#: usr/share/applications/usb-creator.desktop.in.h:2
+msgid "Create a multi-boot USB"
+msgstr "Создать мульти-загрузочный USB-накопитель"
+
+#: usr/share/solid/actions/usb-constructor-openusb.desktop.in.h:1
+msgid "Create a multi-boot USB with the USB Creator"
+msgstr "Создать мульти-загрузочный USB-накопитель"
+
+#. (itstool) path: action/message
+#: usr/share/polkit-1/actions/com.solydxk.pkexec.usb-creator.tmp-sh.policy:8
+msgid "USB Creator requires authentication to install Grub on your device"
+msgstr ""
+
+#: po/en/help.html%2Bhtml.body.h1:8-2
+msgid "USB Creator Help"
+msgstr "Помощник USB Creator"
+
+#: po/en/help.html%2Bhtml.body.div.h2:10-3
+msgid "Description"
+msgstr "Описание"
+
+#: po/en/help.html%2Bhtml.body.div.p:11-3
+msgid ""
+"The USB Creator is a tool to help users to create a bootable flash drive "
+"with multiple Linux operating systems."
+msgstr ""
+"USB Creator это инструмент, который поможет Вам создать загрузочный флэш-"
+"диск с операционной системой Linux."
+
+#: po/en/help.html%2Bhtml.body.div.h2:13-3
+msgid "Important"
+msgstr "Важный"
+
+#: po/en/help.html%2Bhtml.body.div.p:14-3
+msgid ""
+"Make sure you backed up all important data from the flash drive before you "
+"start."
+msgstr ""
+"Прежде чем начать убедитесь что Вы сделали резервные копии всех важных "
+"данныёх с флеш-накопителя."
+
+#: po/en/help.html%2Bhtml.body.div.p:15-3
+msgid ""
+"USB Creator expects a USB pen drive with a single fat32 partition or a 100MB "
+"fat32 boot partition and a second partition for the ISOs in the file system "
+"format of your choosing."
+msgstr ""
+
+#: po/en/help.html%2Bhtml.body.div.p:16-3
+msgid "Note: a fat32 partition can not hold files larger than 4GB."
+msgstr ""
+
+#: po/en/help.html%2Bhtml.body.div.h2:18-3
+msgid "Terminal"
+msgstr ""
+
+#: po/en/help.html%2Bhtml.body.div.p:19-3
+#, fuzzy
+msgid "You can also use the USB Creator from the terminal."
+msgstr ""
+"Вы также можете использовать USB-Creator из терминала. Вот несколько "
+"примеров:"
+
+#: po/en/help.html%2Bhtml.body.div.p:20-3
+msgid "See \"usb-creator -h\" for a list of all available options."
+msgstr ""
+
+#: po/en/help.html%2Bhtml.body.div.h2:22-3
+msgid "Your ISO is not booting?"
+msgstr "Ваш ISO не загрузочный?"
+
+#: po/en/help.html%2Bhtml.body.div.p:23-3
+msgid ""
+"If the ISO did not boot with automatic distribution name detection, you "
+"manually select the appropriate distribution name from the \"Manual\" drop "
+"down menu."
+msgstr ""
+
+#: po/en/help.html%2Bhtml.body.div.p:24-3
+#, fuzzy
+msgid ""
+"If you still cannot boot your ISO you can configure the menu on your flash "
+"drive: /boot/grub/grub.cfg"
+msgstr ""
+"Меню сконфигурировано в файле, который Вы можете найти на Вашем флеш-"
+"накопителе: /boot/grub/grub.cfg"
+
+#: po/en/help.html%2Bhtml.body.div.p:25-3
+#, fuzzy
+msgid ""
+"Please help improve this application by adapting grub.cfg until the ISO "
+"boots and post your changes on <a href=\"https://github.com/SolydXK/usb-"
+"creator\" target=\"_blank\">GitHub</a> or our <a href=\"https://forums."
+"solydxk.com\" target=\"_blank\">forum</a>."
+msgstr ""
+"Помогите улучшить это приложение, адаптируя grub.cfg для загрузочных ISO и "
+"публикуя изменения на GitHub или нашем <a href=\"https://forums.solydxk.com"
+"\" target=\"_blank\">форуме</a>."
+
+#: po/en/help.html%2Bhtml.body.div.p:26-3
+#, fuzzy
+msgid ""
+"Don't forget to attach the log file when you post an issue on our forum: ~/."
+"usb-creator/usb-creator.log"
+msgstr ""
+"Не забудьте приложить файл журнала, когда размещаете вопрос на нашем "
+"форуме: /var/log/usb-creator.log"
+
+#~ msgid "Delete"
+#~ msgstr "Удалить"
+
+#~ msgid ""
+#~ "On our <a href=\"https://github.com/SolydXK/usb-creator\" target=\"_blank"
+#~ "\">GitHub</a> page you can see a list of tested distributions but not all "
+#~ "can be booted directly from the ISO file. Check the distribution's forum "
+#~ "if it can be booted directly from the ISO file."
+#~ msgstr ""
+#~ "На странице <a href=\"https://github.com/SolydXK/usb-creator\" target="
+#~ "\"_blank\">GitHub</a> Вы можете посмотреть список протестированных "
+#~ "дистрибутивов, но не все они могут быть загружены напрямую с файла ISO. "
+#~ "Проверьте на форуме дистрибутива, может ли он быть загружен "
+#~ "непосредственно с ISO."
+
+#~ msgid "Hidden features"
+#~ msgstr "Скрытые возможности"
+
+#~ msgid ""
+#~ "When you remove the ISO file name from the ISO field, USB Creator will "
+#~ "calculate the space needed for all ISO files in that directory."
+#~ msgstr ""
+#~ "Когда Вы удалите имя файла ISO из поля ISO, USB Creator вычислит "
+#~ "пространство, необходимое для всех файлов ISO в этом каталоге."
+
+#~ msgid ""
+#~ "You can change the order in which the ISO files are displayed in the menu "
+#~ "by adding a number in front of the ISO file name, e.g.: \"01-MyDistro-"
+#~ "amd64.iso\"."
+#~ msgstr ""
+#~ "Вы можете изменять порядок вывода файлов ISO в меню на экране, добавляя "
+#~ "число перед именем файла ISO. Пример: \"01-MyDistro-amd64.iso\"."
+
+#~ msgid ""
+#~ "Symbolic links are followed but the symbolic links must have the \".iso\" "
+#~ "extension to make it work."
+#~ msgstr ""
+#~ "Символические ссылки поддерживаются, но они должны иметь расширение \".iso"
+#~ "\" чтобы работать."
+
+#~ msgid "# usb-creator -b -g -r"
+#~ msgstr "# usb-creator -b -g -r"
+
+#~ msgid ""
+#~ "This will try to repair an unbootable flash drive that already contains "
+#~ "ISO files."
+#~ msgstr "Исправить незагружающийся флеш-диск содержащий ISO образ."
+
+#~ msgid "# usb-creator -h"
+#~ msgstr "# usb-creator -h"
+
+#~ msgid "This will show all available options and their usage."
+#~ msgstr "Это покажет все доступные варианты и их использования."
+
+#~ msgid "Warning: all data will be lost"
+#~ msgstr "Предупреждение: все данные будут потеряны"
+
+#~ msgid "Tries to repair an unbootable USB"
+#~ msgstr "Попытаться восстановить не загружаемый USB "
+
+#~ msgid "Partitioning USB..."
+#~ msgstr "Разметка USB..."
+
+#~ msgid "Searching for bad block"
+#~ msgstr "Поиск плохих блоков"
+
+#~ msgid "Run this application with root permission."
+#~ msgstr "Запустите это приложение с правами \"суперпользователя\""
+
+#~ msgid "The device was not found or no device was given."
+#~ msgstr "Устройство не найдено."
+
+#~ msgid "The device has no bootloader installed."
+#~ msgstr "На устройстве не установлен загрузчик."
+
+#~ msgid ""
+#~ "Unable to guess distribution from ISO name.\n"
+#~ "Make sure you have the distribution name in the ISO name."
+#~ msgstr ""
+#~ "Не удалось распознать имя дистрибутива.\n"
+#~ "Убедитесь что имя дистрибутива указано в названии ISO."

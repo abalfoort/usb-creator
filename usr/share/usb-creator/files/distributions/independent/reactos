@@ -1,0 +1,6 @@
+menuentry '[MENUTITLE]' --class reactos {
+    set iso_path='/[ISONAME]'
+    search --set -f $iso_path
+    linux16 /boot/memdisk iso
+    initrd16 $iso_path
+} 

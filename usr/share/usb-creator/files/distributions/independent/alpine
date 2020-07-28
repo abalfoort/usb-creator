@@ -1,0 +1,7 @@
+menuentry '[MENUTITLE]' --class alpine {
+    set iso_path='/[ISONAME]'
+    loopback loop $iso_path
+    search --set -f $iso_path
+    linux (loop)[VMLINUZ] isoloop=$iso_path modloop=/boot/modloop-vanilla [OPTIONS]
+    initrd (loop)[INITRD]
+}

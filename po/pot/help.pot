@@ -1,0 +1,77 @@
+#: ./po/en/help.html%2Bhtml.body.h1:8-2
+msgid "USB Creator Help"
+msgstr ""
+
+#: ./po/en/help.html%2Bhtml.body.div.h2:10-3
+msgid "Description"
+msgstr ""
+
+#: ./po/en/help.html%2Bhtml.body.div.p:11-3
+msgid ""
+"The USB Creator is a tool to help users to create a bootable flash drive "
+"with multiple Linux operating systems."
+msgstr ""
+
+#: ./po/en/help.html%2Bhtml.body.div.h2:13-3
+msgid "Important"
+msgstr ""
+
+#: ./po/en/help.html%2Bhtml.body.div.p:14-3
+msgid ""
+"Make sure you backed up all important data from the flash drive before you "
+"start."
+msgstr ""
+
+#: ./po/en/help.html%2Bhtml.body.div.p:15-3
+msgid ""
+"USB Creator expects a USB pen drive with a single fat32 partition or a 100MB "
+"fat32 boot partition and a second partition for the ISOs in the file system "
+"format of your choosing."
+msgstr ""
+
+#: ./po/en/help.html%2Bhtml.body.div.p:16-3
+msgid "Note: a fat32 partition can not hold files larger than 4GB."
+msgstr ""
+
+#: ./po/en/help.html%2Bhtml.body.div.h2:18-3
+msgid "Terminal"
+msgstr ""
+
+#: ./po/en/help.html%2Bhtml.body.div.p:19-3
+msgid "You can also use the USB Creator from the terminal."
+msgstr ""
+
+#: ./po/en/help.html%2Bhtml.body.div.p:20-3
+msgid "See \"usb-creator -h\" for a list of all available options."
+msgstr ""
+
+#: ./po/en/help.html%2Bhtml.body.div.h2:22-3
+msgid "Your ISO is not booting?"
+msgstr ""
+
+#: ./po/en/help.html%2Bhtml.body.div.p:23-3
+msgid ""
+"If the ISO did not boot with automatic distribution name detection, you "
+"manually select the appropriate distribution name from the \"Manual\" drop "
+"down menu."
+msgstr ""
+
+#: ./po/en/help.html%2Bhtml.body.div.p:24-3
+msgid ""
+"If you still cannot boot your ISO you can configure the menu on your flash "
+"drive: /boot/grub/grub.cfg"
+msgstr ""
+
+#: ./po/en/help.html%2Bhtml.body.div.p:25-3
+msgid ""
+"Please help improve this application by adapting grub.cfg until the ISO "
+"boots and post your changes on <a href=\"https://github.com/SolydXK/usb-"
+"creator\" target=\"_blank\">GitHub</a> or our <a href=\""
+"https://forums.solydxk.com\" target=\"_blank\">forum</a>."
+msgstr ""
+
+#: ./po/en/help.html%2Bhtml.body.div.p:26-3
+msgid ""
+"Don't forget to attach the log file when you post an issue on our forum: "
+"~/.usb-creator/usb-creator.log"
+msgstr ""

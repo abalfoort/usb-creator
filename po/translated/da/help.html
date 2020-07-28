@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link href="../link/general.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="background"></div>
+	<h1>Hjælp til USB-skaber</h1>
+	<div class="main">
+		<h2>Beskrivelse</h2>
+		<p>USb-skaberen er et værktøj der gør det muligt for brugere at lave en USB-pen
+hvorfra man kan starte forskellige udgave af Linux.</p>
+
+		<h2>Vigtigt</h2>
+		<p>Kontrollér at du har sikkerhedskopieret alle vigtige data fra USB-pennen for
+du begynder.</p>
+		<p>USB skaberen forventer at finde en USB-pen med en enkelt fat32 partition
+ELLER en 100MB fat32 opstartspartition OG yderligere en partition til plads
+til ISO-filerne, formateret med dit foretrukne filsystem.</p>
+		<p>Bemærk: En fat32 partition kan ikke håndtere filer større end 4GB.</p>
+		
+		<h2>Terminalvindue</h2>
+		<p>Du kan også anvende USB skaberen i et terminalvindue.</p>
+		<p>Kør "usb-creator -h" for at få en liste over valgmulighederne. </p>
+
+		<h2>Kan du ikke starte op fra din ISO?</h2>
+		<p>Hvis ISO'en ikke kunne startes op når distributionsnavnet blev valgt
+automatisk, bør du selv vælge distributionsnavn under rullegardinmenuen i
+"Tilpasset".</p>
+		<p>Hvis du stadig ikke kan starte op på ISO'en, kan du tilrette USB-pennens
+menu: /boot/grub/grub.cfg</p>
+		<p>Hjælp venligst med at forbedre denne applikation ved at tilpasse grub.cfg
+indtil ISO'en kan startes op, og beskriv herefter dine rettelser på <a
+href="https://github.com/SolydXK/usb-creator" target="_blank">GitHub</a>
+eller vores <a href="https://forums.solydxk.com" target="_blank">forum</a>.</p>
+		<p>Glem ikke at vedhæfte logfilen hvis du opretter en sag i vores
+supportforum. Filen findes her: ~/.usb-creator/usb-creator.log</p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,8 @@
+menuentry '[MENUTITLE]' --class [CLASS] {
+    set iso_path='/[ISONAME]'
+    loopback loop $iso_path
+    search --set -f $iso_path
+    probe --set=rootuuid -u $root
+    linux (loop)[VMLINUZ] livemedia=/dev/disk/by-uuid/$rootuuid:$iso_path [OPTIONS]
+    initrd (loop)[INITRD]
+}

@@ -1,0 +1,883 @@
+#!/bin/bash
+
+# Script to make a multi-boot USB stick
+# Arjen Balfoort, 06-06-2019
+# Dependencies: grub-efi-amd64-bin, grub-pc-bin, grub2-common, udisks2, psmisc, util-linux, coreutils, python3-fuzzywuzzy
+
+# exit codes
+# 0 - All's well
+# 1 - Invalid argument
+# 2 - Device does not exist
+# 3 - Device not detachable
+# 4 - Partition does not exist
+# 5 - Unable to mount partition
+# 6 - Given ISO path not found
+# 7 - ISO too large for fat system
+# 8 - Not enough space on device
+# 9 - Cannot get distribution name
+# 10 - Unable to find target ISO
+# 11 - sha256sum mismatch
+# 12 - Rsync failed
+# 13 - Device is in use
+
+# Without arguments: show GUI
+if [ -z "$1" ] || [ "$1" == '-v' ] || [ "$1" == '--verbose' ]; then
+    # Check if GUI is already started
+    if ! pgrep -f python3.*usb-creator &>/dev/null; then
+        DEBUG='-OO'
+        if [ "$1" == '-v' ] || [ "$1" == '--verbose' ]; then
+            DEBUG='-Wd' 
+        fi
+        echo "python3 ${DEBUG} /usr/lib/usb-creator/main.py \"$@\""
+        python3 ${DEBUG} /usr/lib/usb-creator/main.py "$@"
+    fi
+    exit 0
+fi
+
+# Distros that need unpacking to get it to boot (separate by space)
+UNPACKDISTROS='puppy'
+
+# Search patterns (in search order)
+VMLINUZPTRNS='vmlinuz* bzImage* linux* generic* gentoo* kernel*'
+INITRDPTRNS='init* *.img *.*gz *.*lz *.xz'
+
+# Global variables
+FILESDIR='/usr/share/usb-creator/files'
+TMPBASH='/tmp/usb-creator-tmp.sh'
+REMOVE=false
+FORCE=false
+UNPACK=false
+UNPACKED=false
+PARTITIONUSB=false
+LOGNAME=$(logname)
+USERDIR=$(eval echo "~$LOGNAME/.usb-creator")
+LOG="$USERDIR/usb-creator.log"
+if [ ! -d "$USERDIR" ]; then
+    mkdir -p "$USERDIR"
+fi
+
+#Source families
+. "$FILESDIR/distributions/families"
+
+function usage() {
+    printf "
+USB Creator Help
+Usage: usb-creator [OPTIONS] [PATH_TO_ISO] [DEVICE]
+
+-D                      Show all supported distribution names.
+-d [family_name]        Show supported distribution names by family name:
+                        $FAMILIES
+-f [distribution_name]  Force distribution name (see -D or -d parameter)
+-h                      This help screen.
+-l [path_to_iso]        Show ISO label
+-p                      Partition the USB device
+-r                      Remove the ISO from the USB device.
+-s [path_to_iso]        Show distribution name from ISO path
+-u                      Unpack ISO to USB device
+
+No parameters           Start the GUI
+-v                      Starts GUI with verbose output
+"
+}
+
+function cleanup() {
+    # Remove leading/trailing white spaces and some special characters
+    printf "$1" | awk '{$1=$1}1' | tr -d '()[]|/\n'
+}
+
+# Fuzzy string comparison
+# Arguments: string1, string2, min_ratio, fuzzy_level
+# fuzzy_level (optional):
+#     1 = no string pre-processing (differnce in character case)
+#     2 = optimal partial logic
+#     3 = includes string pre-processing (remove punctuation, lower case, etc)
+#     4 = takes out the common tokens (the intersection) and then makes a pairwise comparisons
+function get_fuzzy_ratio() {
+    case $3 in
+        2) RATIOCMD='partial_ratio';;
+        3) RATIOCMD='token_sort_ratio';;
+        4) RATIOCMD='token_set_ratio';;
+        *) RATIOCMD='ratio';;
+    esac
+    printf $(python3 -c "from fuzzywuzzy import fuzz; print(fuzz.${RATIOCMD}('${1}', '${2}'))")
+}
+
+function get_iso_label {
+    # Check if a valid iso path was given
+    if [ -z "$1" ] || [ ! -f "$1" ]; then
+        return 1
+    fi
+    echo $(dd if="$1" bs=1 skip=32808 count=32 status=none |  sed 's/[[:space:]]*$//')
+}
+
+# Check for valid distribution name
+function check_os() {
+    OSFAMILY=''
+    OSNAME=''
+    OSNM=${1,,}
+
+    if [ -z "$OSNM" ]; then
+        return 1
+    fi
+
+    # Find OSFAMILY and OSNAME
+    HRATIO=0
+    for FAMILY in $FAMILIES; do
+        DISTROS=$(eval "echo \$${FAMILY^^}")
+        for D in $DISTROS; do
+            RATIO=$(get_fuzzy_ratio "$OSNM" "$D" 2)
+            #echo "get_fuzzy_ratio \"$OSNM\" \"$D\" 2 = $RATIO"
+            # Current ratio is higher than previous ratio and ration is bigger than 80
+            # and the length of the current distro name is bigger than the saved osname.
+            if (( RATIO > 80 )); then
+                if (( RATIO > HRATIO )) || ( (( RATIO == HRATIO )) && [ ${#D} -gt ${#OSNAME} ] ); then
+                    HRATIO=$RATIO
+                    OSFAMILY=$FAMILY
+                    OSNAME=$D
+                fi
+            fi
+        done
+    done
+}
+
+# Function to find a file by multiple patterns
+function find_file() {
+    # $1 = iso path, $2 = fixed paterns, $3 optional patterns
+    # Check if a valid iso path was given
+    if [ -z "$1" ] || [ ! -f "$1" ]; then
+        return 1
+    fi
+    # Build find string
+    #FINDSTR="find \"$2\" -type f -size +1M -iname \"\${PTRN}\" -printf \"%h\0%d\0%p\n\" | sort -t '\0' -n | awk -F '\0' '{print \$3}' | grep -ivF 'efi' | head -1"
+    FINDSTR="7z l \"$1\" | awk '{print $NF}' | egrep -i \"$3\${PTRN}\" | egrep -iv '\[|\]|efi' | awk '{print \$(NF-1), \$NF}' | sort -t ' ' -n | tail -1"
+    # Create pattern array
+    read -r -a ARR <<< "$2"
+    # Loop array with index
+    #for IND in "${!ARR[@]}"; do
+        #echo "$IND:    ${ARR[$IND]}"
+    for PTRN in ${ARR[@]}; do
+        #echo "PTRN=\"$PTRN\"; $FINDSTR" >> "$LOG"
+        FLE=$(eval "$FINDSTR")
+        if [ ! -z "$FLE" ]; then
+            echo "$FLE"
+            return 0
+        fi
+    done
+}
+
+search_kernel() {
+    # Check if a valid iso path was given
+    if [ -z "$1" ] || [ ! -f "$1" ]; then
+        return 1
+    fi
+    
+    # Get kernel/initramfs paths from grub.cfg
+    GRUBCFG=$(7z l "$1" | awk '{print $NF}' | grep 'boot/grub.*/grub.cfg' | head -1)
+    if [ ! -z "$GRUBCFG" ]; then
+        GRUBDIR=$(dirname $GRUBCFG)
+        7z e "a$1" "$GRUBCFG" -o"/tmp/" -aoa >/dev/null
+        TMPCFG='/tmp/grub.cfg'
+        if [ -f "$TMPCFG" ]; then
+            KERNELPATH=$(grep -i ^[[:space:]]*linux "$TMPCFG" | head -1 | awk '{print $2}')
+            if [ ! -z "$KERNELPATH" ]; then
+                # Check if the path exists
+                CHK=$(7z l "$1" | awk '{print $NF}' | grep " ${KERNELPATH:1}$")
+                if [ ! -z "$CHK" ]; then
+                    # Check that path is absolute
+                    if [ "${KERNELPATH:0:1}" != '/' ]; then
+                        KERNELPATH="/$GRUBDIR/$KERNELPATH"
+                    fi
+                    # Save the kernel path and the boot options
+                    VMLINUZ="$KERNELPATH"
+                    # Search the linux line, first line only, print the 3rd column and above, remove variables/uuids/labels, remove multiple spaces
+                    BOOTOPTIONS=$(grep -i ^[[:space:]]*linux "$TMPCFG" | head -1 | awk '{$1=$2=""; print}' | sed 's/\S*\(\$\|label\|LABEL\|uuid\|UUID\)\S*//g' | tr -s ' ')
+                    echo "grub kernel/options: $VMLINUZ $BOOTOPTIONS" | tee -a "$LOG"
+                fi
+            fi
+            INITRDFSPATH=$(grep -i ^[[:space:]]*initrd "$TMPCFG" | head -1 | awk '{print $2}')
+            if [ ! -z "$INITRDFSPATH" ]; then
+                # Check that path is absolute
+                if [ "${INITRDFSPATH:0:1}" != '/' ]; then
+                    INITRDFSPATH="/$GRUBDIR/$INITRDFSPATH"
+                fi
+                CHK=$(7z l "$1" | awk '{print $NF}' | grep "${INITRDFSPATH:1}$")
+                if [ ! -z "$CHK" ]; then
+                    INITRD="$INITRDFSPATH"
+                    echo "grub initrd: $INITRD" | tee -a "$LOG"
+                fi
+            fi
+            # Cleanup
+            rm -f "$TMPCFG"
+        fi
+    fi
+    
+    # Get kernel/initramfs paths from isolinux/*.cfg
+    if [ -z "$VMLINUZ" ] || [ -z "$INITRD" ]; then
+        # Get all isolinux configs from default directory
+        ISOLINUXCFGS=$(7z l "$1" | awk '{print $NF}' | grep 'isolinux/.*.cfg')
+        if [ -z "$ISOLINUXCFGS" ]; then
+            # isolinux not in default directory: search for it
+            SEARCHCFG=$(7z l "$1" | awk '{print $NF}' | grep '.*/isolinux.cfg' | head -1)
+            if [ ! -z "$SEARCHCFG" ]; then
+                ISOLINUXDIR=$(echo $(dirname $SEARCHCFG))
+                ISOLINUXCFGS=$(7z l "$1" | awk '{print $NF}' | grep " $ISOLINUXDIR/.*.cfg")
+            fi
+        fi
+        for CFG in $ISOLINUXCFGS; do
+            # Exit loop if kernel and initramfs were found
+            if [ ! -z "$VMLINUZ" ] && [ ! -z "$INITRD" ]; then
+                break
+            fi
+            # Extract isolinux config to /tmp
+            7z e "$1" "$CFG" -o"/tmp/" -aoa >/dev/null
+            TMPCFG="/tmp/$(basename $CFG)"
+            if [ -f "$TMPCFG"  ]; then
+                if [ -z "$VMLINUZ" ]; then
+                    KERNELPATH=$(grep -i ^[[:space:]]*kernel "$TMPCFG" | head -1 | awk '{print $2}')
+                    if [ ! -z "$KERNELPATH" ]; then
+                        # Check that path is absolute
+                        if [ "${KERNELPATH:0:1}" != '/' ]; then
+                            KERNELPATH="/$(dirname $CFG)/$KERNELPATH"
+                        fi
+                        # Check that file is present in ISO
+                        CHK=$(7z l "$1" | awk '{print $NF}' | grep "${KERNELPATH:1}$")
+                        if [ ! -z "$CHK" ]; then
+                            VMLINUZ="$KERNELPATH"
+                            echo "isolinux kernel: $VMLINUZ" | tee -a "$LOG"
+                        fi
+                    fi
+                fi
+                if [ -z "$INITRD" ]; then
+                    INITRDFSPATHS=$(grep -oP 'initrd=.*' "$TMPCFG" | head -1 | awk '{print $1}' | cut -d'=' -f 2 | sed 's/,/ /g')
+                    for INITRDFSPATH in $INITRDFSPATHS; do
+                        if [ ! -z "$INITRDFSPATH" ]; then
+                            # Check that path is absolute
+                            if [ "${INITRDFSPATH:0:1}" != '/' ]; then
+                                INITRDFSPATH="/$(dirname $CFG)/$INITRDFSPATH"
+                            fi
+                            # Check that file is present in ISO
+                            CHK=$(7z l "$1" | awk '{print $NF}' | grep "${INITRDFSPATH:1}$")
+                            if [ ! -z "$CHK" ]; then
+                                # Save the initramfs and boot options
+                                if [ ! -z "$INITRD" ]; then
+                                    INITRD="(loop)$INITRD"
+                                fi
+                                INITRD="$INITRDFSPATH $INITRD"
+                                # Search the initrd= line, first line only, remove unwanted words with patterns, remove multiple spaces
+                                if [ -z "$BOOTOPTIONS" ]; then
+                                    BOOTOPTIONS=$(grep -i 'initrd=.*' "$TMPCFG" | head -1 | sed 's/\S*\(\$\|label\|uuid\|append\|initrd\)\S*//Ig' | tr -s ' ')
+                                fi
+                            fi
+                        fi
+                    done
+                    # Log the find
+                    if [ ! -z "$INITRD" ]; then
+                        echo "isolinux initrd/options: $INITRD $BOOTOPTIONS" | tee -a "$LOG"
+                    fi
+                fi
+            fi
+            # Cleanup
+            rm -f "$TMPCFG"
+        done
+    fi
+    
+    # Search for vmlinuz file if not able via configuration
+    if [ -z "$VMLINUZ" ]; then
+        VMLINUZ=$(find_file "$1" "$VMLINUZPTRNS")
+    fi
+    
+    # Search for initrd in the same directory as vmlinuz was found
+    if [ -z "$INITRD" ] && [ ! -z "$VMLINUZ" ]; then
+        VMLINUZDIR=$(dirname "$VMLINUZ")
+        INITRD=$(find_file "$1" "$INITRDPTRNS" "$VMLINUZDIR.*")
+    fi
+    
+    # initrd not found: search whole of the ISO
+    if [ -z "$INITRD" ]; then
+        INITRD=$(find_file "$1" "$INITRDPTRNS")
+    fi
+    
+    if [ "${VMLINUZ:0:1}" != '/' ] && [ ! -z "$VMLINUZ" ]; then
+        VMLINUZ="/$VMLINUZ"
+    fi
+    if [ "${INITRD:0:1}" != '/' ] && [ ! -z "$INITRD" ]; then
+        INITRD="/$INITRD"
+    fi
+}
+
+# Funtion to label the USB partition if it has no label
+label_partition() {
+    # $1=partition, $2=filesystem
+    LABEL='USBCREATOR'
+    CURLABEL=$(ls -l /dev/disk/by-label | grep $(basename $1))
+    if [ -z "$CURLABEL" ]; then
+        case $2 in
+            *fat*)
+                CMD="fatlabel $1 \"$LABEL\""
+                ;;
+            exfat)
+                CMD="exfatlabel $1 \"$LABEL\""
+                ;;
+            ntfs)
+                CMD="ntfslabel $1 \"$LABEL\""
+                ;;
+            ext*)
+                CMD="e2label $1 \"$LABEL\""
+                ;;
+        esac
+        
+        if [ ! -z "$CMD" ]; then
+            echo "Set label: $CMD" | tee -a "$LOG"
+cat <<EOF >"$TMPBASH"
+#!/bin/bash
+$CMD
+EOF
+            chmod +x "$TMPBASH"
+            pkexec "$TMPBASH"
+            rm -f "$TMPBASH"
+        fi
+    fi
+}
+
+# Get parameters
+while getopts 'd:Df:hl:prs:u' OPT; do
+    case $OPT in
+        D)
+            # Show list with distribution names
+            for FAMILY in $FAMILIES; do
+                eval "echo \$${FAMILY^^} | tr '\r\n' ' '"
+            done
+            printf '\n'
+            exit 0
+            ;;
+        d)
+            # Show list with distribution names by family name
+            for FAMILY in $FAMILIES; do
+                if [ "${OPTARG,,}" == "$FAMILY" ]; then
+                    eval "echo \$${FAMILY^^}"
+                    break
+                fi
+            done
+            exit 0
+            ;;
+        f)
+            # Force distribution name
+            check_os "$OPTARG"
+            FORCE=true
+            ;;
+        h)
+            # Help
+            usage
+            exit 0
+            ;;
+        l)
+            # Show iso label
+            if [ -f "$OPTARG" ]; then
+                echo $(get_iso_label "$OPTARG")
+            fi
+            exit 0
+            ;;
+        p)
+            PARTITIONUSB=true
+            ;;
+        r)
+            # Remove
+            REMOVE=true
+            ;;
+        s)
+            # Show distribution name
+            if [ -f "$OPTARG" ]; then
+                LBL=$(get_iso_label "$OPTARG")
+                if [ -z "$LBL" ]; then
+                    LBL=$(basename "$OPTARG")
+                fi
+                check_os "$LBL"
+                echo "$OSNAME"
+            fi
+            exit 0
+            ;;
+        u)
+            UNPACK=true
+            ;;
+        *)
+            usage
+            exit 1
+            ;;
+    esac
+done
+# Get required positional arguments ISO and Device
+shift $(( OPTIND - 1 ))
+ISO=${1?$( echo 'Missing ISO path.' )}
+DEVICE=${2?$( echo 'Missing device path.' )}
+ISONAME=$(basename "$ISO")
+ISOSIZE=$(( $(stat -c%s "$ISO") / 1024 ))
+DEVICESIZE=$(( $(udisksctl info -b $DEVICE | grep -i size: | awk '{print $NF}') / 1024 ))
+
+# Start logging
+echo "==========>>>>> Start log at $(date) <<<<<==========" | tee -a "$LOG"
+
+# Check if device exists
+if [ ! -e "$DEVICE" ]; then
+    echo "$DEVICE does not exist." | tee -a "$LOG"
+    exit 2
+fi
+
+# Check the device if it's a pen drive
+DEVNM=$(basename "$DEVICE")
+DETACHABLE=$(grep -h . /sys/block/$DEVNM/removable)
+if [ "$DETACHABLE" -ne 1 ]; then
+    echo "$DEVICE is not a detachable device." | tee -a "$LOG"
+    exit 3
+fi
+
+# Use dd to write the ISO to the pen drive
+if $UNPACK; then
+    if [ $ISOSIZE -gt $DEVICESIZE ]; then
+        echo "Not enough space on $DEVICE. Needed: $ISOSIZE, Available: $DEVICESIZE" | tee -a "$LOG"
+        exit 8
+    fi
+    echo "DD $ISO to $DEVICE" | tee -a "$LOG"
+    cat <<EOF >"$TMPBASH"
+#!/bin/bash
+dd if="$ISO" of=$DEVICE bs=64k oflag=dsync status=progress 2>&1 | tee -a "$LOG"
+EOF
+    chmod +x "$TMPBASH"
+    pkexec "$TMPBASH"
+    rm -f "$TMPBASH"
+    exit 0
+fi
+
+if $PARTITIONUSB; then
+    # Partition the USB device
+    echo "Partition $DEVICE" | tee -a "$LOG"
+cat <<EOF >"$TMPBASH"
+#!/bin/bash
+echo "Unmount $DEVICE partitions" | tee -a "$LOG"
+umount $DEVICE* | tee -a "$LOG"
+
+echo "Partition $DEVICE (hybrid)" | tee -a "$LOG"
+dd if=/dev/zero of=$DEVICE bs=1k count=2048 oflag=dsync status=progress
+
+parted $DEVICE -a optimal -s -- \
+    mktable gpt \
+    mkpart primary 1MiB 3MiB \
+    mkpart primary fat16 3MiB 20MiB \
+    mkpart primary ext4 20MiB 100% \
+    name 1 grub \
+    name 2 esp \
+    name 3 usbcreator \
+    set 1 bios_grub on \
+    set 2 esp on
+    #disk_set pmbr_boot on
+
+echo "Probing new paritions" | tee -a "$LOG"
+partprobe $DEVICE; sync
+
+echo "Create file systems" | tee -a "$LOG"
+mkfs.fat -F16 -v -I -n ESP ${DEVICE}2 | tee -a "$LOG"
+mkfs.ext4 -Fqv -L USBCREATOR ${DEVICE}3 | tee -a "$LOG"
+
+EOF
+    chmod +x "$TMPBASH"
+    pkexec "$TMPBASH"
+    rm -f "$TMPBASH"
+    # Save partition variables
+    FATPARTITION=${DEVICE}2
+    PARTITION=${DEVICE}3
+    PARTITIONFS='ext4'
+fi
+
+# Log device information
+cat <<EOF >"$TMPBASH"
+#!/bin/bash
+partprobe $DEVICE; sync; sleep 5
+echo | tee -a "$LOG"
+parted $DEVICE print | tee -a "$LOG"
+EOF
+chmod +x "$TMPBASH"
+pkexec "$TMPBASH"
+rm -f "$TMPBASH"
+
+if [ -z "$FATPARTITION" ] && [ -z "$PARTITION" ]; then
+    # Loop through partition to find a fat partition
+    PARTITIONS=$(echo ${DEVICE}[0-9])
+    NRPARTITIONS=$(echo ${PARTITIONS} | wc -w)
+    for PART in $PARTITIONS; do
+        FATSTR=''
+        if [ -z "$FATPARTITION" ]; then
+            # Is it a fat partition?
+            FATSTR=$(udisksctl info -b $PART | grep -i idtype | grep fat)
+            if [ ! -z "$FATSTR" ]; then
+                FATPARTITION=$PART
+            fi
+        fi
+        if [ -z "$FATSTR" ] || [ "$NRPARTITIONS" -eq 1 ]; then
+            #PARTITIONUUID=$(udisksctl info -b $PART | grep -i iduuid |  awk '{print $NF}')
+            PARTITIONFS=$(udisksctl info -b $PART | grep -i idtype | awk '{print $NF}')
+            if [[ ! "$PARTITIONFS" =~ ':' ]]; then
+                # Label the partition if it has no label (systemrescuecd needs a USB partition label to boot from ISO)
+                PARTITION=$PART
+                label_partition $PARTITION $PARTITIONFS
+            fi
+        fi
+    done
+fi
+
+# Check if device has partition
+if [ -z "$PARTITION" ] || [ ! -e "$PARTITION" ]; then
+    echo "$PARTITION does not exist." | tee -a "$LOG"
+    exit 4
+fi
+
+# Get the mount point of the boot partition
+MOUNT=$(grep "$PARTITION" /etc/mtab | awk '{print $2}' | sed 's/\\040/ /g')
+if [ -z "$MOUNT" ]; then
+    udisksctl mount -b "$PARTITION" --no-user-interaction | tee -a "$LOG"
+    sleep 5
+    MOUNT=$(grep "$PARTITION" /etc/mtab | awk '{print $2}' | sed 's/\\040/ /g')
+fi
+if [ -z "$MOUNT" ]; then
+    echo "$PARTITION could not be mounted." | tee -a "$LOG"
+    exit 5
+fi
+
+# Make sure user is owner of boot mount
+cat <<EOF >"$TMPBASH"
+#!/bin/bash
+chown -R $LOGNAME:$LOGNAME "$MOUNT"
+EOF
+chmod +x "$TMPBASH"
+pkexec "$TMPBASH"
+rm -f "$TMPBASH"
+
+# Copy grub files to partition
+mkdir -p "$MOUNT/boot/grub/themes/usb-creator/icons"
+cp -rf "$FILESDIR/grub/themes" "$MOUNT/boot/grub/"
+if [ -f '/usr/lib/syslinux/memdisk' ]; then
+    cp -f '/usr/lib/syslinux/memdisk' "$MOUNT/boot/"
+fi
+echo "Grub files copied to $MOUNT/boot/grub/" | tee -a "$LOG"
+
+if ! $REMOVE; then
+    # Get the mount point of the fat partition
+    if [ "$PARTITION" != "$FATPARTITION" ]; then
+        FATMOUNT=$(grep "$FATPARTITION" /etc/mtab | awk '{print $2}' | sed 's/\\040/ /g')
+        if [ -z "$FATMOUNT" ]; then
+            udisksctl mount -b "$FATPARTITION" --no-user-interaction | tee -a "$LOG"
+            sleep 5
+            FATMOUNT=$(grep "$FATPARTITION" /etc/mtab | awk '{print $2}' | sed 's/\\040/ /g')
+        fi
+        if [ -z "$FATMOUNT" ]; then
+            echo "$FATPARTITION could not be mounted." | tee -a "$LOG"
+            exit 5
+        fi
+    else
+        FATMOUNT=$MOUNT
+    fi
+fi
+
+if $REMOVE; then
+    # Make sure ISO path points to mount when removing ISO
+    ISO="$MOUNT/$ISONAME"
+    # Check if ISO/ISO directory exists
+    if [ ! -e "$ISO" ]; then
+        echo "$ISO does not exist." | tee -a "$LOG"
+        exit 6
+    fi
+    # Remove de ISO
+    rm -rfv "$ISO" | tee -a "$LOG"
+else
+    # Gather info from ISO:
+    # Size, label, path to kernel and initramfs, existence of loopback.cfg
+    echo "Gather ISO information: $ISO" | tee -a "$LOG"
+    
+    # Check if ISO is smaller than 4G if copying to fat partition
+    MAXFATSIZE=$(( 4 * 1024 * 1024 ))
+    if [[ "$PARTITIONFS" =~ 'fat' ]] && [ "$ISOSIZE" -gt "$MAXFATSIZE" ]; then
+        echo "$ISO too large for FAT formatted USB (max 4GB). Format the USB to exFAT, NTFS, ext4, etc." | tee -a "$LOG"
+        exit 7
+    fi
+
+    # Check available space
+    FREESIZE=$(df --output=avail $PARTITION | awk 'NR==2')
+    echo "Check space on $PARTITION: available: $FREESIZE, needed: $ISOSIZE" | tee -a "$LOG"
+    if [ $ISOSIZE -gt $FREESIZE ]; then
+        echo "Not enough space on $PARTITION. Needed: $ISOSIZE, Available: $FREESIZE" | tee -a "$LOG"
+        exit 8
+    fi
+
+    # Get the ISO label and remove trailing spaces
+    ISOLABEL=$(get_iso_label "$ISO")
+    echo "ISO label: $ISOLABEL" | tee -a "$LOG"
+
+    # Check name by label
+    if [ -z "$OSNAME" ] || [ -z "$OSFAMILY" ]; then
+        check_os "$ISOLABEL"
+    fi
+
+    # Or check name by ISO name
+    if [ -z "$OSNAME" ] || [ -z "$OSFAMILY" ]; then
+        check_os "$ISO"
+    fi
+    
+    if [ ! -z "$OSNAME" ]; then
+        echo "Found distribution: $OSFAMILY/$OSNAME"
+    fi
+    
+    if [ ! -z "$OSNAME" ] && [[ "$UNPACKDISTROS" =~ "$OSNAME" ]]; then
+        # Some distros only work if they are unpacked
+        echo "Unpacking $ISO to $MOUNT/$ISONAME" | tee -a "$LOG"
+        mkdir "$MOUNT/$ISONAME"
+        7z x "$ISO" -o"$MOUNT/$ISONAME/" -aoa
+        # Search the kernel
+        search_kernel "$ISO"
+        # Set unpacked to true
+        UNPACKED=true
+    else
+        # Check for loopback.cfg
+        # https://www.aioboot.com/en/boot-linux-iso/
+        if ! $FORCE; then
+            LB=$(7z l "$ISO" | awk '{print $NF}' | grep 'boot/grub/loopback.cfg')
+            if [ ! -z "$LB" ]; then
+                # Extract the file
+                7z e "$ISO" "$LB" -o"/tmp/" -aoa >/dev/null
+                if [ -f '/tmp/loopback.cfg' ]; then
+                    # Check if linux/initrd/source paths are correct
+                    KERNELPATHS=$(egrep '^\s+linux|^\s+initrd|^\s*source' '/tmp/loopback.cfg' | head -2 | awk '{print $2}')
+                    rm -f '/tmp/loopback.cfg'
+                    for KP in $KERNELPATHS; do
+                        #echo ">> Loopback check: ${KP:1}"
+                        CHK=$(7z l "$ISO" | awk '{print $NF}' | grep ^"${KP:1}")
+                        if [ -z "$CHK" ]; then
+                            # Path not found: use legacy (vmlinuz/initrd)
+                            FORCE=true
+                            break
+                        fi
+                    done
+                    if ! $FORCE; then
+                        # Save the loopback path
+                        LOOPBACK='/boot/grub/loopback.cfg'
+                    fi
+                else
+                    # Just gamble that loopback is correctly formatted
+                    LOOPBACK='/boot/grub/loopback.cfg'
+                fi
+            fi
+        fi
+
+        # Loopback file not found: search for kernel and initramfs
+        if [ -z "$LOOPBACK" ]; then
+            search_kernel "$ISO"
+        fi
+    fi
+
+    if [ -z "$OSNAME" ]; then
+        if [ ! -z "$LOOPBACK" ]; then
+            echo 'Unable to determine distribution name. Default to linux.' | tee -a "$LOG"
+            OSNAME='linux'
+        else
+            # There is no certain way to decide which configuration to use to boot this ISO
+            echo 'Unable to determine distribution name. Use the -f parameter.' | tee -a "$LOG"
+            exit 9
+        fi
+    fi
+
+    # Create menu title from ISO name if not set already
+    if [ -z "$MENUTITLE" ]; then
+        MENUTITLE=$(printf "$ISONAME" | sed -e 's/x86_//g' -e 's/[-_]/ /g' -e 's/64/64-bit/g' -e 's/32/32-bit/g' -e 's/i*686/32-bit/g')
+        # Uppercase first character
+        MENUTITLE="${MENUTITLE^}"
+        # Remove extension
+        MENUTITLE="${MENUTITLE%.*}"
+    fi
+
+    # Cleanup strings
+    MENUTITLE=$(cleanup "$MENUTITLE")
+    OSNAME=$(cleanup "$OSNAME")
+    if [ -z "$OSNAME" ]; then
+        OSNAME='iso'
+    fi
+
+    if [ ! -z "$LOOPBACK" ]; then
+        # Fill in the menuentry template
+        MENUENTRY=$(sed "s/\[MENUTITLE\]/$MENUTITLE/" "$FILESDIR/loopback-template")
+        MENUENTRY=$(printf "$MENUENTRY" | sed "s/\[CLASS\]/$OSNAME/g")
+        MENUENTRY=$(printf "$MENUENTRY" | sed "s/\[ISOLABEL\]/$ISOLABEL/g")
+        MENUENTRY=$(printf "$MENUENTRY" | sed "s/\[ISONAME\]/$ISONAME/g")
+        MENUENTRY=$(printf "$MENUENTRY" | sed "s|\[LOOPBACK\]|$LOOPBACK|g")
+    else
+        # Get the grub configuration
+        MENUENTRYTEMPATE="$FILESDIR/distributions/$OSFAMILY/$OSNAME"
+        if [ ! -f "$MENUENTRYTEMPATE" ]; then
+            # Use the family jewels
+            if [[ "${ISO,,}" =~ 'live' ]] || [[ "${VMLINUZ,,}" =~ 'live' ]] || [[ "${ISOLABEL,,}" =~ 'live' ]]; then
+                MENUENTRYTEMPATE="$FILESDIR/distributions/$OSFAMILY/generic-live"
+            fi
+            if [ ! -f "$MENUENTRYTEMPATE" ]; then
+                MENUENTRYTEMPATE="$FILESDIR/distributions/$OSFAMILY/generic"
+            fi
+        fi
+        if [ ! -f "$MENUENTRYTEMPATE" ]; then
+            # We shouldn't get here and this probably won't work :(
+            # Try the loopback template
+            LOOPBACK='/boot/grub/grub.cfg'
+            MENUENTRYTEMPATE="$FILESDIR/loopback-template"
+        fi
+
+        # Fill in the menuentry template
+        MENUENTRY=$(sed "s/\[MENUTITLE\]/$MENUTITLE/" "$MENUENTRYTEMPATE")
+        MENUENTRY=$(printf "$MENUENTRY" | sed "s/\[CLASS\]/$OSNAME/g")
+        MENUENTRY=$(printf "$MENUENTRY" | sed "s/\[ISOLABEL\]/$ISOLABEL/g")
+        MENUENTRY=$(printf "$MENUENTRY" | sed "s/\[ISONAME\]/$ISONAME/g")
+        MENUENTRY=$(printf "$MENUENTRY" | sed "s|\[LOOPBACK\]|$LOOPBACK|g")
+        MENUENTRY=$(printf "$MENUENTRY" | sed "s|\[VMLINUZ\]|$VMLINUZ|g")
+        MENUENTRY=$(printf "$MENUENTRY" | sed "s|\[INITRD\]|$INITRD|g")
+        MENUENTRY=$(printf "$MENUENTRY" | sed "s|\[OPTIONS\]|$BOOTOPTIONS|g")
+    fi
+
+    if ! $UNPACKED; then
+        # Rsync the ISO and check the progress
+        echo "Copy $ISO to $PARTITION/$OSNAME" | tee -a "$LOG"
+        # Get bytes to write from the ISO
+        SRC=$(stat --printf %s "$ISO")
+        STATVAL=0
+        
+        # Start rsync
+        rsync --inplace "$ISO" "$MOUNT/" &
+        
+        # Check that the target ISO exists
+        CNT=0
+        until [ -f "$MOUNT/$ISONAME" ] || (( CNT > 5 )); do
+            sleep 1
+            CNT=$(( CNT + 1 ))
+        done
+        
+        if [ ! -f "$MOUNT/$ISONAME" ]; then
+            exit 10
+        fi
+
+        # Calculate estimate percentage done
+        PERC=0
+        while (( PERC < 100 )); do
+            # Get bytes currently written to ISO
+            TRG=$(stat --printf %s "$MOUNT/$ISONAME")
+            # Calculate percentage
+            PERC=$((( TRG * 100 ) / SRC ))
+            if (( PERC > 100 )); then
+                PERC=100
+            fi
+            if (( PERC > 0 )); then
+                echo "Copied: $PERC%" | tee -a "$LOG"
+            else
+                echo "Prepare copy $ISONAME" | tee -a "$LOG"
+            fi
+            sleep 5
+        done
+        echo "Copied: 100%" | tee -a "$LOG"
+
+        # Compare hash with sha256sum
+        echo "Verify hash of $MOUNT/$ISONAME" | tee -a "$LOG"
+        if [ -f "$MOUNT/$ISONAME" ]; then
+            if [ -f "$ISO.sha256" ]; then
+                SHAORG=$(awk '{print $1}' "$ISO.sha256")
+            else
+                SHAORG=$(sha256sum "$ISO" | awk '{print $1}')
+            fi
+            SHACOPY=$(sha256sum "$MOUNT/$ISONAME" | awk '{print $1}')
+            if [ "$SHAORG" != "$SHACOPY" ]; then
+                echo -e "Hash mismatch of $ISO. Original: $SHAORG, Target: $SHACOPY\n" | tee -a "$LOG"
+                exit 11
+            fi
+        else
+            echo -e "Unable to verify hash: $MOUNT/$ISONAME does not exist\n" | tee -a "$LOG"
+            exit 12
+        fi
+    fi
+    
+    # Install EFI and legacy Grub on device
+    echo "Install Grub to $DEVICE" | tee -a "$LOG"
+cat <<EOF >"$TMPBASH"
+#!/bin/bash
+GRUBCHK=\$(dd bs=512 count=1 if=$DEVICE 2>/dev/null | strings | grep GRUB)
+EFI=\$(find "$FATMOUNT" -iname "boot*.efi")
+if [ -z "\$GRUBCHK" ] || [ -z "\$EFI" ]; then
+    grub-install --recheck --removable --efi-directory="$FATMOUNT" --boot-directory="$MOUNT/boot" --target=x86_64-efi | tee -a $LOG
+    grub-install --recheck --removable --efi-directory="$FATMOUNT" --boot-directory="$MOUNT/boot" --target=i386-efi | tee -a $LOG
+    grub-install --target=i386-pc $DEVICE | tee -a $LOG
+else
+    echo "Grub already installed on $DEVICE" | tee -a $LOG
+fi
+EOF
+    chmod +x "$TMPBASH"
+    pkexec "$TMPBASH"
+    rm -f "$TMPBASH"
+fi
+
+# Build grub.cfg
+# https://wiki.archlinux.org/index.php/Multiboot_USB_drive#Configuring_GRUB
+# https://github.com/aguslr/multibootusb/tree/master/mbusb.d
+GRUBCFGPATH="$MOUNT/boot/grub/grub.cfg"
+if [ ! -f "$GRUBCFGPATH" ]; then
+    # New grub.cfg
+    echo "Create grub.cfg from $FILESDIR/grub-template" | tee -a "$LOG"
+    GRUBCFG=$(cat "$FILESDIR/grub-template")
+    GRUBCFG="${GRUBCFG}\n\n${MENUENTRY}"
+else
+    # Edit existing grub.cfg
+    echo "Use existing $GRUBCFGPATH" | tee -a "$LOG"
+    GRUBCFG=$(cat "$GRUBCFGPATH")
+    # List all current ISOs and current configured ISOs
+    CURISOS=$(find "$MOUNT" -maxdepth 1 -iname "*.iso")
+    CONFISOS=$(echo "$GRUBCFG" | grep -oP '(?<=isofile|iso_path=).*(?=$)' "$GRUBCFGPATH" | sed "s/'//g" | sed 's|/||g')
+    # Remove menuentries of not availabel ISOs
+    for CFISO in $CONFISOS; do
+        KEEP=false
+        for CURISO in $CURISOS; do
+            CURISO=$(basename "$CURISO")
+            # Keep if found ISO is in grub.cfg, unless the newly added ISO is already in grub.cfg
+            if [ "$CFISO" == "$CURISO" ] && [ "$CFISO" != "$ISONAME" ]; then
+                KEEP=true
+                break
+            fi
+        done
+        if ! $KEEP; then
+            # https://stackoverflow.com/questions/37680636/sed-multiline-delete-with-pattern
+            GRUBCFG=$(printf "$GRUBCFG" | sed "/menuentry/{:a;N;/}/!ba};/$CFISO/d")
+        fi
+    done
+    # Append new menuentry
+    if ! $REMOVE; then
+        GRUBCFG="${GRUBCFG}\n\n${MENUENTRY}"
+    fi
+fi
+
+# Save the new grub.cfg
+printf "$GRUBCFG\n" > "$GRUBCFGPATH" | tee -a "$LOG"
+
+# Check if boot partition is in use
+FUSER=$(fuser -m "$MOUNT")
+if [ -z "$FUSER" ]; then
+    udisksctl unmount -b $PARTITION --no-user-interaction | tee -a "$LOG"
+    #udisksctl power-off -b $PARTITION --no-user-interaction | tee -a "$LOG"
+else
+    echo "$PARTITION is in use. Close any programs using the device." | tee -a "$LOG"
+    exit 13
+fi
+
+# Check if fat partition is in use
+if ! $REMOVE; then
+    if [ "$PARTITION" != "$FATPARTITION" ]; then
+        FUSER=$(fuser -m "$FATMOUNT")
+        if [ -z "$FUSER" ]; then
+            udisksctl unmount -b $FATPARTITION --no-user-interaction | tee -a "$LOG"
+            #udisksctl power-off -b $PARTITION --no-user-interaction | tee -a "$LOG"
+        else
+            echo "$FATPARTITION is in use. Close any programs using the device." | tee -a "$LOG"
+            exit 13
+        fi
+    fi
+fi
+
+# Done
+echo "=============== End log at $(date) ===============" | tee -a "$LOG"
+exit 0

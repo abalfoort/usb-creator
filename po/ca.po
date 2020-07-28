@@ -1,0 +1,381 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Translators:
+# Arjen Balfoort <arjenbalfoort@solydxk.com>, 2018,2020
+# Arjen Balfoort <arjenbalfoort@solydxk.com>, 2016
+# Eduard Selma <selma@tinet.cat>, 2015,2017,2019
+msgid ""
+msgstr ""
+"Project-Id-Version: usb-creator\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-01-30 20:53+0100\n"
+"PO-Revision-Date: 2020-01-30 20:08+0000\n"
+"Last-Translator: Arjen Balfoort <arjenbalfoort@solydxk.com>\n"
+"Language-Team: Catalan (http://www.transifex.com/solydxk/usb-creator/"
+"language/ca/)\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: usr/lib/usb-creator/usbcreator.py:76
+#: usr/share/applications/usb-creator.desktop.in.h:1
+msgid "USB Creator"
+msgstr "USB Creator "
+
+#: usr/lib/usb-creator/usbcreator.py:77
+msgid "Device"
+msgstr "Dispositiu "
+
+#: usr/lib/usb-creator/usbcreator.py:78
+msgid "Partition device"
+msgstr "Partició del dispositiu"
+
+#: usr/lib/usb-creator/usbcreator.py:79
+msgid "This will remove all data from the device."
+msgstr "Això eliminarà totes les dades del dispositiu."
+
+#: usr/lib/usb-creator/usbcreator.py:80
+msgid "USB"
+msgstr "USB  "
+
+#: usr/lib/usb-creator/usbcreator.py:81
+msgid "Available"
+msgstr "Disponible "
+
+#: usr/lib/usb-creator/usbcreator.py:82
+msgid "Required"
+msgstr "Necessari "
+
+#: usr/lib/usb-creator/usbcreator.py:83
+msgid "Execute"
+msgstr "Executa "
+
+#: usr/lib/usb-creator/usbcreator.py:84
+msgid "ISO"
+msgstr "ISO "
+
+#: usr/lib/usb-creator/usbcreator.py:85
+msgid "Write single ISO"
+msgstr "Escriu un sol ISO"
+
+#: usr/lib/usb-creator/usbcreator.py:86
+msgid "Write a single ISO to USB using dd"
+msgstr "Escriu un sol ISO al dispositiu usant dd "
+
+#: usr/lib/usb-creator/usbcreator.py:87
+msgid "Remove"
+msgstr "Elimina"
+
+#: usr/lib/usb-creator/usbcreator.py:88
+msgid "Refresh device list"
+msgstr "Actualitza la llista de dispositius "
+
+#: usr/lib/usb-creator/usbcreator.py:89
+msgid "Unmount device"
+msgstr "Desmunta el dispositiu "
+
+#: usr/lib/usb-creator/usbcreator.py:90
+msgid "Browse for ISO file"
+msgstr "Cerca fitxers ISO "
+
+#: usr/lib/usb-creator/usbcreator.py:91
+msgid "Clear the ISO field"
+msgstr "Esborra el camp ISO "
+
+#: usr/lib/usb-creator/usbcreator.py:92
+msgid "Manual"
+msgstr "Manual"
+
+#: usr/lib/usb-creator/usbcreator.py:93
+msgid ""
+"Manually select the distribution name if USB Creator cannot\n"
+"determine the distribution name automatically."
+msgstr ""
+"Selecciona manualment la distribució si USB Creator no pot determinar el nom "
+"de la distribució automàticament."
+
+#: usr/lib/usb-creator/usbcreator.py:97
+msgid "Copy ISO to USB..."
+msgstr "Copia la ISO al USB..."
+
+#: usr/lib/usb-creator/usbcreator.py:101
+msgid "Prepare copy of ISO..."
+msgstr "Prepara la còpia de la ISO..."
+
+#: usr/lib/usb-creator/usbcreator.py:102
+msgid "Verify hash of ISO..."
+msgstr "Verifica la funció resum de la ISO..."
+
+#: usr/lib/usb-creator/usbcreator.py:103
+msgid "Install Grub..."
+msgstr "Instal·la GRUB..."
+
+#: usr/lib/usb-creator/usbcreator.py:104
+msgid "Unpacking ISO..."
+msgstr "Desempaquetant la ISO..."
+
+#: usr/lib/usb-creator/usbcreator.py:105
+msgid "Gather ISO information..."
+msgstr "Aplegant la informació de la ISO..."
+
+#: usr/lib/usb-creator/usbcreator.py:149
+msgid "Version"
+msgstr "Versió "
+
+#: usr/lib/usb-creator/usbcreator.py:164
+msgid ""
+"Cannot add ISO from path: {}.\n"
+"Please, remove the ISO path or browse for an existing ISO."
+msgstr ""
+"No es pot afegir la ISO des del camí: {}.\n"
+"Si us plau, elimineu el camí de la ISO o cerqueu una ISO existent. "
+
+#: usr/lib/usb-creator/usbcreator.py:172
+msgid ""
+"There is not enough space available on the pen drive.\n"
+"Please, remove unneeded files before continuing."
+msgstr ""
+"No hi ha prou espai disponible al llapis de memòria.\n"
+"Si us plau, elimineu fitxers innecessaris abans de continuar."
+
+#: usr/lib/usb-creator/usbcreator.py:201
+msgid "Are you sure you want to remove the selected ISO from the device?"
+msgstr "Esteu segurs de voler eliminar la ISO seleccionada del dispositiu? "
+
+#: usr/lib/usb-creator/usbcreator.py:222
+msgid "Select ISO"
+msgstr "Seleccioneu la ISO "
+
+#: usr/lib/usb-creator/usbcreator.py:279
+msgid "Unmount"
+msgstr "Desmunta "
+
+#: usr/lib/usb-creator/usbcreator.py:284
+msgid "You can now safely remove the device."
+msgstr "Ara podeu retirar el dispositiu amb seguretat. "
+
+#: usr/lib/usb-creator/usbcreator.py:286
+msgid ""
+"Could not unmount the device.\n"
+"Please unmount the device manually."
+msgstr ""
+"No es pot desmuntar el dispositiu.\n"
+"Si us plau, desmunteu-lo manualment. "
+
+#: usr/lib/usb-creator/usbcreator.py:324
+msgid ""
+"No partition found.\n"
+"Please format the USB before you continue."
+msgstr ""
+"No he trobat cap partició.\n"
+"Si us plau formateu el USB abans de continuar."
+
+#: usr/lib/usb-creator/usbcreator.py:326
+msgid "No Partition"
+msgstr "Sense particions"
+
+#: usr/lib/usb-creator/usbcreator.py:563
+msgid "Error"
+msgstr "Error"
+
+#: usr/lib/usb-creator/usbcreator.py:566
+msgid "Wrong arguments were passed."
+msgstr "S'han passat arguments erronis."
+
+#: usr/lib/usb-creator/usbcreator.py:568
+msgid "The device was not found."
+msgstr "No he trobat el dispositiu."
+
+#: usr/lib/usb-creator/usbcreator.py:570
+msgid "The device is not detachable."
+msgstr "El dispositiu no és extraïble."
+
+#: usr/lib/usb-creator/usbcreator.py:572
+msgid "The device has no partition."
+msgstr "El dispositiu no té particions."
+
+#: usr/lib/usb-creator/usbcreator.py:574
+msgid "Unable to mount the device."
+msgstr "No es pot muntar el dispositiu. "
+
+#: usr/lib/usb-creator/usbcreator.py:576
+msgid "Given ISO path was not found."
+msgstr "No es troba el camí especificat cap a la ISO. "
+
+#: usr/lib/usb-creator/usbcreator.py:578
+msgid ""
+"ISO too large for FAT formatted USB (max 4GB).\n"
+"Format the USB to exFAT, NTFS, ext4, etc."
+msgstr ""
+"ISO massa gran per a USB amb format FAT (màx. 4GB).\n"
+"Formateu l'USB en extFAT, NTFS, ext4, etc."
+
+#: usr/lib/usb-creator/usbcreator.py:581
+msgid "There is not enough space available on the device."
+msgstr "No hi ha prou espai disponible al dispositiu. "
+
+#: usr/lib/usb-creator/usbcreator.py:583
+msgid ""
+"Unable to determine the distribution name.\n"
+"Select a distribution in the 'Manual' section."
+msgstr ""
+"No puc determinar el nom de la distribució.\n"
+"Trieu una distribució a la secció 'Manual'."
+
+#: usr/lib/usb-creator/usbcreator.py:586
+msgid "Cannot find the target ISO file. Did you insert the USB?"
+msgstr "No puc trobar el fitxer ISO d'origen. Heu inserit l'USB?"
+
+#: usr/lib/usb-creator/usbcreator.py:588
+msgid "Hash mismatch."
+msgstr "La hash no concorda. "
+
+#: usr/lib/usb-creator/usbcreator.py:590
+msgid "Copy of ISO failed."
+msgstr "Ha fallat la còpia de la ISO."
+
+#: usr/lib/usb-creator/usbcreator.py:592
+msgid "Device is in use by another application."
+msgstr "El dispositiu està en ús per una altra aplicació. "
+
+#: usr/lib/usb-creator/usbcreator.py:594
+msgid ""
+"An unknown error accured.\n"
+"Please, visit our forum for support: https://forums.solydxk.com"
+msgstr ""
+"S'ha produït un error desconegut.\n"
+"Si us plau, visiteu el nostre fòrum de suport: https://forums.solydxk.com "
+
+#: usr/lib/usb-creator/usbcreator.py:598
+msgid "The USB was successfully written."
+msgstr "S'ha enregistrat a l'USB amb èxit. "
+
+#: usr/lib/usb-creator/usbcreator.py:599
+msgid "Finished"
+msgstr "Acabat"
+
+#: usr/lib/usb-creator/main.py:49
+msgid "Unexpected error"
+msgstr "Error inesperat"
+
+#: usr/lib/usb-creator/main.py:50
+msgid ""
+"USB Creator has failed with the following unexpected error. Please submit a "
+"bug report!"
+msgstr ""
+"USB Creator ha fallat amb aquest error inesperat. Si us plau, envieu un "
+"informe d'error! "
+
+#: usr/share/applications/usb-creator.desktop.in.h:2
+msgid "Create a multi-boot USB"
+msgstr "Crea un USB de multi-arrencada. "
+
+#: usr/share/solid/actions/usb-constructor-openusb.desktop.in.h:1
+msgid "Create a multi-boot USB with the USB Creator"
+msgstr "Crea un USB de multi-arrencada amb l'USB Creator."
+
+#. (itstool) path: action/message
+#: usr/share/polkit-1/actions/com.solydxk.pkexec.usb-creator.tmp-sh.policy:8
+msgid "USB Creator requires authentication to install Grub on your device"
+msgstr ""
+"USB Creator necessita autenticar-se per instal·lar GRUB al vostre dispositiu"
+
+#: po/en/help.html%2Bhtml.body.h1:8-2
+msgid "USB Creator Help"
+msgstr "Ajuda de l'USB Creator "
+
+#: po/en/help.html%2Bhtml.body.div.h2:10-3
+msgid "Description"
+msgstr "Descripció "
+
+#: po/en/help.html%2Bhtml.body.div.p:11-3
+msgid ""
+"The USB Creator is a tool to help users to create a bootable flash drive "
+"with multiple Linux operating systems."
+msgstr ""
+"USB Creator és una eina que ajuda als usuaris a crear unitats Flash que "
+"puguin arrencar amb múltiples S. O. Linux. "
+
+#: po/en/help.html%2Bhtml.body.div.h2:13-3
+msgid "Important"
+msgstr "Important "
+
+#: po/en/help.html%2Bhtml.body.div.p:14-3
+msgid ""
+"Make sure you backed up all important data from the flash drive before you "
+"start."
+msgstr ""
+"Assegureu-vos que heu fet còpia de seguretat de les dades importants a la "
+"vostra unitat flash abans de continuar. "
+
+#: po/en/help.html%2Bhtml.body.div.p:15-3
+msgid ""
+"USB Creator expects a USB pen drive with a single fat32 partition or a 100MB "
+"fat32 boot partition and a second partition for the ISOs in the file system "
+"format of your choosing."
+msgstr ""
+"USB Creator espera un llapis USB amb una partició d'arrencada FAT32 de "
+"100MB  i una segona partició per al sistema de fitxers de les ISOs amb el "
+"format que escolliu. "
+
+#: po/en/help.html%2Bhtml.body.div.p:16-3
+msgid "Note: a fat32 partition can not hold files larger than 4GB."
+msgstr "Nota: les particions FAT32 no poden encabir fitxers més grans de 4GB."
+
+#: po/en/help.html%2Bhtml.body.div.h2:18-3
+msgid "Terminal"
+msgstr "Terminal"
+
+#: po/en/help.html%2Bhtml.body.div.p:19-3
+msgid "You can also use the USB Creator from the terminal."
+msgstr "També podeu usar l'USB Creator des del terminal."
+
+#: po/en/help.html%2Bhtml.body.div.p:20-3
+msgid "See \"usb-creator -h\" for a list of all available options."
+msgstr "Vegeu \"usb-creatot -h\" per una llista de les opcions disponibles."
+
+#: po/en/help.html%2Bhtml.body.div.h2:22-3
+msgid "Your ISO is not booting?"
+msgstr "El vostre ISO no arrenca? "
+
+#: po/en/help.html%2Bhtml.body.div.p:23-3
+msgid ""
+"If the ISO did not boot with automatic distribution name detection, you "
+"manually select the appropriate distribution name from the \"Manual\" drop "
+"down menu."
+msgstr ""
+"Si la ISO no arrenca amb la detecció automàtica de nom, podeu triar "
+"manualment el nom de la distribució apropiada des del menú desplegable "
+"\"Manual\"."
+
+#: po/en/help.html%2Bhtml.body.div.p:24-3
+msgid ""
+"If you still cannot boot your ISO you can configure the menu on your flash "
+"drive: /boot/grub/grub.cfg"
+msgstr ""
+"Si encara així no podeu arrencar la vostra ISO, podeu configurar el menú en "
+"la vostra unitat flaix: /boot/grub/grub.cfg"
+
+#: po/en/help.html%2Bhtml.body.div.p:25-3
+msgid ""
+"Please help improve this application by adapting grub.cfg until the ISO "
+"boots and post your changes on <a href=\"https://github.com/SolydXK/usb-"
+"creator\" target=\"_blank\">GitHub</a> or our <a href=\"https://forums."
+"solydxk.com\" target=\"_blank\">forum</a>."
+msgstr ""
+"Si us plau, ajudeu a millorar aquesta aplicació adaptant el fitxer grub.cfg "
+"fins que la ISO arrenqui i comunicant els vostres canvis a <a href=\"https://"
+"github.com/SolydXK/usb-creator\" target=\"_blank\">GitHub</a> o bé el nostre "
+"<a href=\"https://forums.solydxk.com\" target=\"_blank\">fòrum</a>."
+
+#: po/en/help.html%2Bhtml.body.div.p:26-3
+msgid ""
+"Don't forget to attach the log file when you post an issue on our forum: ~/."
+"usb-creator/usb-creator.log"
+msgstr ""
+"No us oblideu d'adjuntar el fitxer registre (log) quan comuniqueu un "
+"problema al nostre fòrum: ~/.usb-creator/usb-creator.log "

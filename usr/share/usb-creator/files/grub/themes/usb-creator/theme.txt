@@ -1,0 +1,61 @@
+# USB Creator theme for GRUB2
+#
+# Copyright 2019 Arjen Balfoort
+
+#general settings
+title-font: "Unifont Regular 16"
+message-font: "Unifont Regular 16"
+terminal-font: "Unifont Regular 16"
+title-text: ""
+desktop-image: "bg.png"
+terminal-left: "0"
+terminal-top: "0"
+terminal-width: "100%"
+terminal-height: "100%"
+terminal-border: "0"
+
+#progress bar
++ progress_bar {
+        id = "__timeout__"
+        left = 0
+        top = 0
+        height = 20
+        width = 100%
+        font = "Unifont Regular 16"
+        text_color = "#ffffff"
+        fg_color = "#42738a"
+        bg_color = "#243e4b"
+        border_color = "#243e4b"
+        text = "@TIMEOUT_NOTIFICATION_MIDDLE@"
+}
+
+#boot menu
++ boot_menu {
+    left = 13%
+    width = 74%
+    top = 25%
+    height = 300
+    item_font = "Unifont Regular 18"
+    selected_item_font = "Unifont Regular 18"
+    item_color = "#999"
+    selected_item_color= "#fff"
+    icon_height = 24
+    icon_width = 24
+    item_height = 24
+    item_padding = 0
+    item_icon_space = 8
+    item_spacing = 4
+    scrollbar = false
+}
+
+#help bar at the bottom
++ label {
+    top = 100%-56
+    left = 13%
+    width = 74%
+    height = 20
+    align = "center"
+    color = "#ffffff"
+    font = "Unifont Regular 16"
+    text = "Use the ↑ and ↓ keys to select, 'e' to edit or 'c' for the command-line."
+}

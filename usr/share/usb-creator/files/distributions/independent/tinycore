@@ -1,0 +1,6 @@
+menuentry '[MENUTITLE]' --class tinycore {
+    set iso_path='/[ISONAME]'
+    loopback loop $iso_path
+    linux (loop)[VMLINUZ] [OPTIONS]
+    initrd (loop)[INITRD]
+} 

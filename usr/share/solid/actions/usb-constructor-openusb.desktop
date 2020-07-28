@@ -1,0 +1,25 @@
+[Desktop Entry]
+X-KDE-Solid-Predicate=[ StorageVolume.ignored == false AND StorageVolume.usage == 'FileSystem' ]
+Type=Service
+Actions=open;
+
+[Desktop Action open]
+# %f gives StorageAccess.filePath, %d gives Block.device, %i gives UDI
+Exec=usb-creator
+Icon=usb-creator
+Name=Create a multi-boot USB with the USB Creator
+Name[ca]=Crea un USB de multi-arrencada amb l'USB Creator.
+Name[da]=Skab en multi-boot USB-pen ved hjælp af USB-skaberen
+Name[de]=Erstelle einen Multi-Boot USB Stick mit dem USB Creator
+Name[fr]=Créer une clé USB multi-boot avec USB Creator
+Name[it]=Crea USB multi-boot con USB Creator
+Name[ja]=USB クリエーターはマルチブート USB を生成します
+Name[lt]=Sukurti keleriopo paleidimo USB, naudojant USB kūrėją
+Name[nb]=Lag en multioppstarts USB med USB Creator
+Name[nl]=Maak een multi-boot USB met de USB Creator
+Name[pl]=Utwórz USB wielosystemowy za pomocą kreatora USB.
+Name[pt]=Criar um USB multi-boot com o USB Creator
+Name[pt_BR]=Criar um USB "multi-boot" com o USB Creator.
+Name[ru]=Создать мульти-загрузочный USB-накопитель
+Name[sr]=Прави вишесистемски УСБ са УСБ ствараоцем
+Name[tr]=USB Creator ile çoklu açılış USB'si oluştur

@@ -1,0 +1,9 @@
+menuentry '[MENUTITLE]' --class [CLASS] {
+    set iso_path='/[ISONAME]'
+    loopback loop $iso_path
+    set boot_locale='locale.lang=en_US'
+    set boot_default=' rootfstype=auto ro rd.luks=0 rd.lvm=0 rd.md=0 rd.dm=0 rd.live.image acpi_osi=Linux audit=0 logo.nologo scsi_mod.use_blk_mq=1 dm_mod.use_blk_mq=1 rd.loglevel=0 rd.systemd.show_status=false rd.udev.log-priority=0 systemd.show_status=auto loglevel=2 udev.log-priority=0  i915.fastboot=1 '
+    probe -u -s isouuid (loop)
+    linux (loop)[VMLINUZ] $boot_default root=live:UUID=$isouuid iso-scan/filename=$iso_path $boot_locale quiet rhgb splash=silent [OPTIONS]
+    initrd (loop)[INITRD]
+}

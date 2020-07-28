@@ -1,0 +1,8 @@
+menuentry '[MENUTITLE]' --class [CLASS] {
+    set iso_path='/[ISONAME]'
+    loopback loop $iso_path
+    search --set -f $iso_path
+    probe --set=usb_label --label $root
+    linux (loop)[VMLINUZ] img_loop=$iso_path img_label=$usb_label archisobasedir=sysresccd  copytoram setkmap=us [OPTIONS]
+    initrd (loop)[INITRD]
+}

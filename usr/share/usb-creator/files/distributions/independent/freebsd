@@ -1,0 +1,11 @@
+menuentry '[MENUTITLE]' --class freebsd {
+    set iso_path='/[ISONAME]'
+    loopback loop $iso_path
+    set root=(loop)
+    kfreebsd (loop)/boot/kernel/kernel
+    kfreebsd_module (loop)/boot/kernel/ahci.ko
+    kfreebsd_module (loop)/boot/pxeboot type=mfs_root
+    set kFreeBSD.vfs.root.mountfrom=ufs:/dev/md0
+    set kFreeBSD.vfs.root.mountfrom.options=ro
+    set kFreeBSD.mfsbsd.autodhcp="YES" 
+}

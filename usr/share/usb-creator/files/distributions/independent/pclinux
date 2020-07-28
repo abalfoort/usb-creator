@@ -1,0 +1,7 @@
+menuentry '[MENUTITLE]' --class pclinux {
+    set iso_path='/[ISONAME]'
+    loopback loop $iso_path
+    search --set -f $iso_path
+    linux (loop)[VMLINUZ] bootfromiso=$iso_path [OPTIONS]
+    initrd (loop)[INITRD]
+}

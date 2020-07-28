@@ -1,0 +1,10 @@
+menuentry '[MENUTITLE]' --class [CLASS] {
+    iso_path='/[ISONAME]'
+    search --set -f $iso_path
+    probe --set=rootuuid -u $root
+    export iso_path rootuuid
+    loopback loop $iso_path
+    root=(loop)
+    configfile [LOOPBACK]
+    loopback --delete loop
+}

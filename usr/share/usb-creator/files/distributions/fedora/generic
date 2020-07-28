@@ -1,0 +1,7 @@
+menuentry '[MENUTITLE]' --class [CLASS] {
+    set iso_path='/[ISONAME]'
+    loopback loop $iso_path
+    probe --set=cd_label --label (loop)
+    linux (loop)[VMLINUZ] iso-scan/filename=$iso_path inst.stage2=hd:LABEL=$cd_label [OPTIONS]
+    initrd (loop)[INITRD]
+} 

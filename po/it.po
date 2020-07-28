@@ -1,0 +1,529 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Translators:
+# Arjen Balfoort <arjenbalfoort@solydxk.com>, 2018
+# Arjen Balfoort <arjenbalfoort@solydxk.com>, 2016
+# Davide Favaro <belzebu87@gmail.com>, 2015,2017
+# Franco Frolloni <frolloni@gmail.com>, 2018-2019
+msgid ""
+msgstr ""
+"Project-Id-Version: usb-creator\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-01-30 20:03+0100\n"
+"PO-Revision-Date: 2019-04-13 09:56+0000\n"
+"Last-Translator: Franco Frolloni <frolloni@gmail.com>\n"
+"Language-Team: Italian (http://www.transifex.com/solydxk/usb-creator/"
+"language/it/)\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: usr/lib/usb-creator/usbcreator.py:76
+#: usr/share/applications/usb-creator.desktop.in.h:1
+msgid "USB Creator"
+msgstr "SolydXK USB Creator"
+
+#: usr/lib/usb-creator/usbcreator.py:77
+msgid "Device"
+msgstr "Dispositivi"
+
+#: usr/lib/usb-creator/usbcreator.py:78
+#, fuzzy
+msgid "Partition device"
+msgstr "Ripara dispositivo"
+
+#: usr/lib/usb-creator/usbcreator.py:79
+msgid "This will remove all data from the device."
+msgstr ""
+
+#: usr/lib/usb-creator/usbcreator.py:80
+msgid "USB"
+msgstr "USB"
+
+#: usr/lib/usb-creator/usbcreator.py:81
+msgid "Available"
+msgstr "Disponibile:"
+
+#: usr/lib/usb-creator/usbcreator.py:82
+msgid "Required"
+msgstr "Spazio richiesto:"
+
+#: usr/lib/usb-creator/usbcreator.py:83
+msgid "Execute"
+msgstr "Esegui"
+
+#: usr/lib/usb-creator/usbcreator.py:84
+msgid "ISO"
+msgstr "ISO"
+
+#: usr/lib/usb-creator/usbcreator.py:85
+msgid "Write single ISO"
+msgstr "Scrivi una ISO"
+
+#: usr/lib/usb-creator/usbcreator.py:86
+msgid "Write a single ISO to USB using dd"
+msgstr "Scrivi una ISO su USB con dd"
+
+#: usr/lib/usb-creator/usbcreator.py:87
+msgid "Remove"
+msgstr ""
+
+#: usr/lib/usb-creator/usbcreator.py:88
+msgid "Refresh device list"
+msgstr "Aggiorna lista dispositivi"
+
+#: usr/lib/usb-creator/usbcreator.py:89
+msgid "Unmount device"
+msgstr "Smonta dispositivo"
+
+#: usr/lib/usb-creator/usbcreator.py:90
+msgid "Browse for ISO file"
+msgstr "Sfoglia per inserire un file ISO"
+
+#: usr/lib/usb-creator/usbcreator.py:91
+msgid "Clear the ISO field"
+msgstr "Azzera campo ISO"
+
+#: usr/lib/usb-creator/usbcreator.py:92
+msgid "Manual"
+msgstr ""
+
+#: usr/lib/usb-creator/usbcreator.py:93
+msgid ""
+"Manually select the distribution name if USB Creator cannot\n"
+"determine the distribution name automatically."
+msgstr ""
+
+#: usr/lib/usb-creator/usbcreator.py:97
+msgid "Copy ISO to USB..."
+msgstr ""
+
+#: usr/lib/usb-creator/usbcreator.py:101
+#, fuzzy
+msgid "Prepare copy of ISO..."
+msgstr "Controllo hash dell'immagine ISO"
+
+#: usr/lib/usb-creator/usbcreator.py:102
+#, fuzzy
+msgid "Verify hash of ISO..."
+msgstr "Controllo hash dell'immagine ISO"
+
+#: usr/lib/usb-creator/usbcreator.py:103
+#, fuzzy
+msgid "Install Grub..."
+msgstr "Installazione di Grub..."
+
+#: usr/lib/usb-creator/usbcreator.py:104
+#, fuzzy
+msgid "Unpacking ISO..."
+msgstr "Avvio copia ISO..."
+
+#: usr/lib/usb-creator/usbcreator.py:105
+msgid "Gather ISO information..."
+msgstr ""
+
+#: usr/lib/usb-creator/usbcreator.py:149
+msgid "Version"
+msgstr "Verisone"
+
+#: usr/lib/usb-creator/usbcreator.py:164
+msgid ""
+"Cannot add ISO from path: {}.\n"
+"Please, remove the ISO path or browse for an existing ISO."
+msgstr ""
+"Impossibile aggiungere il file ISO dal percorso: {}.\n"
+"Si prega di rimuovere il percorso inserito o di sfogliare per trovare un ISO "
+"esistente."
+
+#: usr/lib/usb-creator/usbcreator.py:172
+msgid ""
+"There is not enough space available on the pen drive.\n"
+"Please, remove unneeded files before continuing."
+msgstr ""
+"Spazio disponibile sul dispositivo USB non sufficiente.\n"
+"Si prega di liberare spazio cancellando file non necessari prima di "
+"continuare."
+
+#: usr/lib/usb-creator/usbcreator.py:201
+msgid "Are you sure you want to remove the selected ISO from the device?"
+msgstr ""
+"Procedere con la rimozione dell'immagine ISO selezionata dal dispositivo?"
+
+#: usr/lib/usb-creator/usbcreator.py:222
+msgid "Select ISO"
+msgstr "Selezionare ISO"
+
+#: usr/lib/usb-creator/usbcreator.py:279
+msgid "Unmount"
+msgstr "Smonta"
+
+#: usr/lib/usb-creator/usbcreator.py:284
+msgid "You can now safely remove the device."
+msgstr "È ora possibile rimuovere il dispositivo."
+
+#: usr/lib/usb-creator/usbcreator.py:286
+msgid ""
+"Could not unmount the device.\n"
+"Please unmount the device manually."
+msgstr ""
+"Impossibile smontare il dispositivo.\n"
+"Si prega di smontare il dispositivo manualmente."
+
+#: usr/lib/usb-creator/usbcreator.py:324
+msgid ""
+"No partition found.\n"
+"Please format the USB before you continue."
+msgstr ""
+
+#: usr/lib/usb-creator/usbcreator.py:326
+msgid "No Partition"
+msgstr ""
+
+#: usr/lib/usb-creator/usbcreator.py:563
+msgid "Error"
+msgstr ""
+
+#: usr/lib/usb-creator/usbcreator.py:566
+#, fuzzy
+msgid "Wrong arguments were passed."
+msgstr "Sono stati passati argomenti errati a usb-creator."
+
+#: usr/lib/usb-creator/usbcreator.py:568
+#, fuzzy
+msgid "The device was not found."
+msgstr "Nessuna partizione fat32"
+
+#: usr/lib/usb-creator/usbcreator.py:570
+msgid "The device is not detachable."
+msgstr "Impossibile trovare il dispositivo."
+
+#: usr/lib/usb-creator/usbcreator.py:572
+#, fuzzy
+msgid "The device has no partition."
+msgstr "Nessuna partizione fat32"
+
+#: usr/lib/usb-creator/usbcreator.py:574
+msgid "Unable to mount the device."
+msgstr "Impossibile montare il dispositivo."
+
+#: usr/lib/usb-creator/usbcreator.py:576
+msgid "Given ISO path was not found."
+msgstr "Il percorso fornito per l'immagine ISO non è stato trovato."
+
+#: usr/lib/usb-creator/usbcreator.py:578
+msgid ""
+"ISO too large for FAT formatted USB (max 4GB).\n"
+"Format the USB to exFAT, NTFS, ext4, etc."
+msgstr ""
+
+#: usr/lib/usb-creator/usbcreator.py:581
+msgid "There is not enough space available on the device."
+msgstr "Spazio disponibile non sufficiente sulla periferica."
+
+#: usr/lib/usb-creator/usbcreator.py:583
+#, fuzzy
+msgid ""
+"Unable to determine the distribution name.\n"
+"Select a distribution in the 'Manual' section."
+msgstr "Impossibile montare il dispositivo."
+
+#: usr/lib/usb-creator/usbcreator.py:586
+msgid "Cannot find the target ISO file. Did you insert the USB?"
+msgstr ""
+
+#: usr/lib/usb-creator/usbcreator.py:588
+msgid "Hash mismatch."
+msgstr "Hash non corrispondente."
+
+#: usr/lib/usb-creator/usbcreator.py:590
+#, fuzzy
+msgid "Copy of ISO failed."
+msgstr "Sfoglia per inserire un file ISO"
+
+#: usr/lib/usb-creator/usbcreator.py:592
+msgid "Device is in use by another application."
+msgstr "La periferica è in uso da un'altra applicazione."
+
+#: usr/lib/usb-creator/usbcreator.py:594
+msgid ""
+"An unknown error accured.\n"
+"Please, visit our forum for support: https://forums.solydxk.com"
+msgstr ""
+"Errore inatteso.\n"
+"Si prega di visitare il forum di supporto: https://forums.solydxk.com"
+
+#: usr/lib/usb-creator/usbcreator.py:598
+msgid "The USB was successfully written."
+msgstr "Scrittura USB completata con successo."
+
+#: usr/lib/usb-creator/usbcreator.py:599
+msgid "Finished"
+msgstr ""
+
+#: usr/lib/usb-creator/main.py:49
+msgid "Unexpected error"
+msgstr "Errore inatteso"
+
+#: usr/lib/usb-creator/main.py:50
+msgid ""
+"USB Creator has failed with the following unexpected error. Please submit a "
+"bug report!"
+msgstr ""
+"SolydXK USB Creator ha fallito con il seguente errore inatteso.\n"
+"Si consiglia di inviare una segnalazione di bug!"
+
+#: usr/share/applications/usb-creator.desktop.in.h:2
+msgid "Create a multi-boot USB"
+msgstr "Creare un USB multi-boot"
+
+#: usr/share/solid/actions/usb-constructor-openusb.desktop.in.h:1
+msgid "Create a multi-boot USB with the USB Creator"
+msgstr "Crea USB multi-boot con USB Creator"
+
+#. (itstool) path: action/message
+#: usr/share/polkit-1/actions/com.solydxk.pkexec.usb-creator.tmp-sh.policy:8
+msgid "USB Creator requires authentication to install Grub on your device"
+msgstr ""
+
+#: po/en/help.html%2Bhtml.body.h1:8-2
+msgid "USB Creator Help"
+msgstr "USB Creator Help"
+
+#: po/en/help.html%2Bhtml.body.div.h2:10-3
+msgid "Description"
+msgstr "Descrizione"
+
+#: po/en/help.html%2Bhtml.body.div.p:11-3
+msgid ""
+"The USB Creator is a tool to help users to create a bootable flash drive "
+"with multiple Linux operating systems."
+msgstr ""
+"USB Creator è uno strumento per facilitare la creazione di dispositivi "
+"avviabili con più sistemi operativi Linux."
+
+#: po/en/help.html%2Bhtml.body.div.h2:13-3
+msgid "Important"
+msgstr "Importante"
+
+#: po/en/help.html%2Bhtml.body.div.p:14-3
+msgid ""
+"Make sure you backed up all important data from the flash drive before you "
+"start."
+msgstr ""
+"Assicurarsi di aver salvato tutti i dati importanti dalla periferica perima "
+"di incominciare."
+
+#: po/en/help.html%2Bhtml.body.div.p:15-3
+msgid ""
+"USB Creator expects a USB pen drive with a single fat32 partition or a 100MB "
+"fat32 boot partition and a second partition for the ISOs in the file system "
+"format of your choosing."
+msgstr ""
+
+#: po/en/help.html%2Bhtml.body.div.p:16-3
+msgid "Note: a fat32 partition can not hold files larger than 4GB."
+msgstr ""
+
+#: po/en/help.html%2Bhtml.body.div.h2:18-3
+msgid "Terminal"
+msgstr ""
+
+#: po/en/help.html%2Bhtml.body.div.p:19-3
+#, fuzzy
+msgid "You can also use the USB Creator from the terminal."
+msgstr ""
+"È anche possibile utilizzare USB Creator dal terminale. Di seguito alcuni "
+"esempi:"
+
+#: po/en/help.html%2Bhtml.body.div.p:20-3
+msgid "See \"usb-creator -h\" for a list of all available options."
+msgstr ""
+
+#: po/en/help.html%2Bhtml.body.div.h2:22-3
+msgid "Your ISO is not booting?"
+msgstr "L'immagine ISO non si avvia?"
+
+#: po/en/help.html%2Bhtml.body.div.p:23-3
+msgid ""
+"If the ISO did not boot with automatic distribution name detection, you "
+"manually select the appropriate distribution name from the \"Manual\" drop "
+"down menu."
+msgstr ""
+
+#: po/en/help.html%2Bhtml.body.div.p:24-3
+#, fuzzy
+msgid ""
+"If you still cannot boot your ISO you can configure the menu on your flash "
+"drive: /boot/grub/grub.cfg"
+msgstr ""
+"Menu configurato grazie ad un file disponibile sul dispositivo: /boot/grub/"
+"grub.cfg"
+
+#: po/en/help.html%2Bhtml.body.div.p:25-3
+#, fuzzy
+msgid ""
+"Please help improve this application by adapting grub.cfg until the ISO "
+"boots and post your changes on <a href=\"https://github.com/SolydXK/usb-"
+"creator\" target=\"_blank\">GitHub</a> or our <a href=\"https://forums."
+"solydxk.com\" target=\"_blank\">forum</a>."
+msgstr ""
+"Si prega di migliorare questa applicazione adattando il contenuto di grub."
+"cgf fino a che l'immagine ISO sia correttamente avviabile e quindi di "
+"condividere le modifiche necessarie su GitHub o sul nostro <a href=\"https://"
+"forums.solydxk.com\" target=\"_blank\">forum</a>."
+
+#: po/en/help.html%2Bhtml.body.div.p:26-3
+#, fuzzy
+msgid ""
+"Don't forget to attach the log file when you post an issue on our forum: ~/."
+"usb-creator/usb-creator.log"
+msgstr ""
+"Ricordarsi di allegare il file di log quando si intende chiedere supporto "
+"sul nostro forum: /var/log/usb-creator.log"
+
+#~ msgid "Delete"
+#~ msgstr "Cancella"
+
+#~ msgid ""
+#~ "On our <a href=\"https://github.com/SolydXK/usb-creator\" target=\"_blank"
+#~ "\">GitHub</a> page you can see a list of tested distributions but not all "
+#~ "can be booted directly from the ISO file. Check the distribution's forum "
+#~ "if it can be booted directly from the ISO file."
+#~ msgstr ""
+#~ "Sulla nostra pagina di  <a href=\"https://github.com/SolydXK/usb-creator"
+#~ "\" target=\"_blank\">GitHub</a> è pubblicata una lista di distribuzioni "
+#~ "testate ma non tutte possono essere avviate direttamente dall'immagine "
+#~ "ISO. Controllare il forum della distribuzione per accertarsi che sia "
+#~ "direttamente avviabile da immagine ISO."
+
+#~ msgid ""
+#~ "If you want to format your flash drive yourself you need to create a "
+#~ "single fat32 partition or at least two partitions: the first a 100MB "
+#~ "fat32 partition and the second must be large enough for at least one ISO. "
+#~ "Any following partition is being ignored by USB Creator."
+#~ msgstr ""
+#~ "Se vuoi formattare da solo l'unità flash devi creare una singola "
+#~ "partizione fat32 o almeno due partizioni; la prima fat32 di 100 MB e la "
+#~ "seconda grande abbastanza per almeno una ISO. Ogni partizione successiva "
+#~ "sarà ignorata da USB Creator"
+
+#~ msgid "Hidden features"
+#~ msgstr "Opzioni nascoste"
+
+#~ msgid ""
+#~ "When you remove the ISO file name from the ISO field, USB Creator will "
+#~ "calculate the space needed for all ISO files in that directory."
+#~ msgstr ""
+#~ "Rimuovendo il nome del file ISO dal campo ISO, USB Creator calcolerà lo "
+#~ "spazio necessario alle immagini ISO in tale cartella."
+
+#~ msgid ""
+#~ "You can change the order in which the ISO files are displayed in the menu "
+#~ "by adding a number in front of the ISO file name, e.g.: \"01-MyDistro-"
+#~ "amd64.iso\"."
+#~ msgstr ""
+#~ "È possibile modificare l'odine in cui i file ISO sono mostrati nel menu "
+#~ "aggiungendo un numero prima del nome del file ISO, ad es.: \"01-"
+#~ "LaMiaDistro-amd64.iso\"."
+
+#~ msgid ""
+#~ "Symbolic links are followed but the symbolic links must have the \".iso\" "
+#~ "extension to make it work."
+#~ msgstr ""
+#~ "I collegamenti simbolici verrano seguiti ma devono avere l'estensione \"."
+#~ "iso\" per funzionare correttamente."
+
+#~ msgid "Command Examples"
+#~ msgstr "Esenpi di comando"
+
+#~ msgid "# usb-creator -d /dev/sdx -f ntfs -i /path/to/my.iso -s"
+#~ msgstr "# usb-creator -d /dev/sdx -f ntfs -i /path/to/my.iso -s"
+
+#~ msgid ""
+#~ "This will format the flash drive as ntfs, copy the ISO file to the flash "
+#~ "drive and check the hash of the copied ISO file with the original ISO "
+#~ "file."
+#~ msgstr ""
+#~ "L'unità flash verrà formattata come nfts, il file ISO verrà copiato "
+#~ "sull'unità flash e verrà confrontato l'hash dell'ISO copiata con il file "
+#~ "ISO originale"
+
+#~ msgid "# usb-creator -b -g -r"
+#~ msgstr "# usb-creator -b -g -r"
+
+#~ msgid ""
+#~ "This will try to repair an unbootable flash drive that already contains "
+#~ "ISO files."
+#~ msgstr ""
+#~ "Questa azione proverà a riparare un dispositivo non avviabile con "
+#~ "immagini ISO preesistenti."
+
+#~ msgid "# usb-creator -h"
+#~ msgstr "# usb-creator -h"
+
+#~ msgid "This will show all available options and their usage."
+#~ msgstr "Mostra ogni opzione disponibile e le relative modalità d'uso."
+
+#, fuzzy
+#~ msgid "Copied:"
+#~ msgstr "ISO copiata"
+
+#~ msgid "Device options"
+#~ msgstr "Opzioni del dispositivo"
+
+#~ msgid "Warning: all data will be lost"
+#~ msgstr "Attenzione: tutti i dati verranno cancellati"
+
+#~ msgid "Tries to repair an unbootable USB"
+#~ msgstr "Tenta di riparare un dispositivo USB non avviabile"
+
+#~ msgid "ISO options"
+#~ msgstr "Opzioni ISO"
+
+#~ msgid "Checksum"
+#~ msgstr "Checksum"
+
+#~ msgid "Check hashes of original and copied ISO"
+#~ msgstr "Controlla hash dell'originale e della copia"
+
+#~ msgid "Partitioning USB..."
+#~ msgstr "Partizionamento USB..."
+
+#~ msgid "Searching for bad block"
+#~ msgstr "Ricerca di blocchi danneggiati"
+
+#~ msgid "Do not format"
+#~ msgstr "Non formattare"
+
+#~ msgid "Format as ext4"
+#~ msgstr "Formatta come ext4"
+
+#~ msgid "Format as ntfs"
+#~ msgstr "Formatta come nfts"
+
+#~ msgid "Format as hfs+"
+#~ msgstr "Formatta come hfs+"
+
+#~ msgid "Run this application with root permission."
+#~ msgstr "Avvia questa applicazione con i permessi di amministratore"
+
+#~ msgid "The device was not found or no device was given."
+#~ msgstr "Periferica non trovata o nessuna periferica selezionata."
+
+#~ msgid "The device has no bootloader installed."
+#~ msgstr "Nessun bootloader installato sul dispositivo."
+
+#~ msgid ""
+#~ "Unable to guess distribution from ISO name.\n"
+#~ "Make sure you have the distribution name in the ISO name."
+#~ msgstr ""
+#~ "Impossibile determinare la distribuzione dal nome dell'immagine ISO.\n"
+#~ "Assicurarsi che il nome della distribuzione compaia nel nome dell'imagine "
+#~ "ISO."
+
+#~ msgid "Authentication is required to run USB Creator"
+#~ msgstr "E' richiesta l'autenticazione per lanciare USB Creator"

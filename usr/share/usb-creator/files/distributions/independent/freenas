@@ -1,0 +1,9 @@
+menuentry '[MENUTITLE]' --class freenas {
+    set iso_path='/[ISONAME]'
+    loopback loop $iso_path
+    kfreebsd (loop)/boot/kernel/kernel
+    kfreebsd_module $iso_path type=mfs_root
+    set kFreeBSD.vfs.root.mountfrom=cd9660:/dev/md0
+    set kFreeBSD.vfs.root.mountfrom.options=ro
+    set kFreeBSD.grub.platform=$grub_platform
+}

@@ -1,0 +1,6 @@
+menuentry '[MENUTITLE]' --class [CLASS] {
+    set iso_path='/[ISONAME]'
+    loopback loop $iso_path
+    linux (loop)[VMLINUZ] isoboot=$iso_path root=/dev/ram0 init=/linuxrc dokeymap aufs looptype=squashfs loop=/image.squashfs cdroot console=tty1 [OPTIONS]
+    initrd (loop)[INITRD]
+}

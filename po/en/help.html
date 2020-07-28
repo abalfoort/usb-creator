@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link href="../link/general.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="background"></div>
+	<h1>USB Creator Help</h1>
+	<div class="main">
+		<h2>Description</h2>
+		<p>The USB Creator is a tool to help users to create a bootable flash drive with multiple Linux operating systems.</p>
+
+		<h2>Important</h2>
+		<p>Make sure you backed up all important data from the flash drive before you start.</p>
+		<p>USB Creator expects a USB pen drive with a single fat32 partition or a 100MB fat32 boot partition and a second partition for the ISOs in the file system format of your choosing.</p>
+		<p>Note: a fat32 partition can not hold files larger than 4GB.</p>
+		
+		<h2>Terminal</h2>
+		<p>You can also use the USB Creator from the terminal.</p>
+		<p>See "usb-creator -h" for a list of all available options.</p>
+
+		<h2>Your ISO is not booting?</h2>
+		<p>If the ISO did not boot with automatic distribution name detection, you manually select the appropriate distribution name from the "Manual" drop down menu.</p>
+		<p>If you still cannot boot your ISO you can configure the menu on your flash drive: /boot/grub/grub.cfg</p>
+		<p>Please help improve this application by adapting grub.cfg until the ISO boots and post your changes on  <a href="https://github.com/SolydXK/usb-creator" target="_blank">GitHub</a> or our <a href="https://forums.solydxk.com" target="_blank">forum</a>.</p>
+		<p>Don't forget to attach the log file when you post an issue on our forum: ~/.usb-creator/usb-creator.log</p>
+    </div>
+  </body>
+</html>

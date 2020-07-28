@@ -1,0 +1,43 @@
+# USB Creator grub.cfg
+
+insmod font
+if loadfont /boot/grub/themes/usb-creator/unifont-16.pf2; then
+    if keystatus --shift ; then true ; else
+        if [ x"${grub_platform}" = xefi ]; then
+            insmod efi_gop
+            insmod efi_uga
+            insmod videotest
+            insmod videoinfo
+        else
+            insmod vbe
+            insmod vga
+        fi
+        insmod loopback
+        insmod iso9660
+        insmod ufs2
+        insmod ntfs
+        insmod bsd
+        insmod geli
+        insmod gzio
+        insmod part_msdos
+        insmod part_gpt
+        insmod all_video
+        insmod gfxterm
+        insmod gfxmenu
+        set gfxmode=auto
+        set gfxpayload=auto
+        terminal_output gfxterm
+        if terminal_output gfxterm ; then true ; else
+            terminal gfxterm
+        fi
+        # Load theme
+        insmod png
+        loadfont /boot/grub/themes/usb-creator/unifont-20.pf2
+        set theme=/boot/grub/themes/usb-creator/theme.txt
+        export theme
+    fi
+fi
+
+# Set variables
+set timeout=10
+set default=0

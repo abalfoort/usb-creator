@@ -1,0 +1,5 @@
+ARCH="antergos"
+DEBIAN="lmde q4os endless"
+FEDORA="korora"
+MANDRIVA="openmandriva"
+UBUNTU="neon"

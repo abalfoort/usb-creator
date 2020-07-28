@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link href="../link/general.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="background"></div>
+	<h1>USB Creator Help</h1>
+	<div class="main">
+		<h2>Omschrijving</h2>
+		<p>De USB Creator is een tool om gebruikers te helpen een bootable flash drive
+met meerdere Linux besturingssystemen te creëren.</p>
+
+		<h2>Belangrijk</h2>
+		<p>Zorg ervoor dat u een backup heeft gemaakt van alle belangrijke bestanden
+van de flash drive voordat u begint.</p>
+		<p>USB Creator verwacht een USB-stick met een enkele fat32-partitie of een
+100MB fat32 bootpartitie en een tweede partitie voor de ISO's in het
+bestandssysteemformaat van uw keuze.</p>
+		<p>Note: a fat32 partition can not hold files larger than 4GB.</p>
+		
+		<h2>Terminal</h2>
+		<p>USB Creator kan ook in de terminal gebruikt worden.</p>
+		<p>Zie "usb-creator -h" voor een lijst van beschikbare opties.</p>
+
+		<h2>Boot uw ISO bestand niet?</h2>
+		<p>Als de ISO niet is opgestart met automatische distributienaamdetectie,
+selecteert u handmatig de juiste distributienaam uit het "Handmatig"
+drop-downmenu.</p>
+		<p>Als de ISO nog steeds niet opstart, kunt u het menu op uw flash drive
+configureren: /boot/grub/grub/grub.cfg</p>
+		<p>Help deze applicatie te verbeteren door het grub.cfg bestand zo aan te
+passen dat de ISO boot. Post de wijzigingen op <a
+href="https://github.com/SolydXK/usb-creator" target="_blank">GitHub</a> of
+ons <a href="https://forums.solydxk.com" target="_blank">forum</a>.</p>
+		<p>Vergeet niet het logbestand toe te voegen wanneer u een probleem post op ons
+forum: ~/.usb-creator/usb-creator.log</p>
+    </div>
+  </body>
+</html>
