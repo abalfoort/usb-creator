@@ -1,0 +1,10 @@
+__title__ = 'usb-creator'
+__version__ = '0.8.3'
+__author__ = 'Arjen Balfoort'
+__author_email__ = 'arjenbalfoort@solydxk.com'
+__maintainer__ = ''
+__maintainer_email__ = ''
+__url__ = 'https://gitlab.com/abalfoort/usb-creator'
+__description__ = 'Multiboot USB Creator'
+__download_url__ = 'https://gitlab.com/abalfoort/usb-creator/-/archive/master/usb-creator-master.tar.gz'
+

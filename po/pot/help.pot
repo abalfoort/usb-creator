@@ -42,7 +42,7 @@ msgid "You can also use the USB Creator from the terminal."
 msgstr ""
 
 #: ./po/en/help.html%2Bhtml.body.div.p:20-3
-msgid "See \"usb-creator -h\" for a list of all available options."
+msgid "See \"man usb-creator\" for a list of all available options."
 msgstr ""
 
 #: ./po/en/help.html%2Bhtml.body.div.h2:22-3
@@ -60,18 +60,4 @@ msgstr ""
 msgid ""
 "If you still cannot boot your ISO you can configure the menu on your flash "
 "drive: /boot/grub/grub.cfg"
-msgstr ""
-
-#: ./po/en/help.html%2Bhtml.body.div.p:25-3
-msgid ""
-"Please help improve this application by adapting grub.cfg until the ISO "
-"boots and post your changes on <a href=\"https://github.com/SolydXK/usb-"
-"creator\" target=\"_blank\">GitHub</a> or our <a href=\""
-"https://forums.solydxk.com\" target=\"_blank\">forum</a>."
-msgstr ""
-
-#: ./po/en/help.html%2Bhtml.body.div.p:26-3
-msgid ""
-"Don't forget to attach the log file when you post an issue on our forum: "
-"~/.usb-creator/usb-creator.log"
 msgstr ""

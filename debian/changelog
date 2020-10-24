@@ -1,3 +1,21 @@
+usb-creator (0.8.3) stable; urgency=low
+
+  * Updated translation: da
+
+ -- Arjen Balfoort <arjenbalfoort@solydxk.com>  Sat, 24 Oct 2020 19:16:58 +0200
+
+usb-creator (0.8.2) stable; urgency=low
+
+  * Move translation files from setup.py to debian/usb-creator.install
+
+ -- Arjen Balfoort <arjenbalfoort@solydxk.com>  Tue, 29 Sep 2020 10:06:47 +0200
+
+usb-creator (0.8.1) stable; urgency=low
+
+  * Convert to Debian Python packaging
+
+ -- Arjen Balfoort <arjenbalfoort@solydxk.com>  Sun, 27 Sep 2020 15:07:29 +0200
+
 usb-creator (0.8.0) stable; urgency=low
 
   * Solve bug not starting because of wrong debug parameters to python3

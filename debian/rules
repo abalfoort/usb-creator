@@ -13,10 +13,10 @@ export DH_OPTIONS
 .PHONY: update
 
 source := $(shell dpkg-parsechangelog -S Source)
-pyfiles := $(shell find . -wholename ./debian -prune -o -name '*.py' -print 2>/dev/null)
-bashfiles := $(shell find ./usr/bin/ -type f 2>/dev/null)
-desktopfls := $(shell find . -wholename ./debian -prune -o -name '*.desktop' -print 2>/dev/null)
-policyfiles := $(shell find ./usr/share/polkit-1/actions/ -name "*.policy" 2>/dev/null)
+pyfiles := $(shell find ./usb-creator -name '*.py' -print 2>/dev/null)
+#bashfiles := $(shell find ./scripts -type f -print 2>/dev/null>/dev/null)
+desktopfls := $(shell find ./data -name '*.desktop' -print 2>/dev/null)
+policyfiles := $(shell find ./data -name "*.policy" -print 2>/dev/null)
 
 
 # Create mo from the po files
@@ -26,19 +26,19 @@ policyfiles := $(shell find ./usr/share/polkit-1/actions/ -name "*.policy" 2>/de
 	msgfmt $< -o ./po/mo/$(basename $(notdir $<))/LC_MESSAGES/$(source).mo
 
 %:
-	dh $@ --with=python3
+	dh $@ --with=python3 --buildsystem=pybuild
 
 override_dh_auto_clean:
+	# Save new version in version.py
+	sed -i "s/^\(__version__\s*=\s*\).*\$$/\1'$(shell dpkg-parsechangelog -S Version)'/" version.py
 	# Cleanup first
-	find ./usr -type d -name "*__pycache__" -exec rm -r "{}" \;
-	find ./usr -type f -name "*.pyc" -delete
-	find ./usr -type f -name "*.*~" -delete
 	rm -rf ./po/mo ./po/pot
 	mkdir ./po/mo ./po/pot
 	# Clean HTML
 	po4a --rm-translations po4a.cfg
 
 override_dh_auto_install: update $(patsubst %.po,%.mo,$(wildcard ./po/*.po))
+	dh_auto_install
 
 override_dh_builddeb:
 	dh_builddeb
@@ -66,15 +66,15 @@ update:
 		$(pyfiles) && echo "Python files scanned for translations"
 	
 	# Get strings from package launcher (bash script)
-	@ xgettext \
-		--join-existing \
-		--keyword=eval_gettext  \
-		--language=Shell \
-		--output=./po/$(source).pot \
-		--package-name=$(source) \
-		--package-version='' \
-		--from-code=UTF-8 \
-		$(bashfiles) && echo "Shell launcher scanned for translations"
+	#@ xgettext \
+	#	--join-existing \
+	#	--keyword=eval_gettext  \
+	#	--language=Shell \
+	#	--output=./po/$(source).pot \
+	#	--package-name=$(source) \
+	#	--package-version='' \
+	#	--from-code=UTF-8 \
+	#	$(bashfiles) && echo "Shell launcher scanned for translations"
 
 	# Get strings from the desktop file
 	@ for LAUNCHER in $(desktopfls); do \

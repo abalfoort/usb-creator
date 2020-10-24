@@ -6,8 +6,10 @@ import logging
 import re
 import sys
 from shutil import move
-from dialogs import ErrorDialog
-from treeview import TreeViewHandler
+
+# Local imports
+from .dialogs import ErrorDialog
+from .treeview import TreeViewHandler
 
 
 class Logger():

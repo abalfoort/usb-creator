@@ -3,26 +3,28 @@
 # Make sure the right Gtk version is loaded
 import gi
 gi.require_version('Gtk', '3.0')
-
 import sys
-from dialogs import ErrorDialog
 from gi.repository import Gtk
-from usbcreator import USBCreator
+
+# Local imports
+from .dialogs import ErrorDialog
+from .usbcreator import USBCreator
 
 # i18n: http://docs.python.org/3/library/gettext.html
 import gettext
 from gettext import gettext as _
 gettext.textdomain('usb-creator')
 
-debug = False
+# Wrap args or else unittest will fail
 import argparse
-parser = argparse.ArgumentParser()
-parser.add_argument("-v", "--verbose", 
-                    help="increase output verbosity",
-                    action="store_true")
-args = parser.parse_args()
-if args.verbose:
-    debug = True
+class ArgsWrapper(object):
+    def __init__(self):
+        parser = argparse.ArgumentParser()
+        parser.add_argument("-v", "--verbose", 
+                            help="increase output verbosity",
+                            action="store_true")
+        self.args = parser.parse_args()
+
 
 def uncaught_excepthook(*args):
     sys.__excepthook__(*args)
@@ -55,15 +57,14 @@ def uncaught_excepthook(*args):
 sys.excepthook = uncaught_excepthook
 
 # main entry
-if __name__ == "__main__":
+def main():
     # Create an instance of our GTK application
     try:
-        # Calling GObject.threads_init() is not needed for PyGObject 3.10.2+
-        # Check with print (sys.version)
-        # Debian Jessie: 3.4.2
-        #GObject.threads_init()
-
-        USBCreator(debug)
+        wrapper = ArgsWrapper() 
+        USBCreator(wrapper.args.verbose)
         Gtk.main()
     except KeyboardInterrupt:
         pass
+
+if __name__ == '__main__':
+    main()

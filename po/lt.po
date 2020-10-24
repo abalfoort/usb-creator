@@ -3,16 +3,17 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
-# Arjen Balfoort <arjenbalfoort@solydxk.com>, 2018-2020
+# Arjen Balfoort <arjenbalfoort@hotmail.com>, 2020
+# Arjen Balfoort <arjenbalfoort@hotmail.com>, 2018-2020
 # Moo, 2016-2019
 msgid ""
 msgstr ""
 "Project-Id-Version: usb-creator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-30 20:53+0100\n"
-"PO-Revision-Date: 2020-01-30 20:10+0000\n"
-"Last-Translator: Arjen Balfoort <arjenbalfoort@solydxk.com>\n"
-"Language-Team: Lithuanian (http://www.transifex.com/solydxk/usb-creator/"
+"POT-Creation-Date: 2020-10-24 19:17+0200\n"
+"PO-Revision-Date: 2020-10-02 15:24+0000\n"
+"Last-Translator: Arjen Balfoort <arjenbalfoort@hotmail.com>\n"
+"Language-Team: Lithuanian (http://www.transifex.com/abalfoort/usb-creator/"
 "language/lt/)\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
@@ -22,270 +23,241 @@ msgstr ""
 "11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? "
 "1 : n % 1 != 0 ? 2: 3);\n"
 
-#: usr/lib/usb-creator/usbcreator.py:76
-#: usr/share/applications/usb-creator.desktop.in.h:1
-msgid "USB Creator"
-msgstr "USB kūrėjas"
-
-#: usr/lib/usb-creator/usbcreator.py:77
-msgid "Device"
-msgstr "Įrenginys"
-
-#: usr/lib/usb-creator/usbcreator.py:78
-msgid "Partition device"
-msgstr "Skaidyti įrenginį"
-
-#: usr/lib/usb-creator/usbcreator.py:79
-msgid "This will remove all data from the device."
-msgstr "Tai pašalins iš įrenginio visus duomenis."
-
-#: usr/lib/usb-creator/usbcreator.py:80
-msgid "USB"
-msgstr "USB"
-
-#: usr/lib/usb-creator/usbcreator.py:81
-msgid "Available"
-msgstr "Prieinama"
-
-#: usr/lib/usb-creator/usbcreator.py:82
-msgid "Required"
-msgstr "Reikalinga"
-
-#: usr/lib/usb-creator/usbcreator.py:83
-msgid "Execute"
-msgstr "Vykdyti"
-
-#: usr/lib/usb-creator/usbcreator.py:84
-msgid "ISO"
-msgstr "ISO"
-
-#: usr/lib/usb-creator/usbcreator.py:85
-msgid "Write single ISO"
-msgstr "Įrašyti vieną ISO"
-
-#: usr/lib/usb-creator/usbcreator.py:86
-msgid "Write a single ISO to USB using dd"
-msgstr "Įrašyti į USB vieną ISO, naudojant dd"
-
-#: usr/lib/usb-creator/usbcreator.py:87
-msgid "Remove"
-msgstr "Šalinti"
-
-#: usr/lib/usb-creator/usbcreator.py:88
-msgid "Refresh device list"
-msgstr "Iš naujo įkelti įrenginių sąrašą"
-
-#: usr/lib/usb-creator/usbcreator.py:89
-msgid "Unmount device"
-msgstr "Atjungti įrenginį"
-
-#: usr/lib/usb-creator/usbcreator.py:90
-msgid "Browse for ISO file"
-msgstr "Naršyti ISO failą"
-
-#: usr/lib/usb-creator/usbcreator.py:91
-msgid "Clear the ISO field"
-msgstr "Išvalyti ISO lauką"
-
-#: usr/lib/usb-creator/usbcreator.py:92
-msgid "Manual"
-msgstr "Rankinis"
-
-#: usr/lib/usb-creator/usbcreator.py:93
-msgid ""
-"Manually select the distribution name if USB Creator cannot\n"
-"determine the distribution name automatically."
-msgstr ""
-"Jeigu USB kūrėjas negali automatiškai aptikti platinimo pavadinimo,\n"
-"rankiniu būdu pasirinkite platinimo pavadinimą."
-
-#: usr/lib/usb-creator/usbcreator.py:97
-msgid "Copy ISO to USB..."
-msgstr "Kopijuoti ISO į USB..."
-
-#: usr/lib/usb-creator/usbcreator.py:101
-msgid "Prepare copy of ISO..."
-msgstr "Ruošiamas ISO kopijavimas..."
-
-#: usr/lib/usb-creator/usbcreator.py:102
-msgid "Verify hash of ISO..."
-msgstr "Patikrinti ISO maišą..."
-
-#: usr/lib/usb-creator/usbcreator.py:103
-msgid "Install Grub..."
-msgstr "Įdiegti Grub..."
-
-#: usr/lib/usb-creator/usbcreator.py:104
-msgid "Unpacking ISO..."
-msgstr "Išpakuojamas ISO..."
-
-#: usr/lib/usb-creator/usbcreator.py:105
-msgid "Gather ISO information..."
-msgstr "Gaunama ISO informacija..."
-
-#: usr/lib/usb-creator/usbcreator.py:149
-msgid "Version"
-msgstr "Versija"
-
-#: usr/lib/usb-creator/usbcreator.py:164
-msgid ""
-"Cannot add ISO from path: {}.\n"
-"Please, remove the ISO path or browse for an existing ISO."
-msgstr ""
-"Nepavyksta pridėti ISO iš kelio: {}.\n"
-"Prašome pašalinti ISO kelią arba naršyti esamą ISO."
-
-#: usr/lib/usb-creator/usbcreator.py:172
-msgid ""
-"There is not enough space available on the pen drive.\n"
-"Please, remove unneeded files before continuing."
-msgstr ""
-"Atmintuke nėra pakankamai prieinamos vietos.\n"
-"Prieš tęsiant, prašome pašalinti nereikalingus failus."
-
-#: usr/lib/usb-creator/usbcreator.py:201
-msgid "Are you sure you want to remove the selected ISO from the device?"
-msgstr "Ar tikrai norite pašalinti pasirinktą ISO iš įrenginio?"
-
-#: usr/lib/usb-creator/usbcreator.py:222
-msgid "Select ISO"
-msgstr "Pasirinkite ISO"
-
-#: usr/lib/usb-creator/usbcreator.py:279
-msgid "Unmount"
-msgstr "Atjungti"
-
-#: usr/lib/usb-creator/usbcreator.py:284
-msgid "You can now safely remove the device."
-msgstr "Dabar, galite saugiai pašalinti įrenginį."
-
-#: usr/lib/usb-creator/usbcreator.py:286
-msgid ""
-"Could not unmount the device.\n"
-"Please unmount the device manually."
-msgstr ""
-"Nepavyko atjungti įrenginio.\n"
-"Prašome atjungti įrenginį rankiniu būdu."
-
-#: usr/lib/usb-creator/usbcreator.py:324
-msgid ""
-"No partition found.\n"
-"Please format the USB before you continue."
-msgstr ""
-"Nerasta jokio skaidinio.\n"
-"Prieš tęsdami, suformatuokite USB."
-
-#: usr/lib/usb-creator/usbcreator.py:326
-msgid "No Partition"
-msgstr "Nėra skaidinio"
-
-#: usr/lib/usb-creator/usbcreator.py:563
-msgid "Error"
-msgstr "Klaida"
-
-#: usr/lib/usb-creator/usbcreator.py:566
-msgid "Wrong arguments were passed."
-msgstr "Buvo perduoti neteisingi argumentai."
-
-#: usr/lib/usb-creator/usbcreator.py:568
-msgid "The device was not found."
-msgstr "Įrenginys nebuvo rastas."
-
-#: usr/lib/usb-creator/usbcreator.py:570
-msgid "The device is not detachable."
-msgstr "Šis įrenginys nėra atskiriamas."
-
-#: usr/lib/usb-creator/usbcreator.py:572
-msgid "The device has no partition."
-msgstr "Įrenginyje nėra skaidinio"
-
-#: usr/lib/usb-creator/usbcreator.py:574
-msgid "Unable to mount the device."
-msgstr "Nepavyko prijungti įrenginio."
-
-#: usr/lib/usb-creator/usbcreator.py:576
-msgid "Given ISO path was not found."
-msgstr "Nurodytas ISO kelias nebuvo rastas."
-
-#: usr/lib/usb-creator/usbcreator.py:578
-msgid ""
-"ISO too large for FAT formatted USB (max 4GB).\n"
-"Format the USB to exFAT, NTFS, ext4, etc."
-msgstr ""
-"ISO failas per didelis FAT suformatuotam USB atmintukui (maks. 4GB).\n"
-"Suformatuokite USB į exFAT, NTFS, ext4 ir t.t."
-
-#: usr/lib/usb-creator/usbcreator.py:581
-msgid "There is not enough space available on the device."
-msgstr "Įrenginyje nėra pakankamai prieinamos vietos."
-
-#: usr/lib/usb-creator/usbcreator.py:583
-msgid ""
-"Unable to determine the distribution name.\n"
-"Select a distribution in the 'Manual' section."
-msgstr ""
-"Nepavyko nustatyti platinimo pavadinimo.\n"
-"Pasirinkite platinimą \"Rankinis\" sekcijoje."
-
-#: usr/lib/usb-creator/usbcreator.py:586
-msgid "Cannot find the target ISO file. Did you insert the USB?"
-msgstr "Nepavyksta rasti paskirties ISO failo. Ar įkišote USB įrenginį?"
-
-#: usr/lib/usb-creator/usbcreator.py:588
-msgid "Hash mismatch."
-msgstr "Maišų neatitikimas."
-
-#: usr/lib/usb-creator/usbcreator.py:590
-msgid "Copy of ISO failed."
-msgstr "ISO kopijavimas patyrė nesėkmę."
-
-#: usr/lib/usb-creator/usbcreator.py:592
-msgid "Device is in use by another application."
-msgstr "Įrenginys yra naudojamas kitos programos."
-
-#: usr/lib/usb-creator/usbcreator.py:594
-msgid ""
-"An unknown error accured.\n"
-"Please, visit our forum for support: https://forums.solydxk.com"
-msgstr ""
-"Įvyko nežinoma klaida.\n"
-"Norėdami gauti palaikymą, apsilankykite mūsų forume: https://forums.solydxk."
-"com"
-
-#: usr/lib/usb-creator/usbcreator.py:598
-msgid "The USB was successfully written."
-msgstr "USB buvo sėkmingai įrašytas."
-
-#: usr/lib/usb-creator/usbcreator.py:599
-msgid "Finished"
-msgstr "Užbaigta"
-
-#: usr/lib/usb-creator/main.py:49
+#: usb-creator/__init__.py:51
 msgid "Unexpected error"
-msgstr "Netikėta klaida"
+msgstr ""
 
-#: usr/lib/usb-creator/main.py:50
+#: usb-creator/__init__.py:52
 msgid ""
 "USB Creator has failed with the following unexpected error. Please submit a "
 "bug report!"
 msgstr ""
-"USB kūrėjas patyrė nesėkmę su šia netikėta klaida. Prašome pranešti apie "
-"klaidą!"
 
-#: usr/share/applications/usb-creator.desktop.in.h:2
-msgid "Create a multi-boot USB"
-msgstr "Sukurti keleriopo paleidimo USB"
-
-#: usr/share/solid/actions/usb-constructor-openusb.desktop.in.h:1
-msgid "Create a multi-boot USB with the USB Creator"
-msgstr "Sukurti keleriopo paleidimo USB, naudojant USB kūrėją"
-
-#. (itstool) path: action/message
-#: usr/share/polkit-1/actions/com.solydxk.pkexec.usb-creator.tmp-sh.policy:8
-msgid "USB Creator requires authentication to install Grub on your device"
+#: usb-creator/usbcreator.py:78 data/usb-creator.desktop.in.h:1
+msgid "USB Creator"
 msgstr ""
-"Norint įdiegti jūsų įrenginyje Grub, USB kūrėjas reikalauja nustatyti "
-"tapatybę"
+
+#: usb-creator/usbcreator.py:79
+msgid "Device"
+msgstr ""
+
+#: usb-creator/usbcreator.py:80
+msgid "Partition device"
+msgstr ""
+
+#: usb-creator/usbcreator.py:81
+msgid "This will remove all data from the device."
+msgstr ""
+
+#: usb-creator/usbcreator.py:82
+msgid "USB"
+msgstr ""
+
+#: usb-creator/usbcreator.py:83
+msgid "Available"
+msgstr ""
+
+#: usb-creator/usbcreator.py:84
+msgid "Required"
+msgstr ""
+
+#: usb-creator/usbcreator.py:85
+msgid "Execute"
+msgstr ""
+
+#: usb-creator/usbcreator.py:86
+msgid "ISO"
+msgstr ""
+
+#: usb-creator/usbcreator.py:87
+msgid "Write single ISO"
+msgstr ""
+
+#: usb-creator/usbcreator.py:88
+msgid "Write a single ISO to USB using dd"
+msgstr ""
+
+#: usb-creator/usbcreator.py:89
+msgid "Remove"
+msgstr ""
+
+#: usb-creator/usbcreator.py:90
+msgid "Refresh device list"
+msgstr ""
+
+#: usb-creator/usbcreator.py:91
+msgid "Unmount device"
+msgstr ""
+
+#: usb-creator/usbcreator.py:92
+msgid "Browse for ISO file"
+msgstr ""
+
+#: usb-creator/usbcreator.py:93
+msgid "Clear the ISO field"
+msgstr ""
+
+#: usb-creator/usbcreator.py:94
+msgid "Manual"
+msgstr ""
+
+#: usb-creator/usbcreator.py:95
+msgid ""
+"Manually select the distribution name if USB Creator cannot\n"
+"determine the distribution name automatically."
+msgstr ""
+
+#: usb-creator/usbcreator.py:99
+msgid "Copy ISO to USB..."
+msgstr ""
+
+#: usb-creator/usbcreator.py:103
+msgid "Prepare copy of ISO..."
+msgstr ""
+
+#: usb-creator/usbcreator.py:104
+msgid "Verify hash of ISO..."
+msgstr ""
+
+#: usb-creator/usbcreator.py:105
+msgid "Install Grub..."
+msgstr ""
+
+#: usb-creator/usbcreator.py:106
+msgid "Unpacking ISO..."
+msgstr ""
+
+#: usb-creator/usbcreator.py:107
+msgid "Gather ISO information..."
+msgstr ""
+
+#: usb-creator/usbcreator.py:151
+msgid "Version"
+msgstr ""
+
+#: usb-creator/usbcreator.py:166
+msgid ""
+"Cannot add ISO from path: {}.\n"
+"Please, remove the ISO path or browse for an existing ISO."
+msgstr ""
+
+#: usb-creator/usbcreator.py:174
+msgid ""
+"There is not enough space available on the pen drive.\n"
+"Please, remove unneeded files before continuing."
+msgstr ""
+
+#: usb-creator/usbcreator.py:203
+msgid "Are you sure you want to remove the selected ISO from the device?"
+msgstr ""
+
+#: usb-creator/usbcreator.py:224
+msgid "Select ISO"
+msgstr ""
+
+#: usb-creator/usbcreator.py:281
+msgid "Unmount"
+msgstr ""
+
+#: usb-creator/usbcreator.py:286
+msgid "You can now safely remove the device."
+msgstr ""
+
+#: usb-creator/usbcreator.py:288
+msgid ""
+"Could not unmount the device.\n"
+"Please unmount the device manually."
+msgstr ""
+
+#: usb-creator/usbcreator.py:326
+msgid ""
+"No partition found.\n"
+"Please format the USB before you continue."
+msgstr ""
+
+#: usb-creator/usbcreator.py:328
+msgid "No Partition"
+msgstr ""
+
+#: usb-creator/usbcreator.py:565
+msgid "Error"
+msgstr ""
+
+#: usb-creator/usbcreator.py:568
+msgid "Wrong arguments were passed."
+msgstr ""
+
+#: usb-creator/usbcreator.py:570
+msgid "The device was not found."
+msgstr ""
+
+#: usb-creator/usbcreator.py:572
+msgid "The device is not detachable."
+msgstr ""
+
+#: usb-creator/usbcreator.py:574
+msgid "The device has no partition."
+msgstr ""
+
+#: usb-creator/usbcreator.py:576
+msgid "Unable to mount the device."
+msgstr ""
+
+#: usb-creator/usbcreator.py:578
+msgid "Given ISO path was not found."
+msgstr ""
+
+#: usb-creator/usbcreator.py:580
+msgid ""
+"ISO too large for FAT formatted USB (max 4GB).\n"
+"Format the USB to exFAT, NTFS, ext4, etc."
+msgstr ""
+
+#: usb-creator/usbcreator.py:583
+msgid "There is not enough space available on the device."
+msgstr ""
+
+#: usb-creator/usbcreator.py:585
+msgid ""
+"Unable to determine the distribution name.\n"
+"Select a distribution in the 'Manual' section."
+msgstr ""
+
+#: usb-creator/usbcreator.py:588
+msgid "Cannot find the target ISO file. Did you insert the USB?"
+msgstr ""
+
+#: usb-creator/usbcreator.py:590
+msgid "Hash mismatch."
+msgstr ""
+
+#: usb-creator/usbcreator.py:592
+msgid "Copy of ISO failed."
+msgstr ""
+
+#: usb-creator/usbcreator.py:594
+msgid "Device is in use by another application."
+msgstr ""
+
+#: usb-creator/usbcreator.py:596
+msgid "An unknown error has occurred."
+msgstr ""
+
+#: usb-creator/usbcreator.py:599
+msgid "The USB was successfully written."
+msgstr ""
+
+#: usb-creator/usbcreator.py:600
+msgid "Finished"
+msgstr ""
+
+#: data/usb-creator.desktop.in.h:2
+msgid "Create a multi-boot USB"
+msgstr ""
+
+#: data/usb-constructor-openusb.desktop.in.h:1
+msgid "Create a multi-boot USB with the USB Creator"
+msgstr ""
 
 #: po/en/help.html%2Bhtml.body.h1:8-2
 msgid "USB Creator Help"
@@ -338,10 +310,10 @@ msgid "You can also use the USB Creator from the terminal."
 msgstr "Taip pat galite naudoti USB kūrėją terminale."
 
 #: po/en/help.html%2Bhtml.body.div.p:20-3
-msgid "See \"usb-creator -h\" for a list of all available options."
+msgid "See \"man usb-creator\" for a list of all available options."
 msgstr ""
-"Norėdami pamatyti visų prieinamų parametrų sąrašą, žiūrėkite \"usb-creator -h"
-"\"."
+"Norėdami pamatyti visų prieinamų parametrų sąrašą, žiūrėkite \"man usb-"
+"creator\"."
 
 #: po/en/help.html%2Bhtml.body.div.h2:22-3
 msgid "Your ISO is not booting?"
@@ -365,22 +337,7 @@ msgstr ""
 "Jei vis dar negalite paleisti savo ISO, galite konfigūruoti meniu savo "
 "atmintuke: /boot/grub/grub.cfg"
 
-#: po/en/help.html%2Bhtml.body.div.p:25-3
-msgid ""
-"Please help improve this application by adapting grub.cfg until the ISO "
-"boots and post your changes on <a href=\"https://github.com/SolydXK/usb-"
-"creator\" target=\"_blank\">GitHub</a> or our <a href=\"https://forums."
-"solydxk.com\" target=\"_blank\">forum</a>."
+#. (itstool) path: action/message
+#: data/org.debian.pkexec.usb-creator.tmp-sh.policy:8
+msgid "USB Creator requires authentication to install Grub on your device"
 msgstr ""
-"Padėkite mums tobulinti šią programą, pritaikydami grub.cfg iki tol, kol "
-"pasileidžia ISO ir pateikite savo pakeitimus <a href=\"https://github.com/"
-"SolydXK/usb-creator\" target=\"_blank\">GitHub</a> svetainėje ar mūsų <a "
-"href=\"https://forums.solydxk.com\" target=\"_blank\">forume</a>."
-
-#: po/en/help.html%2Bhtml.body.div.p:26-3
-msgid ""
-"Don't forget to attach the log file when you post an issue on our forum: ~/."
-"usb-creator/usb-creator.log"
-msgstr ""
-"Pranešdami mūsų forume apie klaidą, nepamirškite pridėti žurnalo failą: ~/."
-"usb-creator/usb-creator.log"

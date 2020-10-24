@@ -28,8 +28,8 @@ if [ -z "$1" ] || [ "$1" == '-v' ] || [ "$1" == '--verbose' ]; then
         if [ "$1" == '-v' ] || [ "$1" == '--verbose' ]; then
             DEBUG='-Wd' 
         fi
-        echo "python3 ${DEBUG} /usr/lib/usb-creator/main.py \"$@\""
-        python3 ${DEBUG} /usr/lib/usb-creator/main.py "$@"
+        echo "python3 ${DEBUG} -c \"import importlib; uc = importlib.import_module('usb-creator'); uc.main() $@\""
+        python3 ${DEBUG} -c "import importlib; uc = importlib.import_module('usb-creator'); uc.main() $@"
     fi
     exit 0
 fi
@@ -42,7 +42,7 @@ VMLINUZPTRNS='vmlinuz* bzImage* linux* generic* gentoo* kernel*'
 INITRDPTRNS='init* *.img *.*gz *.*lz *.xz'
 
 # Global variables
-FILESDIR='/usr/share/usb-creator/files'
+FILESDIR='/usr/share/usb-creator'
 TMPBASH='/tmp/usb-creator-tmp.sh'
 REMOVE=false
 FORCE=false

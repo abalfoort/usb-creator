@@ -1,5 +1,5 @@
 #. (itstool) path: action/message
-#: ./usr/share/polkit-1/actions/com.solydxk.pkexec.usb-creator.tmp-sh.policy:8
+#: ./data/org.debian.pkexec.usb-creator.tmp-sh.policy:8
 msgid "USB Creator requires authentication to install Grub on your device"
 msgstr ""
 

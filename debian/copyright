@@ -1,7 +1,7 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: usb-creator
 Upstream-Contact: Arjen Balfoort <arjenbalfoort@solydxk.com>
-Source: <https://github.com/SolydXK/usb-creator>
+Source: <https://gitlab.com/abalfoort/usb-creator>
 
 Files: *
 Copyright: 2014 Arjen Balfoort <arjenbalfoort@solydxk.com>

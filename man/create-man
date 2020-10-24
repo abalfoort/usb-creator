@@ -1,0 +1,4 @@
+#!/bin/bash
+
+pandoc -s -t man usb-creator.1.md -o usb-creator.1
+man ./usb-creator.1

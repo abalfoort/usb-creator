@@ -14,13 +14,10 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 # Distro families to save
 FAMILIES='Ubuntu Debian Manjaro Arch CentOS Fedora Gentoo Mandriva openSUSE Puppy Slackware Solaris'
 
-SAVEPATH="$DIR/usr/share/usb-creator/files/distributions/families"
+SAVEPATH="$DIR/data/files/distributions/families"
 
 # Source extras
 . "$DIR/families-extra"
-
-# Remove directory structure
-#find . -type d -delete
 
 # Initiate families file
 echo "FAMILIES=\"${FAMILIES,,} independent\"" > "$SAVEPATH.tmp"
@@ -59,7 +56,7 @@ done
 
 if $SAVEFILE; then
     # Add independent distributions
-    IND=$(ls "./usr/share/usb-creator/files/distributions/independent" | tr '\r\n' ' ' | sed 's/ *$//')
+    IND=$(ls "./data/files/distributions/independent" | tr '\r\n' ' ' | sed 's/ *$//')
     echo "INDEPENDENT=\"$IND\"" | tee -a "$SAVEPATH.tmp"
     echo
     mv -vf "$SAVEPATH.tmp" "$SAVEPATH"

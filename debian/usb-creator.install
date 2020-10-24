@@ -1,5 +1,6 @@
-usr
-po/mo/*          usr/share/locale/
-po/link          usr/share/usb-creator/html/
-po/en            usr/share/usb-creator/html/
-po/translated/*  usr/share/usb-creator/html/
+data/files/*           usr/share/usb-creator/
+data/buttons        usr/share/usb-creator/
+po/mo/*               usr/share/locale/
+po/link                  usr/share/usb-creator/html/
+po/en                    usr/share/usb-creator/html/
+po/translated/*    usr/share/usb-creator/html/

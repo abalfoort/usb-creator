@@ -9,20 +9,22 @@ gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk, GLib
 from os.path import join, abspath, dirname, basename, islink, \
                     splitext, exists, expanduser, isdir, getsize
-from utils import ExecuteThreadedCommands, getoutput, \
-                  shell_exec, getPackageVersion, get_user_home, \
-                  get_fuzzy_ratio
 import os
 import re
 from glob import glob
 from datetime import datetime
-from dialogs import MessageDialog, ErrorDialog, WarningDialog, \
-                    SelectFileDialog, QuestionDialog
-from combobox import ComboBoxHandler
-from treeview import TreeViewHandler
 from queue import Queue
-from logger import Logger
-from udisks2 import Udisks2
+
+# Local imports
+from .utils import ExecuteThreadedCommands, getoutput, \
+                              shell_exec, getPackageVersion, get_user_home, \
+                              get_fuzzy_ratio
+from .dialogs import MessageDialog, ErrorDialog, WarningDialog, \
+                                   SelectFileDialog, QuestionDialog
+from .combobox import ComboBoxHandler
+from .treeview import TreeViewHandler
+from .logger import Logger
+from .udisks2 import Udisks2
 
 # i18n: http://docs.python.org/3/library/gettext.html
 import gettext
@@ -39,7 +41,7 @@ class USBCreator(object):
         # Load window and widgets
         self.scriptName = basename(__file__)
         self.scriptDir = abspath(dirname(__file__))
-        self.mediaDir = join(self.scriptDir, '../../share/usb-creator')
+        self.mediaDir = '/usr/share/usb-creator'
         self.builder = Gtk.Builder()
         self.builder.add_from_file(join(self.mediaDir, 'usb-creator.glade'))
 
@@ -496,7 +498,7 @@ class USBCreator(object):
 
     def get_logos(self):
         logos_dict = {}
-        logos_path = join(self.mediaDir, 'files/grub/themes/usb-creator/icons')
+        logos_path = join(self.mediaDir, 'grub/themes/usb-creator/icons')
         logos = glob(join(logos_path, '*.png'))
         for logo in logos:
             key = splitext(basename(logo))[0]
@@ -591,8 +593,7 @@ class USBCreator(object):
                 elif ret == 13:
                     ErrorDialog(title, _("Device is in use by another application."))
                 else:
-                    msg = _("An unknown error accured.\n"
-                            "Please, visit our forum for support: https://forums.solydxk.com")
+                    msg = _("An unknown error has occurred.")
                     ErrorDialog(title, msg)
             else:
                 msg = _("The USB was successfully written.")
