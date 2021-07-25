@@ -75,7 +75,8 @@ class USBCreator(object):
         self.statusbar = go("statusbar")
 
         # Translations
-        self.window.set_title(_("USB Creator"))
+        self.title = "USB Creator"
+        self.window.set_title(self.title)
         self.lblDevice.set_label(_("Device"))
         self.lblPartition.set_label(_("Partition device"))
         self.lblPartition.set_tooltip_text(_("This will remove all data from the device."))
@@ -92,8 +93,8 @@ class USBCreator(object):
         self.btnBrowseIso.set_tooltip_text(_("Browse for ISO file"))
         self.btnClear.set_tooltip_text(_("Clear the ISO field"))
         self.lblForceDistro.set_label(_("Manual"))
-        self.lblForceDistro.set_tooltip_text(_("Manually select the distribution name if USB Creator cannot\n"
-                                               "determine the distribution name automatically."))
+        self.lblForceDistro.set_tooltip_text(_("Manually select the distribution name if {title} cannot\n"
+                                               "determine the distribution name automatically.".format(title=self.title)))
 
         # Log lines to show: check string, 0=pulse, 1=get percentage, show line (translatable)
         copy_string = _("Copy ISO to USB...")
