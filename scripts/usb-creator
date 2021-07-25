@@ -737,7 +737,7 @@ else
 
     if ! $UNPACKED; then
         # Rsync the ISO and check the progress
-        echo "Copy $ISO to $PARTITION/$OSNAME" | tee -a "$LOG"
+        echo "Copy $ISO to $MOUNT" | tee -a "$LOG"
         # Get bytes to write from the ISO
         SRC=$(stat --printf %s "$ISO")
         STATVAL=0
