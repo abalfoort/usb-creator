@@ -49,9 +49,6 @@ update:
 	# Make distro families list
 	./get-distro-families.sh
 
-	# Push pot file to Transifex
-	tx push -s
-
 	# Get translations from Transifex
 	tx pull -a
 
@@ -131,3 +128,6 @@ update:
 			rm -rvf "$${D}"; \
 		fi; \
 	done && echo "HTML files scanned for translations"
+	
+	# Push pot file to Transifex
+	tx push -s
