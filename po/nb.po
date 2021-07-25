@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usb-creator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-24 19:17+0200\n"
+"POT-Creation-Date: 2020-11-02 11:40+0100\n"
 "PO-Revision-Date: 2018-11-04 13:20+0000\n"
 "Last-Translator: Arjen Balfoort <arjenbalfoort@solydxk.com>\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/solydxk/usb-"
@@ -33,114 +33,111 @@ msgstr ""
 "USB Creator har mislyktes med følgende uventet feil. Vær snill å send en "
 "feilrapport!"
 
-#: usb-creator/usbcreator.py:78 data/usb-creator.desktop.in.h:1
-msgid "USB Creator"
-msgstr "USB Creator"
-
-#: usb-creator/usbcreator.py:79
+#: usb-creator/usbcreator.py:80
 msgid "Device"
 msgstr "Enhet"
 
-#: usb-creator/usbcreator.py:80
+#: usb-creator/usbcreator.py:81
 #, fuzzy
 msgid "Partition device"
 msgstr "Reparer enhet"
 
-#: usb-creator/usbcreator.py:81
+#: usb-creator/usbcreator.py:82
 msgid "This will remove all data from the device."
 msgstr ""
 
-#: usb-creator/usbcreator.py:82
+#: usb-creator/usbcreator.py:83
 msgid "USB"
 msgstr "USB"
 
-#: usb-creator/usbcreator.py:83
+#: usb-creator/usbcreator.py:84
 msgid "Available"
 msgstr "Tilgjenegelig"
 
-#: usb-creator/usbcreator.py:84
+#: usb-creator/usbcreator.py:85
 msgid "Required"
 msgstr "Påkrevd"
 
-#: usb-creator/usbcreator.py:85
+#: usb-creator/usbcreator.py:86
 msgid "Execute"
 msgstr "Utfør"
 
-#: usb-creator/usbcreator.py:86
+#: usb-creator/usbcreator.py:87
 msgid "ISO"
 msgstr "ISO"
 
-#: usb-creator/usbcreator.py:87
+#: usb-creator/usbcreator.py:88
 msgid "Write single ISO"
 msgstr ""
 
-#: usb-creator/usbcreator.py:88
+#: usb-creator/usbcreator.py:89
 msgid "Write a single ISO to USB using dd"
 msgstr ""
 
-#: usb-creator/usbcreator.py:89
+#: usb-creator/usbcreator.py:90
 msgid "Remove"
 msgstr ""
 
-#: usb-creator/usbcreator.py:90
+#: usb-creator/usbcreator.py:91
 msgid "Refresh device list"
 msgstr "Oppdater enhetslisten"
 
-#: usb-creator/usbcreator.py:91
+#: usb-creator/usbcreator.py:92
 msgid "Unmount device"
 msgstr "Avmonter enheten"
 
-#: usb-creator/usbcreator.py:92
+#: usb-creator/usbcreator.py:93
 msgid "Browse for ISO file"
 msgstr "Bla etter ISO fil"
 
-#: usb-creator/usbcreator.py:93
+#: usb-creator/usbcreator.py:94
 msgid "Clear the ISO field"
 msgstr "Tøm ISO-feltet"
 
-#: usb-creator/usbcreator.py:94
+#: usb-creator/usbcreator.py:95
 msgid "Manual"
 msgstr ""
 
-#: usb-creator/usbcreator.py:95
+#: usb-creator/usbcreator.py:96
+#, python-brace-format
 msgid ""
-"Manually select the distribution name if USB Creator cannot\n"
+"Manually select the distribution name if {title} cannot\n"
 "determine the distribution name automatically."
 msgstr ""
 
-#: usb-creator/usbcreator.py:99
+#: usb-creator/usbcreator.py:100
 msgid "Copy ISO to USB..."
 msgstr ""
 
-#: usb-creator/usbcreator.py:103
+#: usb-creator/usbcreator.py:104
 #, fuzzy
 msgid "Prepare copy of ISO..."
 msgstr "Sjekk ISO-ens hash..."
 
-#: usb-creator/usbcreator.py:104
+#: usb-creator/usbcreator.py:105
 #, fuzzy
 msgid "Verify hash of ISO..."
 msgstr "Sjekk ISO-ens hash..."
 
-#: usb-creator/usbcreator.py:105
+#: usb-creator/usbcreator.py:106
 #, fuzzy
 msgid "Install Grub..."
 msgstr "Installerer Grub..."
 
-#: usb-creator/usbcreator.py:106
+#: usb-creator/usbcreator.py:107
 #, fuzzy
 msgid "Unpacking ISO..."
 msgstr "Begynn å kopiere ISO..."
 
-#: usb-creator/usbcreator.py:107
+#: usb-creator/usbcreator.py:108
 msgid "Gather ISO information..."
 msgstr ""
 
-#: usb-creator/usbcreator.py:151
+#: usb-creator/usbcreator.py:152
 msgid "Version"
 msgstr "Versjon"
 
-#: usb-creator/usbcreator.py:166
+#: usb-creator/usbcreator.py:167
 msgid ""
 "Cannot add ISO from path: {}.\n"
 "Please, remove the ISO path or browse for an existing ISO."
@@ -148,7 +145,7 @@ msgstr ""
 "Kan ikke legge til ISO fra sti {}\n"
 "Vennligst fjern stien til ISO-en eller bla for en eksisterende ISO."
 
-#: usb-creator/usbcreator.py:174
+#: usb-creator/usbcreator.py:175
 msgid ""
 "There is not enough space available on the pen drive.\n"
 "Please, remove unneeded files before continuing."
@@ -156,23 +153,23 @@ msgstr ""
 "Det er ikke nok plass på den flyttbare enheten.\n"
 "Vennligst, fjern unødvendige filer før du fortsetter."
 
-#: usb-creator/usbcreator.py:203
+#: usb-creator/usbcreator.py:204
 msgid "Are you sure you want to remove the selected ISO from the device?"
 msgstr "Er du sikker på at du ønsker å fjerne den valgte ISOen fra enheten."
 
-#: usb-creator/usbcreator.py:224
+#: usb-creator/usbcreator.py:225
 msgid "Select ISO"
 msgstr "Velg ISO"
 
-#: usb-creator/usbcreator.py:281
+#: usb-creator/usbcreator.py:282
 msgid "Unmount"
 msgstr "Avmonter"
 
-#: usb-creator/usbcreator.py:286
+#: usb-creator/usbcreator.py:287
 msgid "You can now safely remove the device."
 msgstr "Du kan trygt fjerne enheten."
 
-#: usb-creator/usbcreator.py:288
+#: usb-creator/usbcreator.py:289
 msgid ""
 "Could not unmount the device.\n"
 "Please unmount the device manually."
@@ -180,94 +177,98 @@ msgstr ""
 "Kunne ikke avmontere enheten.\n"
 "Vennligst avmonter enheten manuelt."
 
-#: usb-creator/usbcreator.py:326
+#: usb-creator/usbcreator.py:327
 msgid ""
 "No partition found.\n"
 "Please format the USB before you continue."
 msgstr ""
 
-#: usb-creator/usbcreator.py:328
+#: usb-creator/usbcreator.py:329
 #, fuzzy
 msgid "No Partition"
 msgstr "Reparer enhet"
 
-#: usb-creator/usbcreator.py:565
+#: usb-creator/usbcreator.py:566
 msgid "Error"
 msgstr ""
 
-#: usb-creator/usbcreator.py:568
+#: usb-creator/usbcreator.py:569
 #, fuzzy
 msgid "Wrong arguments were passed."
 msgstr "Feil argumenter ble sendt til USB Creator"
 
-#: usb-creator/usbcreator.py:570
+#: usb-creator/usbcreator.py:571
 #, fuzzy
 msgid "The device was not found."
 msgstr "Enheten har ikke noen fat32 partisjon"
 
-#: usb-creator/usbcreator.py:572
+#: usb-creator/usbcreator.py:573
 #, fuzzy
 msgid "The device is not detachable."
 msgstr "Enheten har ikke installert noen oppstartlaster."
 
-#: usb-creator/usbcreator.py:574
+#: usb-creator/usbcreator.py:575
 #, fuzzy
 msgid "The device has no partition."
 msgstr "Enheten har ikke noen fat32 partisjon"
 
-#: usb-creator/usbcreator.py:576
+#: usb-creator/usbcreator.py:577
 msgid "Unable to mount the device."
 msgstr "Ikke i stand til å montere enheten."
 
-#: usb-creator/usbcreator.py:578
+#: usb-creator/usbcreator.py:579
 msgid "Given ISO path was not found."
 msgstr "Angitte sti til ISO ble ikke funnet."
 
-#: usb-creator/usbcreator.py:580
+#: usb-creator/usbcreator.py:581
 msgid ""
 "ISO too large for FAT formatted USB (max 4GB).\n"
 "Format the USB to exFAT, NTFS, ext4, etc."
 msgstr ""
 
-#: usb-creator/usbcreator.py:583
+#: usb-creator/usbcreator.py:584
 msgid "There is not enough space available on the device."
 msgstr "Det er ikke nok plass tilgjengelig på enheten."
 
-#: usb-creator/usbcreator.py:585
+#: usb-creator/usbcreator.py:586
 #, fuzzy
 msgid ""
 "Unable to determine the distribution name.\n"
 "Select a distribution in the 'Manual' section."
 msgstr "Ikke i stand til å montere enheten."
 
-#: usb-creator/usbcreator.py:588
+#: usb-creator/usbcreator.py:589
 msgid "Cannot find the target ISO file. Did you insert the USB?"
 msgstr ""
 
-#: usb-creator/usbcreator.py:590
+#: usb-creator/usbcreator.py:591
 msgid "Hash mismatch."
 msgstr "Feil i hash."
 
-#: usb-creator/usbcreator.py:592
+#: usb-creator/usbcreator.py:593
 #, fuzzy
 msgid "Copy of ISO failed."
 msgstr "Bla etter ISO fil"
 
-#: usb-creator/usbcreator.py:594
+#: usb-creator/usbcreator.py:595
 msgid "Device is in use by another application."
 msgstr "Enheten er i bruk av et annet program."
 
-#: usb-creator/usbcreator.py:596
+#: usb-creator/usbcreator.py:597
 msgid "An unknown error has occurred."
 msgstr ""
 
-#: usb-creator/usbcreator.py:599
+#: usb-creator/usbcreator.py:600
 msgid "The USB was successfully written."
 msgstr "USB-en ble skrevet uten feil."
 
-#: usb-creator/usbcreator.py:600
+#: usb-creator/usbcreator.py:601
 msgid "Finished"
 msgstr ""
+
+#: data/usb-creator.desktop.in.h:1
+msgid "USB Creator"
+msgstr "USB Creator"
 
 #: data/usb-creator.desktop.in.h:2
 msgid "Create a multi-boot USB"

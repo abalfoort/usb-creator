@@ -3,17 +3,17 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
-# Arjen Balfoort <arjenbalfoort@solydxk.com>, 2018
-# Slobodan Simić <slsimic@gmail.com>, 2017
+# Arjen Balfoort <arjenbalfoort@hotmail.com>, 2018,2020
+# Slobodan Simić <slsimic@gmail.com>, 2017,2020
 # Slobodan Simić <slsimic@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: usb-creator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-24 19:17+0200\n"
-"PO-Revision-Date: 2018-11-04 13:20+0000\n"
-"Last-Translator: Arjen Balfoort <arjenbalfoort@solydxk.com>\n"
-"Language-Team: Serbian (http://www.transifex.com/solydxk/usb-creator/"
+"POT-Creation-Date: 2021-04-14 08:38+0200\n"
+"PO-Revision-Date: 2020-11-19 13:22+0000\n"
+"Last-Translator: Slobodan Simić <slsimic@gmail.com>\n"
+"Language-Team: Serbian (http://www.transifex.com/abalfoort/usb-creator/"
 "language/sr/)\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
@@ -33,114 +33,108 @@ msgid ""
 msgstr ""
 "УСБ стваралац није успео уз следећу неочекивану грешку. Пријавите грешку!"
 
-#: usb-creator/usbcreator.py:78 data/usb-creator.desktop.in.h:1
-msgid "USB Creator"
-msgstr "УСБ стваралац"
-
-#: usb-creator/usbcreator.py:79
+#: usb-creator/usbcreator.py:80
 msgid "Device"
 msgstr "Уређај"
 
-#: usb-creator/usbcreator.py:80
-#, fuzzy
-msgid "Partition device"
-msgstr "Поправи уређај"
-
 #: usb-creator/usbcreator.py:81
-msgid "This will remove all data from the device."
-msgstr ""
+msgid "Partition device"
+msgstr "Партициониши уређај"
 
 #: usb-creator/usbcreator.py:82
+msgid "This will remove all data from the device."
+msgstr "Ово ће уклонити све податке са уређаја."
+
+#: usb-creator/usbcreator.py:83
 msgid "USB"
 msgstr "УСБ"
 
-#: usb-creator/usbcreator.py:83
+#: usb-creator/usbcreator.py:84
 msgid "Available"
 msgstr "Доступно"
 
-#: usb-creator/usbcreator.py:84
+#: usb-creator/usbcreator.py:85
 msgid "Required"
 msgstr "Потребно"
 
-#: usb-creator/usbcreator.py:85
+#: usb-creator/usbcreator.py:86
 msgid "Execute"
 msgstr "Изврши"
 
-#: usb-creator/usbcreator.py:86
+#: usb-creator/usbcreator.py:87
 msgid "ISO"
 msgstr "ИСО"
 
-#: usb-creator/usbcreator.py:87
-msgid "Write single ISO"
-msgstr ""
-
 #: usb-creator/usbcreator.py:88
-msgid "Write a single ISO to USB using dd"
-msgstr ""
+msgid "Write single ISO"
+msgstr "Упиши један ИСО"
 
 #: usb-creator/usbcreator.py:89
-msgid "Remove"
-msgstr ""
+msgid "Write a single ISO to USB using dd"
+msgstr "Уписује један ИСО одраз помоћу dd наредбе"
 
 #: usb-creator/usbcreator.py:90
+msgid "Remove"
+msgstr "Уклони"
+
+#: usb-creator/usbcreator.py:91
 msgid "Refresh device list"
 msgstr "Освежи листу уређаја"
 
-#: usb-creator/usbcreator.py:91
+#: usb-creator/usbcreator.py:92
 msgid "Unmount device"
 msgstr "Демонтирај уређај"
 
-#: usb-creator/usbcreator.py:92
+#: usb-creator/usbcreator.py:93
 msgid "Browse for ISO file"
 msgstr "Тражи ИСО фајл"
 
-#: usb-creator/usbcreator.py:93
+#: usb-creator/usbcreator.py:94
 msgid "Clear the ISO field"
 msgstr "Очисти ИСО поље"
 
-#: usb-creator/usbcreator.py:94
-msgid "Manual"
-msgstr ""
-
 #: usb-creator/usbcreator.py:95
+msgid "Manual"
+msgstr "Ручно"
+
+#: usb-creator/usbcreator.py:96
+#, fuzzy, python-brace-format
 msgid ""
-"Manually select the distribution name if USB Creator cannot\n"
+"Manually select the distribution name if {title} cannot\n"
 "determine the distribution name automatically."
 msgstr ""
+"Ручно изаберите назив дистрибуције уколико УСБ стваралац то не може "
+"аутоматски да утврди."
 
-#: usb-creator/usbcreator.py:99
+#: usb-creator/usbcreator.py:100
 msgid "Copy ISO to USB..."
-msgstr ""
-
-#: usb-creator/usbcreator.py:103
-#, fuzzy
-msgid "Prepare copy of ISO..."
-msgstr "Провера хеша ИСО фајла..."
+msgstr "Копирам ИСО на УСБ..."
 
 #: usb-creator/usbcreator.py:104
-#, fuzzy
-msgid "Verify hash of ISO..."
-msgstr "Провера хеша ИСО фајла..."
+msgid "Prepare copy of ISO..."
+msgstr "Припремам копирање ИСО одраза..."
 
 #: usb-creator/usbcreator.py:105
-#, fuzzy
-msgid "Install Grub..."
-msgstr "Инсталирам ГРУБ"
+msgid "Verify hash of ISO..."
+msgstr "Проверавам хеш ИСО фајла..."
 
 #: usb-creator/usbcreator.py:106
-#, fuzzy
-msgid "Unpacking ISO..."
-msgstr "Покрећем копирање ИСО одраза..."
+msgid "Install Grub..."
+msgstr "Инсталирам ГРУБ..."
 
 #: usb-creator/usbcreator.py:107
-msgid "Gather ISO information..."
-msgstr ""
+msgid "Unpacking ISO..."
+msgstr "Распакујем ИСО..."
 
-#: usb-creator/usbcreator.py:151
+#: usb-creator/usbcreator.py:108
+msgid "Gather ISO information..."
+msgstr "Прикупљам податке ИСО фајла..."
+
+#: usb-creator/usbcreator.py:152
 msgid "Version"
 msgstr "Верзија"
 
-#: usb-creator/usbcreator.py:166
+#: usb-creator/usbcreator.py:167
 msgid ""
 "Cannot add ISO from path: {}.\n"
 "Please, remove the ISO path or browse for an existing ISO."
@@ -148,7 +142,7 @@ msgstr ""
 "Не могу да додам ИСО са путање: {}.\n"
 "Уклоните путању или пронађите постојећи ИСО фајл."
 
-#: usb-creator/usbcreator.py:174
+#: usb-creator/usbcreator.py:175
 msgid ""
 "There is not enough space available on the pen drive.\n"
 "Please, remove unneeded files before continuing."
@@ -156,23 +150,23 @@ msgstr ""
 "Нема довољно простора на флешу.\n"
 "Уклоните непотребне фајлове пре настављања."
 
-#: usb-creator/usbcreator.py:203
+#: usb-creator/usbcreator.py:204
 msgid "Are you sure you want to remove the selected ISO from the device?"
 msgstr "Заиста желите да уклоните изабрани ИСО са уређаја?"
 
-#: usb-creator/usbcreator.py:224
+#: usb-creator/usbcreator.py:225
 msgid "Select ISO"
 msgstr "Избор ИСО одраза"
 
-#: usb-creator/usbcreator.py:281
+#: usb-creator/usbcreator.py:282
 msgid "Unmount"
 msgstr "Демонтирај"
 
-#: usb-creator/usbcreator.py:286
+#: usb-creator/usbcreator.py:287
 msgid "You can now safely remove the device."
 msgstr "Сада можете безбедно уклонити уређај."
 
-#: usb-creator/usbcreator.py:288
+#: usb-creator/usbcreator.py:289
 msgid ""
 "Could not unmount the device.\n"
 "Please unmount the device manually."
@@ -180,94 +174,97 @@ msgstr ""
 "Не могу да демонтирам уређај.\n"
 "Уређај демонтирајте ручно."
 
-#: usb-creator/usbcreator.py:326
+#: usb-creator/usbcreator.py:327
 msgid ""
 "No partition found.\n"
 "Please format the USB before you continue."
 msgstr ""
+"Нема партиција.\n"
+"Форматирајте УСБ пре него што наставите."
 
-#: usb-creator/usbcreator.py:328
-#, fuzzy
+#: usb-creator/usbcreator.py:329
 msgid "No Partition"
-msgstr "Поправи уређај"
+msgstr "Нема партиције"
 
-#: usb-creator/usbcreator.py:565
+#: usb-creator/usbcreator.py:566
 msgid "Error"
-msgstr ""
+msgstr "Грешка"
 
-#: usb-creator/usbcreator.py:568
-#, fuzzy
+#: usb-creator/usbcreator.py:569
 msgid "Wrong arguments were passed."
-msgstr "Погрешни аргументи су дати уз команду usb-creator"
+msgstr "Погрешни аргументи су дати."
 
-#: usb-creator/usbcreator.py:570
-#, fuzzy
+#: usb-creator/usbcreator.py:571
 msgid "The device was not found."
-msgstr "Уређај нема ФАТ32 партицију."
+msgstr "Уређај није пронађен."
 
-#: usb-creator/usbcreator.py:572
-#, fuzzy
+#: usb-creator/usbcreator.py:573
 msgid "The device is not detachable."
-msgstr "Уређај нема инсталиран подизни учитавач."
+msgstr "Уређај није уклоњив."
 
-#: usb-creator/usbcreator.py:574
-#, fuzzy
+#: usb-creator/usbcreator.py:575
 msgid "The device has no partition."
-msgstr "Уређај нема ФАТ32 партицију."
+msgstr "Уређај нема партиције."
 
-#: usb-creator/usbcreator.py:576
+#: usb-creator/usbcreator.py:577
 msgid "Unable to mount the device."
 msgstr "Не могу да монтирам уређај."
 
-#: usb-creator/usbcreator.py:578
+#: usb-creator/usbcreator.py:579
 msgid "Given ISO path was not found."
 msgstr "Наведена ИСО путања није нађена."
 
-#: usb-creator/usbcreator.py:580
+#: usb-creator/usbcreator.py:581
 msgid ""
 "ISO too large for FAT formatted USB (max 4GB).\n"
 "Format the USB to exFAT, NTFS, ext4, etc."
 msgstr ""
+"ИСО одраз је превелик за ФАТ форматирани УСБ (макс.4Gb)\n"
+"Форматирајте УСБ на exFAT, NTFS, ext4 и сл."
 
-#: usb-creator/usbcreator.py:583
+#: usb-creator/usbcreator.py:584
 msgid "There is not enough space available on the device."
 msgstr "Нема довољно простора на уређају."
 
-#: usb-creator/usbcreator.py:585
-#, fuzzy
+#: usb-creator/usbcreator.py:586
 msgid ""
 "Unable to determine the distribution name.\n"
 "Select a distribution in the 'Manual' section."
-msgstr "Не могу да монтирам уређај."
-
-#: usb-creator/usbcreator.py:588
-msgid "Cannot find the target ISO file. Did you insert the USB?"
 msgstr ""
+"Не могу да погодим дистрибуцију на основу ИСО фајла.\n"
+"Изаберите дистрибуцију у одељку „Ручно“."
 
-#: usb-creator/usbcreator.py:590
+#: usb-creator/usbcreator.py:589
+msgid "Cannot find the target ISO file. Did you insert the USB?"
+msgstr "Не могу да нађем ИСО фајл. Јесте ли убацили УСБ?"
+
+#: usb-creator/usbcreator.py:591
 msgid "Hash mismatch."
 msgstr "Хеш се не поклапа."
 
-#: usb-creator/usbcreator.py:592
-#, fuzzy
+#: usb-creator/usbcreator.py:593
 msgid "Copy of ISO failed."
-msgstr "Тражи ИСО фајл"
+msgstr "Неуспело копирање ИСО фајла."
 
-#: usb-creator/usbcreator.py:594
+#: usb-creator/usbcreator.py:595
 msgid "Device is in use by another application."
 msgstr "Уређај користи друга апликација."
 
-#: usb-creator/usbcreator.py:596
+#: usb-creator/usbcreator.py:597
 msgid "An unknown error has occurred."
-msgstr ""
+msgstr "Десила се непозната грешка."
 
-#: usb-creator/usbcreator.py:599
+#: usb-creator/usbcreator.py:600
 msgid "The USB was successfully written."
 msgstr "УСБ је успешно уписан."
 
-#: usb-creator/usbcreator.py:600
+#: usb-creator/usbcreator.py:601
 msgid "Finished"
-msgstr ""
+msgstr "Завршено"
+
+#: data/usb-creator.desktop.in.h:1
+msgid "USB Creator"
+msgstr "УСБ стваралац"
 
 #: data/usb-creator.desktop.in.h:2
 msgid "Create a multi-boot USB"
@@ -311,23 +308,25 @@ msgid ""
 "fat32 boot partition and a second partition for the ISOs in the file system "
 "format of your choosing."
 msgstr ""
+"УСБ стваралац очекује УСБ диск са једном ФАТ32 партицијом или 100МБ ФАТ32 "
+"бут партицијом и другом партицијом за ИСО фајлове форматирану по вашем "
+"избору."
 
 #: po/en/help.html%2Bhtml.body.div.p:16-3
 msgid "Note: a fat32 partition can not hold files larger than 4GB."
-msgstr ""
+msgstr "Напомена: ФАТ32 партиција не може садржати фајлове веће од 4Gb."
 
 #: po/en/help.html%2Bhtml.body.div.h2:18-3
 msgid "Terminal"
-msgstr ""
+msgstr "Терминал"
 
 #: po/en/help.html%2Bhtml.body.div.p:19-3
-#, fuzzy
 msgid "You can also use the USB Creator from the terminal."
-msgstr "УСБ ствараоца можете користити и из терминала. Ево неких примера:"
+msgstr "УСБ ствараоца можете користити и из терминала."
 
 #: po/en/help.html%2Bhtml.body.div.p:20-3
 msgid "See \"man usb-creator\" for a list of all available options."
-msgstr ""
+msgstr "Погледајте „man usb-creator“ за листу свих опција."
 
 #: po/en/help.html%2Bhtml.body.div.h2:22-3
 msgid "Your ISO is not booting?"
@@ -339,126 +338,19 @@ msgid ""
 "manually select the appropriate distribution name from the \"Manual\" drop "
 "down menu."
 msgstr ""
+"Ако се ИСО не подиже са аутоматским утврђивањем назива дистрибуције, ручно "
+"изаберите одговарајући назив из падајућег менија „Ручно“."
 
 #: po/en/help.html%2Bhtml.body.div.p:24-3
-#, fuzzy
 msgid ""
 "If you still cannot boot your ISO you can configure the menu on your flash "
 "drive: /boot/grub/grub.cfg"
 msgstr ""
-"Мени се подешава у фајлу који можете наћи на флешу: /boot/grub/grub.cfg"
+"Ако се и даље ИСО не подиже, мени можете подесити на флеш диску: /boot/grub/"
+"grub.cfg"
 
 #. (itstool) path: action/message
 #: data/org.debian.pkexec.usb-creator.tmp-sh.policy:8
 msgid "USB Creator requires authentication to install Grub on your device"
 msgstr ""
-
-#~ msgid ""
-#~ "An unknown error accured.\n"
-#~ "Please, visit our forum for support: https://forums.solydxk.com"
-#~ msgstr ""
-#~ "Десила се непозната грешка.\n"
-#~ "Посетите наш форум ради подршке: https://forums.solydxk.com"
-
-#, fuzzy
-#~ msgid ""
-#~ "Please help improve this application by adapting grub.cfg until the ISO "
-#~ "boots and post your changes on <a href=\"https://github.com/SolydXK/usb-"
-#~ "creator\" target=\"_blank\">GitHub</a> or our <a href=\"https://forums."
-#~ "solydxk.com\" target=\"_blank\">forum</a>."
-#~ msgstr ""
-#~ "Помозите у побољшавању апликације прилагођавањем grub.cfg фајла док ИСО "
-#~ "не проради и поставите ваше измене на Гитхаб или на нашем <a href="
-#~ "\"https://forums.solydxk.com\" target=\"_blank\">форуму</a>."
-
-#, fuzzy
-#~ msgid ""
-#~ "Don't forget to attach the log file when you post an issue on our forum: "
-#~ "~/.usb-creator/usb-creator.log"
-#~ msgstr ""
-#~ "Не заборавите да приложите и фајл дневника када постављате проблем на наш "
-#~ "форум: /var/log/usb-creator.log"
-
-#~ msgid "Delete"
-#~ msgstr "Обриши"
-
-#~ msgid ""
-#~ "On our <a href=\"https://github.com/SolydXK/usb-creator\" target=\"_blank"
-#~ "\">GitHub</a> page you can see a list of tested distributions but not all "
-#~ "can be booted directly from the ISO file. Check the distribution's forum "
-#~ "if it can be booted directly from the ISO file."
-#~ msgstr ""
-#~ "На нашој <a href=\"https://github.com/SolydXK/usb-creator\" target="
-#~ "\"_blank\">Гитхаб</a> страници можете видети листу тестираних "
-#~ "дистрибуција али не могу се све подизати директно из ИСО фајла. "
-#~ "Погледајте на форуму или страници одређене дистрибуције ако је то случај."
-
-#~ msgid "Hidden features"
-#~ msgstr "Скривене могућности"
-
-#~ msgid ""
-#~ "When you remove the ISO file name from the ISO field, USB Creator will "
-#~ "calculate the space needed for all ISO files in that directory."
-#~ msgstr ""
-#~ "Када уклоните ИСО фајл из ИСО поља, УСБ стваралац ће прорачунати потребан "
-#~ "простор за све ИСО фајлове у том директоријуму."
-
-#~ msgid ""
-#~ "You can change the order in which the ISO files are displayed in the menu "
-#~ "by adding a number in front of the ISO file name, e.g.: \"01-MyDistro-"
-#~ "amd64.iso\"."
-#~ msgstr ""
-#~ "Можете променити редослед по којем ће ИСО фајлови бити поређани додајући "
-#~ "број на почетку назива ИСО фајла, нпр. „01-МојЛинукс-amd64.iso“."
-
-#~ msgid ""
-#~ "Symbolic links are followed but the symbolic links must have the \".iso\" "
-#~ "extension to make it work."
-#~ msgstr ""
-#~ "Симболичке везе се прате али морају имати .iso екстензију да би радиле."
-
-#~ msgid "# usb-creator -d /dev/sdx -f ntfs -i /path/to/my.iso -s"
-#~ msgstr "# usb-creator -d /dev/sdx -f ntfs -i /path/to/my.iso -s"
-
-#~ msgid "# usb-creator -b -g -r"
-#~ msgstr "# usb-creator -b -g -r"
-
-#~ msgid ""
-#~ "This will try to repair an unbootable flash drive that already contains "
-#~ "ISO files."
-#~ msgstr ""
-#~ "Ово ће покушати да поправи флеш који већ има ИСО фајлове али се не подижу."
-
-#~ msgid "# usb-creator -h"
-#~ msgstr "# usb-creator -h"
-
-#~ msgid "This will show all available options and their usage."
-#~ msgstr "Ово ће приказати све доступне опције и њихову употребу."
-
-#~ msgid "Warning: all data will be lost"
-#~ msgstr "Упозорење: сви подаци биће изгубљени"
-
-#~ msgid "Tries to repair an unbootable USB"
-#~ msgstr "Покушај поправке не-бутабилног УСБ-а"
-
-#~ msgid "Partitioning USB..."
-#~ msgstr "Партиционишем УСБ..."
-
-#~ msgid "Searching for bad block"
-#~ msgstr "Тражим лоше блокове"
-
-#~ msgid "Run this application with root permission."
-#~ msgstr "Покрените овај програм за кореним дозволама."
-
-#~ msgid "The device was not found or no device was given."
-#~ msgstr "Уређај није нађен или није задат."
-
-#~ msgid "The device has no bootloader installed."
-#~ msgstr "Уређај нема инсталиран подизни учитавач."
-
-#~ msgid ""
-#~ "Unable to guess distribution from ISO name.\n"
-#~ "Make sure you have the distribution name in the ISO name."
-#~ msgstr ""
-#~ "Не могу да погодим дистрибуцију на основу ИСО фајла.\n"
-#~ "Проверите да ли се назив дистрибуције садржи у називу ИСО фајла."
+"УСБ стваралац захтева аутентификацију због инсталације ГРУБ-а на уређај"

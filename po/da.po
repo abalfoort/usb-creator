@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usb-creator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-24 19:17+0200\n"
+"POT-Creation-Date: 2020-11-02 11:40+0100\n"
 "PO-Revision-Date: 2020-10-22 06:54+0000\n"
 "Last-Translator: Tony Albers\n"
 "Language-Team: Danish (http://www.transifex.com/abalfoort/usb-creator/"
@@ -33,111 +33,108 @@ msgstr ""
 "USB-skaberen er fejlet med følgende uventede fejl. Insend venligst en "
 "fejrapport!"
 
-#: usb-creator/usbcreator.py:78 data/usb-creator.desktop.in.h:1
-msgid "USB Creator"
-msgstr "USB-skaber"
-
-#: usb-creator/usbcreator.py:79
+#: usb-creator/usbcreator.py:80
 msgid "Device"
 msgstr "Enhed"
 
-#: usb-creator/usbcreator.py:80
+#: usb-creator/usbcreator.py:81
 msgid "Partition device"
 msgstr "Partitionér enhed"
 
-#: usb-creator/usbcreator.py:81
+#: usb-creator/usbcreator.py:82
 msgid "This will remove all data from the device."
 msgstr "Dette vil slette al data fra enheden."
 
-#: usb-creator/usbcreator.py:82
+#: usb-creator/usbcreator.py:83
 msgid "USB"
 msgstr "USB"
 
-#: usb-creator/usbcreator.py:83
+#: usb-creator/usbcreator.py:84
 msgid "Available"
 msgstr "Tilgængelig"
 
-#: usb-creator/usbcreator.py:84
+#: usb-creator/usbcreator.py:85
 msgid "Required"
 msgstr "Påkrævet"
 
-#: usb-creator/usbcreator.py:85
+#: usb-creator/usbcreator.py:86
 msgid "Execute"
 msgstr "Udfør"
 
-#: usb-creator/usbcreator.py:86
+#: usb-creator/usbcreator.py:87
 msgid "ISO"
 msgstr "ISO"
 
-#: usb-creator/usbcreator.py:87
+#: usb-creator/usbcreator.py:88
 msgid "Write single ISO"
 msgstr "Skriv en enkelt ISO"
 
-#: usb-creator/usbcreator.py:88
+#: usb-creator/usbcreator.py:89
 msgid "Write a single ISO to USB using dd"
 msgstr "Skriv en enkelt ISO til USB med dd"
 
-#: usb-creator/usbcreator.py:89
+#: usb-creator/usbcreator.py:90
 msgid "Remove"
 msgstr "Fjern"
 
-#: usb-creator/usbcreator.py:90
+#: usb-creator/usbcreator.py:91
 msgid "Refresh device list"
 msgstr "Opdatér liste over enheder"
 
-#: usb-creator/usbcreator.py:91
+#: usb-creator/usbcreator.py:92
 msgid "Unmount device"
 msgstr "Afmontér enhed"
 
-#: usb-creator/usbcreator.py:92
+#: usb-creator/usbcreator.py:93
 msgid "Browse for ISO file"
 msgstr "Led efter ISO-fil"
 
-#: usb-creator/usbcreator.py:93
+#: usb-creator/usbcreator.py:94
 msgid "Clear the ISO field"
 msgstr "Ryd ISO-feltet"
 
-#: usb-creator/usbcreator.py:94
+#: usb-creator/usbcreator.py:95
 msgid "Manual"
 msgstr "Tilpasset"
 
-#: usb-creator/usbcreator.py:95
+#: usb-creator/usbcreator.py:96
+#, fuzzy, python-brace-format
 msgid ""
-"Manually select the distribution name if USB Creator cannot\n"
+"Manually select the distribution name if {title} cannot\n"
 "determine the distribution name automatically."
 msgstr ""
 "Vælg distributionsnavnet manuelt i tilfælde af at USB-pen skaberen\n"
 "ikke selv kan fastslå det."
 
-#: usb-creator/usbcreator.py:99
+#: usb-creator/usbcreator.py:100
 msgid "Copy ISO to USB..."
 msgstr "Kopierer ISO til USB..."
 
-#: usb-creator/usbcreator.py:103
+#: usb-creator/usbcreator.py:104
 msgid "Prepare copy of ISO..."
 msgstr "Forbereder kopiering af ISO..."
 
-#: usb-creator/usbcreator.py:104
+#: usb-creator/usbcreator.py:105
 msgid "Verify hash of ISO..."
 msgstr "Kontrollerer ISO kontrolsum..."
 
-#: usb-creator/usbcreator.py:105
+#: usb-creator/usbcreator.py:106
 msgid "Install Grub..."
 msgstr "Installerer Grub..."
 
-#: usb-creator/usbcreator.py:106
+#: usb-creator/usbcreator.py:107
 msgid "Unpacking ISO..."
 msgstr "Pakker ISO'en ud..."
 
-#: usb-creator/usbcreator.py:107
+#: usb-creator/usbcreator.py:108
 msgid "Gather ISO information..."
 msgstr "Indsamler information om ISO'en..."
 
-#: usb-creator/usbcreator.py:151
+#: usb-creator/usbcreator.py:152
 msgid "Version"
 msgstr "Version"
 
-#: usb-creator/usbcreator.py:166
+#: usb-creator/usbcreator.py:167
 msgid ""
 "Cannot add ISO from path: {}.\n"
 "Please, remove the ISO path or browse for an existing ISO."
@@ -146,7 +143,7 @@ msgstr ""
 "Ryd venligst ISO-stien eller gennemse systemet for at finde en eksisterende "
 "ISO."
 
-#: usb-creator/usbcreator.py:174
+#: usb-creator/usbcreator.py:175
 msgid ""
 "There is not enough space available on the pen drive.\n"
 "Please, remove unneeded files before continuing."
@@ -154,23 +151,23 @@ msgstr ""
 "Der er ikke tilstrækkelig plads på USB-pennen.\n"
 "Fjern venligst unødvendige filer før du fortsætter."
 
-#: usb-creator/usbcreator.py:203
+#: usb-creator/usbcreator.py:204
 msgid "Are you sure you want to remove the selected ISO from the device?"
 msgstr "Er du sikker på at du vil fjerne den valgte ISO fra enheden?"
 
-#: usb-creator/usbcreator.py:224
+#: usb-creator/usbcreator.py:225
 msgid "Select ISO"
 msgstr "Vælg ISO"
 
-#: usb-creator/usbcreator.py:281
+#: usb-creator/usbcreator.py:282
 msgid "Unmount"
 msgstr "Afmontér"
 
-#: usb-creator/usbcreator.py:286
+#: usb-creator/usbcreator.py:287
 msgid "You can now safely remove the device."
 msgstr "Du kan nu fjerne enheden."
 
-#: usb-creator/usbcreator.py:288
+#: usb-creator/usbcreator.py:289
 msgid ""
 "Could not unmount the device.\n"
 "Please unmount the device manually."
@@ -178,7 +175,7 @@ msgstr ""
 "Kan ikke afmontere enheden.\n"
 "Afmontér venligst manuelt."
 
-#: usb-creator/usbcreator.py:326
+#: usb-creator/usbcreator.py:327
 msgid ""
 "No partition found.\n"
 "Please format the USB before you continue."
@@ -186,39 +183,39 @@ msgstr ""
 "Der blev ikke fundet en partition.\n"
 "Formatér venligst USB-pennen før du fortsætter."
 
-#: usb-creator/usbcreator.py:328
+#: usb-creator/usbcreator.py:329
 msgid "No Partition"
 msgstr "Ingen Partition"
 
-#: usb-creator/usbcreator.py:565
+#: usb-creator/usbcreator.py:566
 msgid "Error"
 msgstr "Fejl"
 
-#: usb-creator/usbcreator.py:568
+#: usb-creator/usbcreator.py:569
 msgid "Wrong arguments were passed."
 msgstr "Der blev anvendt ugyldige argumenter."
 
-#: usb-creator/usbcreator.py:570
+#: usb-creator/usbcreator.py:571
 msgid "The device was not found."
 msgstr "Enheden kunne ikke findes."
 
-#: usb-creator/usbcreator.py:572
+#: usb-creator/usbcreator.py:573
 msgid "The device is not detachable."
 msgstr "Enheden kan ikke frakobles."
 
-#: usb-creator/usbcreator.py:574
+#: usb-creator/usbcreator.py:575
 msgid "The device has no partition."
 msgstr "Der findes ingen partition på enheden."
 
-#: usb-creator/usbcreator.py:576
+#: usb-creator/usbcreator.py:577
 msgid "Unable to mount the device."
 msgstr "Kan ikke montere enheden."
 
-#: usb-creator/usbcreator.py:578
+#: usb-creator/usbcreator.py:579
 msgid "Given ISO path was not found."
 msgstr "Angivet ISO-sti kunne ikke findes."
 
-#: usb-creator/usbcreator.py:580
+#: usb-creator/usbcreator.py:581
 msgid ""
 "ISO too large for FAT formatted USB (max 4GB).\n"
 "Format the USB to exFAT, NTFS, ext4, etc."
@@ -226,11 +223,11 @@ msgstr ""
 "ISO'en er for stor til en FAT-formateret USB-pen(max 4GB).\n"
 "Formatér i stedet USB-pennen med exFAT, NTFS, ext4 e.l."
 
-#: usb-creator/usbcreator.py:583
+#: usb-creator/usbcreator.py:584
 msgid "There is not enough space available on the device."
 msgstr "Der er ikke tilstrækkelig ledig plads på enheden."
 
-#: usb-creator/usbcreator.py:585
+#: usb-creator/usbcreator.py:586
 msgid ""
 "Unable to determine the distribution name.\n"
 "Select a distribution in the 'Manual' section."
@@ -238,33 +235,37 @@ msgstr ""
 "Det lykkedes ikke at fastslå navnet på distributionen.\n"
 "Vælg et distributionsnavn under 'Tilpasset'."
 
-#: usb-creator/usbcreator.py:588
+#: usb-creator/usbcreator.py:589
 msgid "Cannot find the target ISO file. Did you insert the USB?"
 msgstr "Destinations-ISO'en kunne ikke findes. Har du indsat en USB-pen?"
 
-#: usb-creator/usbcreator.py:590
+#: usb-creator/usbcreator.py:591
 msgid "Hash mismatch."
 msgstr "Kontrolsum passer ikke."
 
-#: usb-creator/usbcreator.py:592
+#: usb-creator/usbcreator.py:593
 msgid "Copy of ISO failed."
 msgstr "ISO-kopiering mislykkedes."
 
-#: usb-creator/usbcreator.py:594
+#: usb-creator/usbcreator.py:595
 msgid "Device is in use by another application."
 msgstr "Enheden bruges af et andet program lige nu."
 
-#: usb-creator/usbcreator.py:596
+#: usb-creator/usbcreator.py:597
 msgid "An unknown error has occurred."
 msgstr "Der opstod en ukendt fejl."
 
-#: usb-creator/usbcreator.py:599
+#: usb-creator/usbcreator.py:600
 msgid "The USB was successfully written."
 msgstr "USB-pennen blev færdiggjort korrekt."
 
-#: usb-creator/usbcreator.py:600
+#: usb-creator/usbcreator.py:601
 msgid "Finished"
 msgstr "Færdig"
+
+#: data/usb-creator.desktop.in.h:1
+msgid "USB Creator"
+msgstr "USB-skaber"
 
 #: data/usb-creator.desktop.in.h:2
 msgid "Create a multi-boot USB"
