@@ -28,9 +28,7 @@ from .udisks2 import Udisks2
 
 # i18n: http://docs.python.org/3/library/gettext.html
 import gettext
-from gettext import gettext as _
-gettext.textdomain('usb-creator')
-
+_ = gettext.translation('usb-creator', fallback=True).gettext
 
 #class for the main window
 class USBCreator(object):
