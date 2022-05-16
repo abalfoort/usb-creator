@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usb-creator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-02 11:40+0100\n"
+"POT-Creation-Date: 2022-04-16 07:50+0200\n"
 "PO-Revision-Date: 2020-11-01 17:42+0000\n"
 "Last-Translator: Franco Frolloni <franco@frolloni.eu>\n"
 "Language-Team: Italian (http://www.transifex.com/abalfoort/usb-creator/"
@@ -23,11 +23,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: usb-creator/__init__.py:51
+#: usb-creator/__init__.py:50
 msgid "Unexpected error"
 msgstr "Errore inatteso"
 
-#: usb-creator/__init__.py:52
+#: usb-creator/__init__.py:51
 msgid ""
 "USB Creator has failed with the following unexpected error. Please submit a "
 "bug report!"
@@ -35,71 +35,71 @@ msgstr ""
 "USB Creator ha fallito col seguente errore inatteso. Prego, invia un bug "
 "report!"
 
-#: usb-creator/usbcreator.py:80
+#: usb-creator/usbcreator.py:78
 msgid "Device"
 msgstr "Device"
 
-#: usb-creator/usbcreator.py:81
+#: usb-creator/usbcreator.py:79
 msgid "Partition device"
 msgstr "Partizione del device"
 
-#: usb-creator/usbcreator.py:82
+#: usb-creator/usbcreator.py:80
 msgid "This will remove all data from the device."
 msgstr "Tutti i dati del device saranno  rimossi"
 
-#: usb-creator/usbcreator.py:83
+#: usb-creator/usbcreator.py:81
 msgid "USB"
 msgstr "USB"
 
-#: usb-creator/usbcreator.py:84
+#: usb-creator/usbcreator.py:82
 msgid "Available"
 msgstr "Disponibile"
 
-#: usb-creator/usbcreator.py:85
+#: usb-creator/usbcreator.py:83
 msgid "Required"
 msgstr "Richiesto"
 
-#: usb-creator/usbcreator.py:86
+#: usb-creator/usbcreator.py:84
 msgid "Execute"
 msgstr "Esegui"
 
-#: usb-creator/usbcreator.py:87
+#: usb-creator/usbcreator.py:85
 msgid "ISO"
 msgstr "ISO"
 
-#: usb-creator/usbcreator.py:88
+#: usb-creator/usbcreator.py:86
 msgid "Write single ISO"
 msgstr "Scrivi una sola ISO"
 
-#: usb-creator/usbcreator.py:89
+#: usb-creator/usbcreator.py:87
 msgid "Write a single ISO to USB using dd"
 msgstr "Scrivi una sola ISO sull'USB usando dd"
 
-#: usb-creator/usbcreator.py:90
+#: usb-creator/usbcreator.py:88
 msgid "Remove"
 msgstr "Rimuovi"
 
-#: usb-creator/usbcreator.py:91
+#: usb-creator/usbcreator.py:89
 msgid "Refresh device list"
 msgstr "Aggiorna la lista dei dispositivi"
 
-#: usb-creator/usbcreator.py:92
+#: usb-creator/usbcreator.py:90
 msgid "Unmount device"
 msgstr "Smonta il dispositivo"
 
-#: usb-creator/usbcreator.py:93
+#: usb-creator/usbcreator.py:91
 msgid "Browse for ISO file"
 msgstr "Cerca. il file ISO"
 
-#: usb-creator/usbcreator.py:94
+#: usb-creator/usbcreator.py:92
 msgid "Clear the ISO field"
 msgstr "Cancella il campo ISO"
 
-#: usb-creator/usbcreator.py:95
+#: usb-creator/usbcreator.py:93
 msgid "Manual"
 msgstr "Manuale"
 
-#: usb-creator/usbcreator.py:96
+#: usb-creator/usbcreator.py:94
 #, fuzzy, python-brace-format
 msgid ""
 "Manually select the distribution name if {title} cannot\n"
@@ -108,35 +108,35 @@ msgstr ""
 "Seleziona manualmente il nome della distribuzione se USB Creator non può "
 "determinare automaticamente il nome della distribuzione."
 
-#: usb-creator/usbcreator.py:100
+#: usb-creator/usbcreator.py:98
 msgid "Copy ISO to USB..."
 msgstr "Copia ISO su USB..."
 
-#: usb-creator/usbcreator.py:104
+#: usb-creator/usbcreator.py:102
 msgid "Prepare copy of ISO..."
 msgstr "Preparazione copia della ISO"
 
-#: usb-creator/usbcreator.py:105
+#: usb-creator/usbcreator.py:103
 msgid "Verify hash of ISO..."
 msgstr "Verifica hash dell'ISO"
 
-#: usb-creator/usbcreator.py:106
+#: usb-creator/usbcreator.py:104
 msgid "Install Grub..."
 msgstr "Installazione di Grub..."
 
-#: usb-creator/usbcreator.py:107
+#: usb-creator/usbcreator.py:105
 msgid "Unpacking ISO..."
 msgstr "Scompattamento ISO..."
 
-#: usb-creator/usbcreator.py:108
+#: usb-creator/usbcreator.py:106
 msgid "Gather ISO information..."
 msgstr "Raccolta informazioni ISO"
 
-#: usb-creator/usbcreator.py:152
+#: usb-creator/usbcreator.py:150
 msgid "Version"
 msgstr "Versione"
 
-#: usb-creator/usbcreator.py:167
+#: usb-creator/usbcreator.py:165
 msgid ""
 "Cannot add ISO from path: {}.\n"
 "Please, remove the ISO path or browse for an existing ISO."
@@ -144,7 +144,7 @@ msgstr ""
 "Impossibile aggiungere l'ISO dal percorso: {}.\n"
 "Prego, rimuovere il percorso dell'ISO o cercane una  esistente."
 
-#: usb-creator/usbcreator.py:175
+#: usb-creator/usbcreator.py:173
 msgid ""
 "There is not enough space available on the pen drive.\n"
 "Please, remove unneeded files before continuing."
@@ -152,23 +152,23 @@ msgstr ""
 "Non c'è abbastanza spazio sulla chiavetta.\n"
 "Prego, rimuovere file non necessari prima di continuare."
 
-#: usb-creator/usbcreator.py:204
+#: usb-creator/usbcreator.py:202
 msgid "Are you sure you want to remove the selected ISO from the device?"
 msgstr "Sei sicuro di voler rimuovere l'ISO selezionata dal dispositivo?"
 
-#: usb-creator/usbcreator.py:225
+#: usb-creator/usbcreator.py:223
 msgid "Select ISO"
 msgstr "Seleziona l'ISO"
 
-#: usb-creator/usbcreator.py:282
+#: usb-creator/usbcreator.py:280
 msgid "Unmount"
 msgstr "Smonta"
 
-#: usb-creator/usbcreator.py:287
+#: usb-creator/usbcreator.py:285
 msgid "You can now safely remove the device."
 msgstr "Puoi rimuovere in sicurezza il dispositivo"
 
-#: usb-creator/usbcreator.py:289
+#: usb-creator/usbcreator.py:287
 msgid ""
 "Could not unmount the device.\n"
 "Please unmount the device manually."
@@ -176,7 +176,7 @@ msgstr ""
 "Impossibile smontare il dispositivo.\n"
 "Prego smontalo manualmente."
 
-#: usb-creator/usbcreator.py:327
+#: usb-creator/usbcreator.py:325
 msgid ""
 "No partition found.\n"
 "Please format the USB before you continue."
@@ -184,39 +184,39 @@ msgstr ""
 "Nessuna partizione trovata.\n"
 "Prego formattare l'USB prima di continuare."
 
-#: usb-creator/usbcreator.py:329
+#: usb-creator/usbcreator.py:327
 msgid "No Partition"
 msgstr "Nessuna partizione"
 
-#: usb-creator/usbcreator.py:566
+#: usb-creator/usbcreator.py:564
 msgid "Error"
 msgstr "Errore"
 
-#: usb-creator/usbcreator.py:569
+#: usb-creator/usbcreator.py:567
 msgid "Wrong arguments were passed."
 msgstr "Sono stati passati argomenti errati."
 
-#: usb-creator/usbcreator.py:571
+#: usb-creator/usbcreator.py:569
 msgid "The device was not found."
 msgstr "Dispositivo non trovato."
 
-#: usb-creator/usbcreator.py:573
+#: usb-creator/usbcreator.py:571
 msgid "The device is not detachable."
 msgstr "Dispositivo non smontabile."
 
-#: usb-creator/usbcreator.py:575
+#: usb-creator/usbcreator.py:573
 msgid "The device has no partition."
 msgstr "Il dispositivo non ha partizioni"
 
-#: usb-creator/usbcreator.py:577
+#: usb-creator/usbcreator.py:575
 msgid "Unable to mount the device."
 msgstr "Impossibile montare il dispositivo."
 
-#: usb-creator/usbcreator.py:579
+#: usb-creator/usbcreator.py:577
 msgid "Given ISO path was not found."
 msgstr "Non è  stato trovato il percorso per la ISO."
 
-#: usb-creator/usbcreator.py:581
+#: usb-creator/usbcreator.py:579
 msgid ""
 "ISO too large for FAT formatted USB (max 4GB).\n"
 "Format the USB to exFAT, NTFS, ext4, etc."
@@ -224,11 +224,11 @@ msgstr ""
 "ISO troppo grande per un dispositivo formattato come Fat (massimo 4GB).\n"
 "Formatta l'USB come exFAT, NTFS, ext4, ecc."
 
-#: usb-creator/usbcreator.py:584
+#: usb-creator/usbcreator.py:582
 msgid "There is not enough space available on the device."
 msgstr "Non c'è abbastanza spazio disponibile nel dispositivo."
 
-#: usb-creator/usbcreator.py:586
+#: usb-creator/usbcreator.py:584
 msgid ""
 "Unable to determine the distribution name.\n"
 "Select a distribution in the 'Manual' section."
@@ -236,31 +236,31 @@ msgstr ""
 "Impossibile determinare il nome  della distribuzione.\n"
 "Selezionane una nella sezione \"Manuale\"."
 
-#: usb-creator/usbcreator.py:589
+#: usb-creator/usbcreator.py:587
 msgid "Cannot find the target ISO file. Did you insert the USB?"
 msgstr "Impossibile trovare il file ISO. Hai inserito l'USB?"
 
-#: usb-creator/usbcreator.py:591
+#: usb-creator/usbcreator.py:589
 msgid "Hash mismatch."
 msgstr "Hash non corrispondente."
 
-#: usb-creator/usbcreator.py:593
+#: usb-creator/usbcreator.py:591
 msgid "Copy of ISO failed."
 msgstr "Copia ISO fallita."
 
-#: usb-creator/usbcreator.py:595
+#: usb-creator/usbcreator.py:593
 msgid "Device is in use by another application."
 msgstr "Il dispositivo è usato da un'altra applicazione."
 
-#: usb-creator/usbcreator.py:597
+#: usb-creator/usbcreator.py:595
 msgid "An unknown error has occurred."
 msgstr "Errore sconosciuto."
 
-#: usb-creator/usbcreator.py:600
+#: usb-creator/usbcreator.py:598
 msgid "The USB was successfully written."
 msgstr "USB scritta con successo."
 
-#: usb-creator/usbcreator.py:601
+#: usb-creator/usbcreator.py:599
 msgid "Finished"
 msgstr "Fine"
 

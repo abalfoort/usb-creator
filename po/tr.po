@@ -3,17 +3,18 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
-# Arjen Balfoort <arjenbalfoort@solydxk.com>, 2018
+# abc Def <hdogan1974@gmail.com>, 2021
+# Arjen Balfoort <arjenbalfoort@hotmail.com>, 2018,2020
 # Butterfly <gokhanlnx@gmail.com>, 2016-2018
-# ortanca_samuray <ortanca_samuray@hotmail.com>, 2016
+# ortanca_samuray <ortanca_samuray@hotmail.com>, 2016,2022
 msgid ""
 msgstr ""
 "Project-Id-Version: usb-creator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-02 11:40+0100\n"
-"PO-Revision-Date: 2018-11-04 13:20+0000\n"
-"Last-Translator: Arjen Balfoort <arjenbalfoort@solydxk.com>\n"
-"Language-Team: Turkish (http://www.transifex.com/solydxk/usb-creator/"
+"POT-Creation-Date: 2022-05-16 08:42+0200\n"
+"PO-Revision-Date: 2015-11-03 12:21+0000\n"
+"Last-Translator: ortanca_samuray <ortanca_samuray@hotmail.com>, 2016,2022\n"
+"Language-Team: Turkish (http://www.transifex.com/abalfoort/usb-creator/"
 "language/tr/)\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
@@ -21,11 +22,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: usb-creator/__init__.py:51
+#: usb-creator/__init__.py:50
 msgid "Unexpected error"
 msgstr "Beklenmeyen hata"
 
-#: usb-creator/__init__.py:52
+#: usb-creator/__init__.py:51
 msgid ""
 "USB Creator has failed with the following unexpected error. Please submit a "
 "bug report!"
@@ -33,111 +34,108 @@ msgstr ""
 "USB Oluşturucu aşağıdaki beklenmeyen hata sonucu başarısız oldu. Lütfen bir "
 "hata raporu gönderin!"
 
-#: usb-creator/usbcreator.py:80
+#: usb-creator/usbcreator.py:78
 msgid "Device"
 msgstr "Aygıt"
 
-#: usb-creator/usbcreator.py:81
-#, fuzzy
+#: usb-creator/usbcreator.py:79
 msgid "Partition device"
-msgstr "Aygıtı onar"
+msgstr "Bölümlenecek Aygıt"
 
-#: usb-creator/usbcreator.py:82
+#: usb-creator/usbcreator.py:80
 msgid "This will remove all data from the device."
-msgstr ""
+msgstr "Bu, cihazdaki tüm verileri kaldıracaktır.."
 
-#: usb-creator/usbcreator.py:83
+#: usb-creator/usbcreator.py:81
 msgid "USB"
 msgstr "USB"
 
-#: usb-creator/usbcreator.py:84
+#: usb-creator/usbcreator.py:82
 msgid "Available"
 msgstr "Kullanılabilir"
 
-#: usb-creator/usbcreator.py:85
+#: usb-creator/usbcreator.py:83
 msgid "Required"
 msgstr "Gerekli"
 
-#: usb-creator/usbcreator.py:86
+#: usb-creator/usbcreator.py:84
 msgid "Execute"
 msgstr "Yürüt"
 
-#: usb-creator/usbcreator.py:87
+#: usb-creator/usbcreator.py:85
 msgid "ISO"
 msgstr "ISO"
 
-#: usb-creator/usbcreator.py:88
+#: usb-creator/usbcreator.py:86
 msgid "Write single ISO"
 msgstr "Tek ISO yaz"
 
-#: usb-creator/usbcreator.py:89
+#: usb-creator/usbcreator.py:87
 msgid "Write a single ISO to USB using dd"
 msgstr "Tek ISO dosyasını dd kullanarak USB'ye yaz"
 
-#: usb-creator/usbcreator.py:90
+#: usb-creator/usbcreator.py:88
 msgid "Remove"
-msgstr ""
+msgstr "Kaldır"
 
-#: usb-creator/usbcreator.py:91
+#: usb-creator/usbcreator.py:89
 msgid "Refresh device list"
 msgstr "Aygıt listesini tazele"
 
-#: usb-creator/usbcreator.py:92
+#: usb-creator/usbcreator.py:90
 msgid "Unmount device"
 msgstr "Aygıtı ayır"
 
-#: usb-creator/usbcreator.py:93
+#: usb-creator/usbcreator.py:91
 msgid "Browse for ISO file"
 msgstr "ISO dosyası için gözat"
 
-#: usb-creator/usbcreator.py:94
+#: usb-creator/usbcreator.py:92
 msgid "Clear the ISO field"
 msgstr "ISO alanını temizle"
 
-#: usb-creator/usbcreator.py:95
+#: usb-creator/usbcreator.py:93
 msgid "Manual"
-msgstr ""
+msgstr "El Yordamı ile"
 
-#: usb-creator/usbcreator.py:96
+#: usb-creator/usbcreator.py:94
 #, python-brace-format
 msgid ""
 "Manually select the distribution name if {title} cannot\n"
 "determine the distribution name automatically."
 msgstr ""
+"Eğer {title} yapamıyorsa dağıtım adını el yordamı ile seçin\n"
+"dağıtım adını otomatik olarak belirleyin."
 
-#: usb-creator/usbcreator.py:100
+#: usb-creator/usbcreator.py:98
 msgid "Copy ISO to USB..."
-msgstr ""
+msgstr "ISO'yu USB'ye Kopyala..."
+
+#: usb-creator/usbcreator.py:102
+msgid "Prepare copy of ISO..."
+msgstr "ISO kopyasını hazırlayın..."
+
+#: usb-creator/usbcreator.py:103
+msgid "Verify hash of ISO..."
+msgstr "ISO karmasını doğrulayın..."
 
 #: usb-creator/usbcreator.py:104
-#, fuzzy
-msgid "Prepare copy of ISO..."
-msgstr "ISO'nun hash doğrulamasını yap..."
+msgid "Install Grub..."
+msgstr "Grub Yükleyin"
 
 #: usb-creator/usbcreator.py:105
-#, fuzzy
-msgid "Verify hash of ISO..."
-msgstr "ISO'nun hash doğrulamasını yap..."
+msgid "Unpacking ISO..."
+msgstr "ISO'yu Paketten Çıkarın..."
 
 #: usb-creator/usbcreator.py:106
-#, fuzzy
-msgid "Install Grub..."
-msgstr "Grub kuruluyor..."
-
-#: usb-creator/usbcreator.py:107
-#, fuzzy
-msgid "Unpacking ISO..."
-msgstr "ISO kopyalama başlatılıyor..."
-
-#: usb-creator/usbcreator.py:108
 msgid "Gather ISO information..."
-msgstr ""
+msgstr "ISO bilgilerini toplayın..."
 
-#: usb-creator/usbcreator.py:152
+#: usb-creator/usbcreator.py:150
 msgid "Version"
 msgstr "Sürüm"
 
-#: usb-creator/usbcreator.py:167
+#: usb-creator/usbcreator.py:165
 msgid ""
 "Cannot add ISO from path: {}.\n"
 "Please, remove the ISO path or browse for an existing ISO."
@@ -145,7 +143,7 @@ msgstr ""
 "Hedeften ISO dosyası eklenemedi: {}.\n"
 "Lütfen, ISO hedefini siliniz ya da mevcut başka biri için gözatınız."
 
-#: usb-creator/usbcreator.py:175
+#: usb-creator/usbcreator.py:173
 msgid ""
 "There is not enough space available on the pen drive.\n"
 "Please, remove unneeded files before continuing."
@@ -153,24 +151,24 @@ msgstr ""
 "Sürücü üstünde yeterli kullanım alanı yok.\n"
 "Lütfen, devam etmeden öne gereksiz dosyaları siliniz."
 
-#: usb-creator/usbcreator.py:204
+#: usb-creator/usbcreator.py:202
 msgid "Are you sure you want to remove the selected ISO from the device?"
 msgstr ""
 "Aygıttan seçilen seçilen ISO dosyasını silmek istediğinize emin misiniz?"
 
-#: usb-creator/usbcreator.py:225
+#: usb-creator/usbcreator.py:223
 msgid "Select ISO"
 msgstr "ISO seç"
 
-#: usb-creator/usbcreator.py:282
+#: usb-creator/usbcreator.py:280
 msgid "Unmount"
 msgstr "Ayır"
 
-#: usb-creator/usbcreator.py:287
+#: usb-creator/usbcreator.py:285
 msgid "You can now safely remove the device."
 msgstr "Şimdi aygıtı güvenle çıkartabilirsiniz."
 
-#: usb-creator/usbcreator.py:289
+#: usb-creator/usbcreator.py:287
 msgid ""
 "Could not unmount the device.\n"
 "Please unmount the device manually."
@@ -178,94 +176,93 @@ msgstr ""
 "Aygıt ayrılamadı.\n"
 "Lütfen cihazı elle ayırın."
 
-#: usb-creator/usbcreator.py:327
+#: usb-creator/usbcreator.py:325
 msgid ""
 "No partition found.\n"
 "Please format the USB before you continue."
 msgstr ""
+"Bölüm bulunamadı.\n"
+"Devam etmeden önce lütfen USB'yi biçimlendirin."
 
-#: usb-creator/usbcreator.py:329
-#, fuzzy
+#: usb-creator/usbcreator.py:327
 msgid "No Partition"
-msgstr "Aygıtı onar"
+msgstr "Bölüm Yok"
 
-#: usb-creator/usbcreator.py:566
+#: usb-creator/usbcreator.py:564
 msgid "Error"
-msgstr ""
+msgstr "Hata"
+
+#: usb-creator/usbcreator.py:567
+msgid "Wrong arguments were passed."
+msgstr "Yanlış argümanların geçişi sağlandı."
 
 #: usb-creator/usbcreator.py:569
-#, fuzzy
-msgid "Wrong arguments were passed."
-msgstr "Usb-creator'a yanlış argümanlar geçildi."
+msgid "The device was not found."
+msgstr "Cihaz bulunamadı."
 
 #: usb-creator/usbcreator.py:571
-#, fuzzy
-msgid "The device was not found."
-msgstr "Aygıt fat32 bölümüne sahip değil."
+msgid "The device is not detachable."
+msgstr "Cihaz ayrılabilir değildir."
 
 #: usb-creator/usbcreator.py:573
-#, fuzzy
-msgid "The device is not detachable."
-msgstr "Aygıt kurulu bir açılış yükleyicisine sahip değil."
+msgid "The device has no partition."
+msgstr "Cihazda bölüm yok."
 
 #: usb-creator/usbcreator.py:575
-#, fuzzy
-msgid "The device has no partition."
-msgstr "Aygıt fat32 bölümüne sahip değil."
-
-#: usb-creator/usbcreator.py:577
 msgid "Unable to mount the device."
 msgstr "Aygıt bağlanamadı."
 
-#: usb-creator/usbcreator.py:579
+#: usb-creator/usbcreator.py:577
 msgid "Given ISO path was not found."
 msgstr "Verilen ISO hedefi bulunamadı."
 
-#: usb-creator/usbcreator.py:581
+#: usb-creator/usbcreator.py:579
 msgid ""
 "ISO too large for FAT formatted USB (max 4GB).\n"
 "Format the USB to exFAT, NTFS, ext4, etc."
 msgstr ""
+"FAT formatlı USB için çok büyük (maks 4GB).\n"
+"USB'yi exFAT, NTFS, ext4, vb. olarak biçimlendirin."
 
-#: usb-creator/usbcreator.py:584
+#: usb-creator/usbcreator.py:582
 msgid "There is not enough space available on the device."
 msgstr "Aygıtta kullanım için yeterli alan mevcut değil."
 
-#: usb-creator/usbcreator.py:586
-#, fuzzy
+#: usb-creator/usbcreator.py:584
 msgid ""
 "Unable to determine the distribution name.\n"
 "Select a distribution in the 'Manual' section."
-msgstr "Aygıt bağlanamadı."
+msgstr ""
+"Dağıtım adı belirlenemiyor.\n"
+"'Manuel' bölümünde bir dağıtım seçin."
+
+#: usb-creator/usbcreator.py:587
+msgid "Cannot find the target ISO file. Did you insert the USB?"
+msgstr "Hedef ISO dosyası bulunamıyor. USB'yi eklediniz mi?"
 
 #: usb-creator/usbcreator.py:589
-msgid "Cannot find the target ISO file. Did you insert the USB?"
-msgstr ""
-
-#: usb-creator/usbcreator.py:591
 msgid "Hash mismatch."
 msgstr "Karma uyumsuzluğu."
 
-#: usb-creator/usbcreator.py:593
-#, fuzzy
+#: usb-creator/usbcreator.py:591
 msgid "Copy of ISO failed."
-msgstr "ISO dosyası için gözat"
+msgstr "ISO kopyası başarısız oldu."
 
-#: usb-creator/usbcreator.py:595
+#: usb-creator/usbcreator.py:593
 msgid "Device is in use by another application."
 msgstr "Aygıtı bir başka uygulama kullanıyor"
 
-#: usb-creator/usbcreator.py:597
+#: usb-creator/usbcreator.py:595
 msgid "An unknown error has occurred."
-msgstr ""
+msgstr "Bilinmeyen bir hata meydana geldi."
 
-#: usb-creator/usbcreator.py:600
+#: usb-creator/usbcreator.py:598
 msgid "The USB was successfully written."
 msgstr "USB başarıyla yazıldı."
 
-#: usb-creator/usbcreator.py:601
+#: usb-creator/usbcreator.py:599
 msgid "Finished"
-msgstr ""
+msgstr "Bitirildi"
 
 #: data/usb-creator.desktop.in.h:1
 msgid "USB Creator"
@@ -313,25 +310,26 @@ msgid ""
 "fat32 boot partition and a second partition for the ISOs in the file system "
 "format of your choosing."
 msgstr ""
+"USB Creator, seçtiğiniz dosya sistemi biçiminde tek bir fat32 bölümü veya "
+"100 MB fat32 önyükleme bölümü ve ISO'lar için ikinci bir bölüm içeren bir "
+"USB kalem sürücü ister."
 
 #: po/en/help.html%2Bhtml.body.div.p:16-3
 msgid "Note: a fat32 partition can not hold files larger than 4GB."
-msgstr ""
+msgstr "Not: bir fat32 bölümü 4 GB'den büyük dosyaları tutamaz."
 
 #: po/en/help.html%2Bhtml.body.div.h2:18-3
 msgid "Terminal"
-msgstr ""
+msgstr "Terminal"
 
 #: po/en/help.html%2Bhtml.body.div.p:19-3
-#, fuzzy
 msgid "You can also use the USB Creator from the terminal."
-msgstr ""
-"USB Oluşturucuyu uçbirimden de kullanabilirsiniz. İşte bazı kullanım "
-"örnekleri:"
+msgstr "USB Oluşturucuyu terminalden de kullanabilirsiniz."
 
 #: po/en/help.html%2Bhtml.body.div.p:20-3
 msgid "See \"man usb-creator\" for a list of all available options."
 msgstr ""
+"Mevcut tüm seçeneklerin listesi için \"man usb-creator\" bölümüne bakın."
 
 #: po/en/help.html%2Bhtml.body.div.h2:22-3
 msgid "Your ISO is not booting?"
@@ -343,184 +341,19 @@ msgid ""
 "manually select the appropriate distribution name from the \"Manual\" drop "
 "down menu."
 msgstr ""
+"ISO, otomatik dağıtım adı algılama ile önyükleme yapmadıysa, \"Manuel\" "
+"açılır menüsünden uygun dağıtım adını el yordamı ile seçersiniz."
 
 #: po/en/help.html%2Bhtml.body.div.p:24-3
-#, fuzzy
 msgid ""
 "If you still cannot boot your ISO you can configure the menu on your flash "
 "drive: /boot/grub/grub.cfg"
 msgstr ""
-"Menü flash sürücünüzde bulabileceğiniz bir dosyada yapılandırılmıştır: /boot/"
-"grub/grub.cfg"
+"Hala ISO'nuzu ön yükleyemiyorsanız, flash sürücünüzdeki menüyü "
+"yapılandırabilirsiniz: /boot/grub/grub.cfg"
 
 #. (itstool) path: action/message
 #: data/org.debian.pkexec.usb-creator.tmp-sh.policy:8
 msgid "USB Creator requires authentication to install Grub on your device"
 msgstr ""
-
-#~ msgid ""
-#~ "An unknown error accured.\n"
-#~ "Please, visit our forum for support: https://forums.solydxk.com"
-#~ msgstr ""
-#~ "Bilinmeyen bir hata oluştu.\n"
-#~ "Lütfen, destek için sitemizi ziyaret ediniz: https://forums.solydxk.com"
-
-#, fuzzy
-#~ msgid ""
-#~ "Please help improve this application by adapting grub.cfg until the ISO "
-#~ "boots and post your changes on <a href=\"https://github.com/SolydXK/usb-"
-#~ "creator\" target=\"_blank\">GitHub</a> or our <a href=\"https://forums."
-#~ "solydxk.com\" target=\"_blank\">forum</a>."
-#~ msgstr ""
-#~ "Lütfen ISO dosyasının açılışını sağlayacak grub.cfg dosyası "
-#~ "uyarlamalarınız ile ilgili değişilikleri bu uygulamanın iyileştirilmesine "
-#~ "katkıda bulunmak için Github ya da <a href=\"https://forums.solydxk.com\" "
-#~ "target=\"_blank\">foruma</a> gönderin."
-
-#, fuzzy
-#~ msgid ""
-#~ "Don't forget to attach the log file when you post an issue on our forum: "
-#~ "~/.usb-creator/usb-creator.log"
-#~ msgstr ""
-#~ "Forumda bir sorunla ilgili bildirim yaptığınızda, şu günlük dosyasının "
-#~ "içeriğini eklemeyi unutmayınız: /var/log/usb-creator.log"
-
-#~ msgid "Delete"
-#~ msgstr "Sil"
-
-#~ msgid ""
-#~ "On our <a href=\"https://github.com/SolydXK/usb-creator\" target=\"_blank"
-#~ "\">GitHub</a> page you can see a list of tested distributions but not all "
-#~ "can be booted directly from the ISO file. Check the distribution's forum "
-#~ "if it can be booted directly from the ISO file."
-#~ msgstr ""
-#~ "<a href=\"https://github.com/SolydXK/usb-creator\" target=\"_blank"
-#~ "\">GitHub</a> sayfamızda test edilmiş dağıtımların bir listesini "
-#~ "görebilirsiniz, ancak hepsi doğrudan ISO dosyasından önyüklenemeyebilir. "
-#~ "Doğrudan ISO dosyasından önyüklenebilir ISO dosyaları için, ilgili "
-#~ "dağıtımın forumunu kontrol edin."
-
-#~ msgid ""
-#~ "If you want to format your flash drive yourself you need to create a "
-#~ "single fat32 partition or at least two partitions: the first a 100MB "
-#~ "fat32 partition and the second must be large enough for at least one ISO. "
-#~ "Any following partition is being ignored by USB Creator."
-#~ msgstr ""
-#~ "USB sürücünüzü kendiniz elle biçimlendirmek isterseniz, tek bir fat32 "
-#~ "bölümü oluşturmalı ya da en az iki bölüm oluşturmanız gerekir: İlk bölüm "
-#~ "100MB'lik bir fat32 bölümü olmalı ve ikinci bölüm en az bir ISO dosyası "
-#~ "için yeterince büyük olmalıdır. Aşağıdaki herhangi bir bölüm USB "
-#~ "Oluşturucu tarafından gözardı edilir."
-
-#~ msgid "Hidden features"
-#~ msgstr "Gizli özellikler"
-
-#~ msgid ""
-#~ "When you remove the ISO file name from the ISO field, USB Creator will "
-#~ "calculate the space needed for all ISO files in that directory."
-#~ msgstr ""
-#~ "ISO dosya adını ISO alanından sildiğinizde, USB Oluşturucu bu dizindeki "
-#~ "tüm ISO dosyaları için gereken alanı hesaplar."
-
-#~ msgid ""
-#~ "You can change the order in which the ISO files are displayed in the menu "
-#~ "by adding a number in front of the ISO file name, e.g.: \"01-MyDistro-"
-#~ "amd64.iso\"."
-#~ msgstr ""
-#~ "ISO dosyalarının menüdeki gösterilme sırasını, ISO dosya adının önüne bir "
-#~ "sayı ekleyerek değiştirebilirsiniz, örneğin: \"01-DağıtımAdı-amd64.iso\"."
-
-#~ msgid ""
-#~ "Symbolic links are followed but the symbolic links must have the \".iso\" "
-#~ "extension to make it work."
-#~ msgstr ""
-#~ "Sembolik bağlantılar takip edilir, ancak sembolik bağlantılar çalışması "
-#~ "için \".iso\" uzantısına sahip olmalıdır."
-
-#~ msgid "Command Examples"
-#~ msgstr "Komut Örnekleri"
-
-#~ msgid "# usb-creator -d /dev/sdx -f ntfs -i /path/to/my.iso -s"
-#~ msgstr "# usb-creator -d /dev/sdx -f ntfs -i /path/to/my.iso -s"
-
-#~ msgid ""
-#~ "This will format the flash drive as ntfs, copy the ISO file to the flash "
-#~ "drive and check the hash of the copied ISO file with the original ISO "
-#~ "file."
-#~ msgstr ""
-#~ "Bu, flash sürücüyü ntfs olarak biçimlendirip, ISO dosyasını sürücüye "
-#~ "kopyalayacak ve kopyalanan ISO dosyasının orijinal ISO dosyası ile "
-#~ "sağlamasını yapacaktır."
-
-#~ msgid "# usb-creator -b -g -r"
-#~ msgstr "# usb-creator -b -g -r"
-
-#~ msgid ""
-#~ "This will try to repair an unbootable flash drive that already contains "
-#~ "ISO files."
-#~ msgstr ""
-#~ "Bu halihazırda ISO dosyası içeren ama açılabilir olmayan bir flash "
-#~ "sürücünün onarımını dener."
-
-#~ msgid "# usb-creator -h"
-#~ msgstr "# usb-creator -h"
-
-#~ msgid "This will show all available options and their usage."
-#~ msgstr ""
-#~ "Bu tüm kullanılabilir seçenekleri ve onların kullanımlarını gösterir."
-
-#, fuzzy
-#~ msgid "Copied:"
-#~ msgstr "ISO kopyalandı:"
-
-#~ msgid "Device options"
-#~ msgstr "Aygıt seçenekleri"
-
-#~ msgid "Warning: all data will be lost"
-#~ msgstr "Uyarı: tüm veriler yok olabilir"
-
-#~ msgid "Tries to repair an unbootable USB"
-#~ msgstr "Açılış yapılamayan USB için onarım deneniyor"
-
-#~ msgid "ISO options"
-#~ msgstr "ISO seçenekleri"
-
-#~ msgid "Checksum"
-#~ msgstr "Sağlama"
-
-#~ msgid "Check hashes of original and copied ISO"
-#~ msgstr "Asıl ve kopya ISO değerlerini kontrol edin"
-
-#~ msgid "Partitioning USB..."
-#~ msgstr "USB bölümleniyor..."
-
-#~ msgid "Searching for bad block"
-#~ msgstr "Kötü blok için araştırılıyor"
-
-#~ msgid "Do not format"
-#~ msgstr "Biçimlendirme yapma"
-
-#~ msgid "Format as ext4"
-#~ msgstr "Ext4 olarak biçimlendir"
-
-#~ msgid "Format as ntfs"
-#~ msgstr "NTFS olarak biçimlendir"
-
-#~ msgid "Run this application with root permission."
-#~ msgstr "Bu uygulamayı yönetici hakları ile çalıştırınız."
-
-#~ msgid "The device was not found or no device was given."
-#~ msgstr "Aygıt bulunamadı veya hiçbir aygıt yok."
-
-#~ msgid "The device has no bootloader installed."
-#~ msgstr "Aygıt kurulu bir açılış yükleyicisine sahip değil."
-
-#~ msgid ""
-#~ "Unable to guess distribution from ISO name.\n"
-#~ "Make sure you have the distribution name in the ISO name."
-#~ msgstr ""
-#~ "ISO isminden dağıtımı tahmin edilemedi.\n"
-#~ "ISO adında dağıtım adı olduğundan emin olunuz."
-
-#~ msgid "Authentication is required to run USB Creator"
-#~ msgstr "USB Oluşturucuyu çalıştırmak için kimlik doğrulama gerekiyor"
+"USB Oluşturucu, Grub'u cihazınıza yüklemek için kimlik doğrulama gerektiriyor"
