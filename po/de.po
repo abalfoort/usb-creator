@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
-# Arjen Balfoort <arjenbalfoort@hotmail.com>, 2020
+# Arjen Balfoort <arjenbalfoort@hotmail.com>, 2020,2022
 # Arjen Balfoort <arjenbalfoort@hotmail.com>, 2018,2020
 # Arjen Balfoort <arjenbalfoort@hotmail.com>, 2016
 # ilu lu, 2020
@@ -15,9 +15,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usb-creator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-16 07:50+0200\n"
-"PO-Revision-Date: 2020-10-25 19:04+0000\n"
-"Last-Translator: ilu lu\n"
+"POT-Creation-Date: 2022-06-29 09:03+0200\n"
+"PO-Revision-Date: 2015-11-03 12:21+0000\n"
+"Last-Translator: Arjen Balfoort <arjenbalfoort@hotmail.com>, 2020,2022\n"
 "Language-Team: German (http://www.transifex.com/abalfoort/usb-creator/"
 "language/de/)\n"
 "Language: de\n"
@@ -103,12 +103,12 @@ msgid "Manual"
 msgstr "Manuell"
 
 #: usb-creator/usbcreator.py:94
-#, fuzzy, python-brace-format
+#, python-brace-format
 msgid ""
 "Manually select the distribution name if {title} cannot\n"
 "determine the distribution name automatically."
 msgstr ""
-"Wählen Sie den Distributionsnamen manuell aus, wenn USB Creator nicht in der "
+"Wählen Sie den Distributionsnamen manuell aus, wenn {title} nicht in der "
 "Lage ist den Verteilungsnamen automatisch zu bestimmen."
 
 #: usb-creator/usbcreator.py:98

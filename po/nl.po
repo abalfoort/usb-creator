@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
-# Arjen Balfoort <arjenbalfoort@hotmail.com>, 2020
+# Arjen Balfoort <arjenbalfoort@hotmail.com>, 2020,2022
 # Arjen Balfoort <arjenbalfoort@hotmail.com>, 2018-2020
 # Arjen Balfoort <arjenbalfoort@hotmail.com>, 2015-2017
 # root <arjenbalfoort@solydxk.com>, 2015
@@ -11,9 +11,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usb-creator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-16 07:50+0200\n"
-"PO-Revision-Date: 2021-01-19 17:54+0000\n"
-"Last-Translator: Arjen Balfoort <arjenbalfoort@hotmail.com>\n"
+"POT-Creation-Date: 2022-06-29 09:03+0200\n"
+"PO-Revision-Date: 2015-11-03 12:21+0000\n"
+"Last-Translator: Arjen Balfoort <arjenbalfoort@hotmail.com>, 2020,2022\n"
 "Language-Team: Dutch (http://www.transifex.com/abalfoort/usb-creator/"
 "language/nl/)\n"
 "Language: nl\n"
@@ -99,13 +99,13 @@ msgid "Manual"
 msgstr "Handmatig"
 
 #: usb-creator/usbcreator.py:94
-#, fuzzy, python-brace-format
+#, python-brace-format
 msgid ""
 "Manually select the distribution name if {title} cannot\n"
 "determine the distribution name automatically."
 msgstr ""
-"Selecteer handmatig de distributienaam als USB Creator de\n"
-"distributienaam niet kan vaststellen"
+"Selecteer handmatig de distributienaam als {title} de\n"
+"distributienaam niet kan vaststellen."
 
 #: usb-creator/usbcreator.py:98
 msgid "Copy ISO to USB..."
@@ -255,7 +255,7 @@ msgstr "Het apparaat wordt door een andere applicatie gebruikt"
 
 #: usb-creator/usbcreator.py:595
 msgid "An unknown error has occurred."
-msgstr ""
+msgstr "Een onbekende fout is opgetreden."
 
 #: usb-creator/usbcreator.py:598
 msgid "The USB was successfully written."

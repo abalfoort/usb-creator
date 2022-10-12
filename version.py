@@ -1,5 +1,5 @@
 __title__ = 'usb-creator'
-__version__ = '0.9.0'
+__version__ = '0.9.2'
 __author__ = 'Arjen Balfoort'
 __author_email__ = 'arjenbalfoort@solydxk.com'
 __maintainer__ = ''
