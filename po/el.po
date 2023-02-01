@@ -1,0 +1,327 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Arjen Balfoort <arjenbalfoort@hotmail.com>, 2018,2020
+# geost <george.stefanakis@gmail.com>, 2016
+# Stelios <stelios.efthi@gmail.com>, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: usb-creator\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-10-09 11:39+0200\n"
+"PO-Revision-Date: 2015-11-03 12:21+0000\n"
+"Last-Translator: Arjen Balfoort <arjenbalfoort@hotmail.com>, 2018,2020\n"
+"Language-Team: Greek (http://www.transifex.com/abalfoort/usb-creator/language/el/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: el\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: usb-creator/__init__.py:50
+msgid "Unexpected error"
+msgstr "Αναπάντεχο σφάλμα"
+
+#: usb-creator/__init__.py:51
+msgid ""
+"USB Creator has failed with the following unexpected error. Please submit a "
+"bug report!"
+msgstr ""
+
+#: usb-creator/usbcreator.py:78
+msgid "Device"
+msgstr "Συσκευή"
+
+#: usb-creator/usbcreator.py:79
+msgid "Partition device"
+msgstr ""
+
+#: usb-creator/usbcreator.py:80
+msgid "This will remove all data from the device."
+msgstr ""
+
+#: usb-creator/usbcreator.py:81
+msgid "USB"
+msgstr "USB"
+
+#: usb-creator/usbcreator.py:82
+msgid "Available"
+msgstr "Διαθέσιμο"
+
+#: usb-creator/usbcreator.py:83
+msgid "Required"
+msgstr "Απαιτείται "
+
+#: usb-creator/usbcreator.py:84
+msgid "Execute"
+msgstr "Εκτέλεση"
+
+#: usb-creator/usbcreator.py:85
+msgid "ISO"
+msgstr "ISO"
+
+#: usb-creator/usbcreator.py:86
+msgid "Write single ISO"
+msgstr ""
+
+#: usb-creator/usbcreator.py:87
+msgid "Write a single ISO to USB using dd"
+msgstr ""
+
+#: usb-creator/usbcreator.py:88
+msgid "Remove"
+msgstr ""
+
+#: usb-creator/usbcreator.py:89
+msgid "Refresh device list"
+msgstr "Ανανέωση λίστας συσκευών"
+
+#: usb-creator/usbcreator.py:90
+msgid "Unmount device"
+msgstr "Αποπροσάρτηση συσκευής "
+
+#: usb-creator/usbcreator.py:91
+msgid "Browse for ISO file"
+msgstr "Εύρεση αρχείου ISO"
+
+#: usb-creator/usbcreator.py:92
+msgid "Clear the ISO field"
+msgstr "Εκκαθάριση του πεδίου ISO"
+
+#: usb-creator/usbcreator.py:93
+msgid "Manual"
+msgstr ""
+
+#: usb-creator/usbcreator.py:94
+#, python-brace-format
+msgid ""
+"Manually select the distribution name if {title} cannot\n"
+"determine the distribution name automatically."
+msgstr ""
+
+#: usb-creator/usbcreator.py:98
+msgid "Copy ISO to USB..."
+msgstr ""
+
+#: usb-creator/usbcreator.py:102
+msgid "Prepare copy of ISO..."
+msgstr ""
+
+#: usb-creator/usbcreator.py:103
+msgid "Verify hash of ISO..."
+msgstr ""
+
+#: usb-creator/usbcreator.py:104
+msgid "Install Grub..."
+msgstr ""
+
+#: usb-creator/usbcreator.py:105
+msgid "Unpacking ISO..."
+msgstr ""
+
+#: usb-creator/usbcreator.py:106
+msgid "Gather ISO information..."
+msgstr ""
+
+#: usb-creator/usbcreator.py:150
+msgid "Version"
+msgstr "Έκδοση"
+
+#: usb-creator/usbcreator.py:165
+msgid ""
+"Cannot add ISO from path: {}.\n"
+"Please, remove the ISO path or browse for an existing ISO."
+msgstr "Δεν είναι δυνατή η προσθήκη ISO από τη διαδρομή: {}.\nΠαρακαλούμε, αφαιρέσετε τη διαδρομή του ISO ή αναζητήστε ένα υπάρχων ISO."
+
+#: usb-creator/usbcreator.py:173
+msgid ""
+"There is not enough space available on the pen drive.\n"
+"Please, remove unneeded files before continuing."
+msgstr ""
+
+#: usb-creator/usbcreator.py:202
+msgid "Are you sure you want to remove the selected ISO from the device?"
+msgstr "Είστε βέβαιοι ότι επιθυμείτε να αφαιρέσετε το επιλεγμένο ISO από τη συσκευή;"
+
+#: usb-creator/usbcreator.py:223
+msgid "Select ISO"
+msgstr "Επιλογή ISO"
+
+#: usb-creator/usbcreator.py:280
+msgid "Unmount"
+msgstr "Aποπροσάρτηση"
+
+#: usb-creator/usbcreator.py:285
+msgid "You can now safely remove the device."
+msgstr "Τώρα μπορείτε, με ασφάλεια, να αφαιρέσετε την συσκεύη."
+
+#: usb-creator/usbcreator.py:287
+msgid ""
+"Could not unmount the device.\n"
+"Please unmount the device manually."
+msgstr ""
+
+#: usb-creator/usbcreator.py:325
+msgid ""
+"No partition found.\n"
+"Please format the USB before you continue."
+msgstr ""
+
+#: usb-creator/usbcreator.py:327
+msgid "No Partition"
+msgstr ""
+
+#: usb-creator/usbcreator.py:564
+msgid "Error"
+msgstr ""
+
+#: usb-creator/usbcreator.py:567
+msgid "Wrong arguments were passed."
+msgstr ""
+
+#: usb-creator/usbcreator.py:569
+msgid "The device was not found."
+msgstr ""
+
+#: usb-creator/usbcreator.py:571
+msgid "The device is not detachable."
+msgstr ""
+
+#: usb-creator/usbcreator.py:573
+msgid "The device has no partition."
+msgstr ""
+
+#: usb-creator/usbcreator.py:575
+msgid "Unable to mount the device."
+msgstr ""
+
+#: usb-creator/usbcreator.py:577
+msgid "Given ISO path was not found."
+msgstr "Η διαδρομή ISO που δώσατε δε βρέθηκε."
+
+#: usb-creator/usbcreator.py:579
+msgid ""
+"ISO too large for FAT formatted USB (max 4GB).\n"
+"Format the USB to exFAT, NTFS, ext4, etc."
+msgstr ""
+
+#: usb-creator/usbcreator.py:582
+msgid "There is not enough space available on the device."
+msgstr "Δεν υπάρχει αρκετός διαθέσιμος χώρος στη συσκευή."
+
+#: usb-creator/usbcreator.py:584
+msgid ""
+"Unable to determine the distribution name.\n"
+"Select a distribution in the 'Manual' section."
+msgstr ""
+
+#: usb-creator/usbcreator.py:587
+msgid "Cannot find the target ISO file. Did you insert the USB?"
+msgstr ""
+
+#: usb-creator/usbcreator.py:589
+msgid "Hash mismatch."
+msgstr ""
+
+#: usb-creator/usbcreator.py:591
+msgid "Copy of ISO failed."
+msgstr ""
+
+#: usb-creator/usbcreator.py:593
+msgid "Device is in use by another application."
+msgstr "Η συσκευή είναι σε χρήση από μια άλλη εφαρμογή."
+
+#: usb-creator/usbcreator.py:595
+msgid "An unknown error has occurred."
+msgstr ""
+
+#: usb-creator/usbcreator.py:598
+msgid "The USB was successfully written."
+msgstr "Το USB εγγράφηκε επιτυχώς."
+
+#: usb-creator/usbcreator.py:599
+msgid "Finished"
+msgstr ""
+
+#: data/usb-creator.desktop.in.h:1
+msgid "USB Creator"
+msgstr "Δημιουργός USB"
+
+#: data/usb-creator.desktop.in.h:2
+msgid "Create a multi-boot USB"
+msgstr "Δημιουργήστε ένα USB πολλαπλής εκκίνησης "
+
+#: data/usb-constructor-openusb.desktop.in.h:1
+msgid "Create a multi-boot USB with the USB Creator"
+msgstr ""
+
+#: po/en/help.html%2Bhtml.body.h18-2
+msgid "USB Creator Help"
+msgstr ""
+
+#: po/en/help.html%2Bhtml.body.div.h210-3
+msgid "Description"
+msgstr "Περιγραφή"
+
+#: po/en/help.html%2Bhtml.body.div.p11-3
+msgid ""
+"The USB Creator is a tool to help users to create a bootable flash drive "
+"with multiple Linux operating systems."
+msgstr ""
+
+#: po/en/help.html%2Bhtml.body.div.h213-3
+msgid "Important"
+msgstr ""
+
+#: po/en/help.html%2Bhtml.body.div.p14-3
+msgid ""
+"Make sure you backed up all important data from the flash drive before you "
+"start."
+msgstr "Βεβαιωθείτε ότι έχετε δημιουργήσει αντίγραφα ασφαλείας όλων των σημαντικών δεδομένων από τη μονάδα οδηγού πριν ξεκινήσετε. "
+
+#: po/en/help.html%2Bhtml.body.div.p15-3
+msgid ""
+"USB Creator expects a USB pen drive with a single fat32 partition or a 100MB"
+" fat32 boot partition and a second partition for the ISOs in the file system"
+" format of your choosing."
+msgstr ""
+
+#: po/en/help.html%2Bhtml.body.div.p16-3
+msgid "Note: a fat32 partition can not hold files larger than 4GB."
+msgstr ""
+
+#: po/en/help.html%2Bhtml.body.div.h218-3
+msgid "Terminal"
+msgstr ""
+
+#: po/en/help.html%2Bhtml.body.div.p19-3
+msgid "You can also use the USB Creator from the terminal."
+msgstr ""
+
+#: po/en/help.html%2Bhtml.body.div.p20-3
+msgid "See \"man usb-creator\" for a list of all available options."
+msgstr ""
+
+#: po/en/help.html%2Bhtml.body.div.h222-3
+msgid "Your ISO is not booting?"
+msgstr "Το ISO σου δεν εκκινείται; "
+
+#: po/en/help.html%2Bhtml.body.div.p23-3
+msgid ""
+"If the ISO did not boot with automatic distribution name detection, you "
+"manually select the appropriate distribution name from the \"Manual\" drop "
+"down menu."
+msgstr ""
+
+#: po/en/help.html%2Bhtml.body.div.p24-3
+msgid ""
+"If you still cannot boot your ISO you can configure the menu on your flash "
+"drive: /boot/grub/grub.cfg"
+msgstr ""
+
+#. (itstool) path: action/message
+#: data/org.debian.pkexec.usb-creator.tmp-sh.policy:8
+msgid "USB Creator requires authentication to install Grub on your device"
+msgstr ""
